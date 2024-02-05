@@ -24,9 +24,13 @@
       <div class="flex justify-between items-center mb-10">
         <h2 class="text-2xl font-bold text-gray-900">Customization</h2>
         <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start"
         >
-        <img src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/upload.svg" class="h-6 w-6 mr-2" alt="Import icon" />
+          <img
+            src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/upload.svg"
+            class="h-6 w-6 mr-2"
+            alt="Import icon"
+          />
           Import config file
         </button>
       </div>
@@ -132,84 +136,154 @@
             placeholder="Enter image link"
           />
         </div>
-        
+
         <div class="flex items-center mb-4" style="display: none">
-          <input type="radio" class="form-radio h-5 w-5 text-blue-600 mr-2 rounded-full" name="imageType" id="choosePhoto" checked />
+          <input
+            type="radio"
+            class="form-radio h-5 w-5 text-blue-600 mr-2 rounded-full"
+            name="imageType"
+            id="choosePhoto"
+            checked
+          />
           <label class="text-gray-700 text-sm font-bold">Photo</label>
         </div>
 
         <div class="flex items-center mb-4" style="display: none">
-          <input type="radio" class="form-radio h-5 w-5 text-blue-600 mr-2 rounded-full" name="imageType" id="chooseLogo" />
+          <input
+            type="radio"
+            class="form-radio h-5 w-5 text-blue-600 mr-2 rounded-full"
+            name="imageType"
+            id="chooseLogo"
+          />
           <label class="text-gray-700 text-sm font-bold">Logo</label>
         </div>
-        
-
-        
-        
       </div>
       <div class="mb-10">
         <h3 class="text-xl font-bold mb-4 text-gray-900">Socials</h3>
         <!-- Website Option -->
         <div class="flex items-center mb-4">
-          <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 mr-2" id="websiteOption" />
+          <input
+            type="checkbox"
+            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+            id="websiteOption"
+          />
           <label class="text-gray-700 text-sm font-bold">Website</label>
         </div>
         <div class="mb-4" id="websiteField" style="display: none">
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="websiteLink" type="text" placeholder="Enter Website link" />
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="websiteLink"
+            type="text"
+            placeholder="Enter Website link"
+          />
         </div>
 
         <!-- GitHub Option -->
         <div class="flex items-center mb-4">
-          <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 mr-2" id="githubOption" />
+          <input
+            type="checkbox"
+            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+            id="githubOption"
+          />
           <label class="text-gray-700 text-sm font-bold">GitHub</label>
         </div>
         <div class="mb-4" id="githubField" style="display: none">
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="githubLink" type="text" placeholder="Enter GitHub profile link" />
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="githubLink"
+            type="text"
+            placeholder="Enter GitHub profile link"
+          />
         </div>
 
         <!-- Instagram Option -->
         <div class="flex items-center mb-4">
-          <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 mr-2" id="instagramOption" />
+          <input
+            type="checkbox"
+            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+            id="instagramOption"
+          />
           <label class="text-gray-700 text-sm font-bold">Instagram</label>
         </div>
         <div class="mb-4" id="instagramField" style="display: none">
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="instagramLink" type="text" placeholder="Enter Instagram profile link" />
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="instagramLink"
+            type="text"
+            placeholder="Enter Instagram profile link"
+          />
         </div>
 
         <!-- LinkedIn Option -->
         <div class="flex items-center mb-4">
-          <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 mr-2" id="linkedinOption" />
+          <input
+            type="checkbox"
+            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+            id="linkedinOption"
+          />
           <label class="text-gray-700 text-sm font-bold">LinkedIn</label>
         </div>
         <div class="mb-4" id="linkedinField" style="display: none">
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="linkedinLink" type="text" placeholder="Enter LinkedIn profile link" />
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="linkedinLink"
+            type="text"
+            placeholder="Enter LinkedIn profile link"
+          />
         </div>
 
         <!-- Slack Option -->
         <div class="flex items-center mb-4">
-          <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 mr-2" id="slackOption" />
+          <input
+            type="checkbox"
+            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+            id="slackOption"
+          />
           <label class="text-gray-700 text-sm font-bold">Slack</label>
         </div>
         <div class="mb-4" id="slackField" style="display: none">
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="slackLink" type="text" placeholder="Enter Slack profile link" />
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="slackLink"
+            type="text"
+            placeholder="Enter Slack profile link"
+          />
         </div>
 
         <!-- YouTube Option -->
         <div class="flex items-center mb-4">
-          <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 mr-2" id="youtubeOption" />
+          <input
+            type="checkbox"
+            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+            id="youtubeOption"
+          />
           <label class="text-gray-700 text-sm font-bold">YouTube</label>
         </div>
         <div class="mb-4" id="youtubeField" style="display: none">
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="youtubeLink" type="text" placeholder="Enter YouTube channel link" />
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="youtubeLink"
+            type="text"
+            placeholder="Enter YouTube channel link"
+          />
         </div>
 
         <!-- Twitter Option -->
         <div class="flex items-center mb-4">
-          <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 mr-2" id="twitterOption" />
+          <input
+            type="checkbox"
+            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+            id="twitterOption"
+          />
           <label class="text-gray-700 text-sm font-bold">Twitter</label>
         </div>
         <div class="mb-4" id="twitterField" style="display: none">
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="twitterLink" type="text" placeholder="Enter Twitter profile link" />
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="twitterLink"
+            type="text"
+            placeholder="Enter Twitter profile link"
+          />
         </div>
 
         <!-- Facebook Option -->
@@ -245,10 +319,13 @@
           var chooseLogoField = document.getElementById('chooseLogoField');
           chooseLogoField.style.display = this.checked ? 'block' : 'none';
         });
-        document.getElementById('imageOption').addEventListener('change', function () {
-          var photoOption = document.getElementById('choosePhoto').parentElement;
+      document
+        .getElementById('imageOption')
+        .addEventListener('change', function () {
+          var photoOption =
+            document.getElementById('choosePhoto').parentElement;
           var logoOption = document.getElementById('chooseLogo').parentElement;
-          
+
           if (this.checked) {
             photoOption.style.display = 'flex';
             logoOption.style.display = 'flex';
@@ -258,11 +335,22 @@
           }
         });
 
-      ['website', 'github', 'instagram', 'linkedin', 'slack', 'youtube', 'twitter', 'facebook'].forEach((platform) => {
-        document.getElementById(`${platform}Option`).addEventListener('change', function () {
-          var field = document.getElementById(`${platform}Field`);
-          field.style.display = this.checked ? 'block' : 'none';
-        });
+      [
+        'website',
+        'github',
+        'instagram',
+        'linkedin',
+        'slack',
+        'youtube',
+        'twitter',
+        'facebook'
+      ].forEach(platform => {
+        document
+          .getElementById(`${platform}Option`)
+          .addEventListener('change', function () {
+            var field = document.getElementById(`${platform}Field`);
+            field.style.display = this.checked ? 'block' : 'none';
+          });
       });
     </script>
   </body>
