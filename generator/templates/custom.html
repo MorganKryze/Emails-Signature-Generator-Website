@@ -10,46 +10,260 @@
     />
     <link
       rel="icon"
-      href="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/icon.svg"
+      href="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/favicon.svg"
     />
+    <style>
+      body {
+        min-height: 100vh; /* Set minimum height to 100% of the viewport height */
+        overflow-y: auto; /* Make the body scrollable */
+      }
+    </style>
   </head>
-  <body class="bg-gray-100 flex items-center justify-center h-screen">
+  <body class="bg-gray-100 flex items-center justify-center">
     <div class="bg-white p-10 rounded shadow-lg w-1/2">
-      <h2 class="text-2xl font-bold mb-6 text-gray-900">Settings</h2>
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="field1"
-          >Field 1</label
+      <div class="flex justify-between items-center mb-10">
+        <h2 class="text-2xl font-bold text-gray-900">Customization</h2>
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         >
+        <img src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/upload.svg" class="h-6 w-6 mr-2" alt="Import icon" />
+          Import config file
+        </button>
+      </div>
+      <div class="mb-10">
         <input
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="field1"
+          id="signatureName"
           type="text"
-          placeholder="Fill this field"
+          placeholder="Enter signature name"
         />
       </div>
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="field2"
-          >Field 2</label
-        >
-        <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="field2"
-          type="text"
-          placeholder="Fill this field"
-        />
+      <div class="mb-10">
+        <h3 class="text-xl font-bold mb-4 text-gray-900">
+          Personal Information
+        </h3>
+
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="name"
+            >Name</label
+          >
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="name"
+            type="text"
+            placeholder="Your full name"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="title"
+            >Title</label
+          >
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="title"
+            type="text"
+            placeholder="Your title in your organization"
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="orgName"
+            >Organization name</label
+          >
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="orgName"
+            type="text"
+            placeholder="Your organization name"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="orgUrl"
+            >Organization url</label
+          >
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="orgUrl"
+            type="text"
+            placeholder="Your organization url"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="email"
+            >Email</label
+          >
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="email"
+            type="text"
+            placeholder="Your email address"
+          />
+        </div>
+        <div class="mb-8">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="additional"
+            >Additional field</label
+          >
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="additional"
+            type="text"
+            placeholder="Organization address, phone number, quote, etc."
+          />
+        </div>
       </div>
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2"
-          >Toggle 1</label
-        >
-        <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" />
+      <div class="mb-10">
+        <h3 class="text-xl font-bold mb-4 text-gray-900">Image</h3>
+        <div class="flex items-center mb-4">
+          <input
+            type="checkbox"
+            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+            id="imageOption"
+          />
+          <label class="text-gray-700 text-sm font-bold">Add an image</label>
+        </div>
+        <div class="mb-4" id="imageField" style="display: none">
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="imageLink"
+            type="text"
+            placeholder="Enter image link"
+          />
+        </div>
+        
+        <div class="flex items-center mb-4" style="display: none">
+          <input type="radio" class="form-radio h-5 w-5 text-blue-600 mr-2 rounded-full" name="imageType" id="choosePhoto" checked />
+          <label class="text-gray-700 text-sm font-bold">Photo</label>
+        </div>
+
+        <div class="flex items-center mb-4" style="display: none">
+          <input type="radio" class="form-radio h-5 w-5 text-blue-600 mr-2 rounded-full" name="imageType" id="chooseLogo" />
+          <label class="text-gray-700 text-sm font-bold">Logo</label>
+        </div>
+        
+
+        
+        
       </div>
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2"
-          >Toggle 2</label
-        >
-        <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" />
+      <div class="mb-10">
+        <h3 class="text-xl font-bold mb-4 text-gray-900">Socials</h3>
+        <!-- Website Option -->
+        <div class="flex items-center mb-4">
+          <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 mr-2" id="websiteOption" />
+          <label class="text-gray-700 text-sm font-bold">Website</label>
+        </div>
+        <div class="mb-4" id="websiteField" style="display: none">
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="websiteLink" type="text" placeholder="Enter Website link" />
+        </div>
+
+        <!-- GitHub Option -->
+        <div class="flex items-center mb-4">
+          <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 mr-2" id="githubOption" />
+          <label class="text-gray-700 text-sm font-bold">GitHub</label>
+        </div>
+        <div class="mb-4" id="githubField" style="display: none">
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="githubLink" type="text" placeholder="Enter GitHub profile link" />
+        </div>
+
+        <!-- Instagram Option -->
+        <div class="flex items-center mb-4">
+          <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 mr-2" id="instagramOption" />
+          <label class="text-gray-700 text-sm font-bold">Instagram</label>
+        </div>
+        <div class="mb-4" id="instagramField" style="display: none">
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="instagramLink" type="text" placeholder="Enter Instagram profile link" />
+        </div>
+
+        <!-- LinkedIn Option -->
+        <div class="flex items-center mb-4">
+          <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 mr-2" id="linkedinOption" />
+          <label class="text-gray-700 text-sm font-bold">LinkedIn</label>
+        </div>
+        <div class="mb-4" id="linkedinField" style="display: none">
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="linkedinLink" type="text" placeholder="Enter LinkedIn profile link" />
+        </div>
+
+        <!-- Slack Option -->
+        <div class="flex items-center mb-4">
+          <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 mr-2" id="slackOption" />
+          <label class="text-gray-700 text-sm font-bold">Slack</label>
+        </div>
+        <div class="mb-4" id="slackField" style="display: none">
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="slackLink" type="text" placeholder="Enter Slack profile link" />
+        </div>
+
+        <!-- YouTube Option -->
+        <div class="flex items-center mb-4">
+          <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 mr-2" id="youtubeOption" />
+          <label class="text-gray-700 text-sm font-bold">YouTube</label>
+        </div>
+        <div class="mb-4" id="youtubeField" style="display: none">
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="youtubeLink" type="text" placeholder="Enter YouTube channel link" />
+        </div>
+
+        <!-- Twitter Option -->
+        <div class="flex items-center mb-4">
+          <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 mr-2" id="twitterOption" />
+          <label class="text-gray-700 text-sm font-bold">Twitter</label>
+        </div>
+        <div class="mb-4" id="twitterField" style="display: none">
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="twitterLink" type="text" placeholder="Enter Twitter profile link" />
+        </div>
+
+        <!-- Facebook Option -->
+        <div class="flex items-center mb-4">
+          <input
+            type="checkbox"
+            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+            id="facebookOption"
+          />
+          <label class="text-gray-700 text-sm font-bold">Facebook</label>
+        </div>
+        <div class="mb-4" id="facebookField" style="display: none">
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="facebookLink"
+            type="text"
+            placeholder="Enter Facebook profile link"
+          />
+        </div>
       </div>
     </div>
+
+    <script>
+      document
+        .getElementById('imageOption')
+        .addEventListener('change', function () {
+          var imageField = document.getElementById('imageField');
+          imageField.style.display = this.checked ? 'block' : 'none';
+
+          var choosePhotoField = document.getElementById('choosePhotoField');
+          choosePhotoField.style.display = this.checked ? 'block' : 'none';
+
+          var chooseLogoField = document.getElementById('chooseLogoField');
+          chooseLogoField.style.display = this.checked ? 'block' : 'none';
+        });
+        document.getElementById('imageOption').addEventListener('change', function () {
+          var photoOption = document.getElementById('choosePhoto').parentElement;
+          var logoOption = document.getElementById('chooseLogo').parentElement;
+          
+          if (this.checked) {
+            photoOption.style.display = 'flex';
+            logoOption.style.display = 'flex';
+          } else {
+            photoOption.style.display = 'none';
+            logoOption.style.display = 'none';
+          }
+        });
+
+      ['website', 'github', 'instagram', 'linkedin', 'slack', 'youtube', 'twitter', 'facebook'].forEach((platform) => {
+        document.getElementById(`${platform}Option`).addEventListener('change', function () {
+          var field = document.getElementById(`${platform}Field`);
+          field.style.display = this.checked ? 'block' : 'none';
+        });
+      });
+    </script>
   </body>
 </html>
