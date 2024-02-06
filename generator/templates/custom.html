@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Email Signature Generator - Settings</title>
+    <title>Email Signature Generator</title>
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
       rel="stylesheet"
@@ -14,297 +14,387 @@
     />
     <style>
       body {
-        min-height: 100vh; /* Set minimum height to 100% of the viewport height */
-        overflow-y: auto; /* Make the body scrollable */
+        min-height: 100vh;
+        overflow-y: auto;
+      }
+      .notification {
+        position: fixed;
+        right: 0;
+        top: 0;
+        background-color: #55b685;
+        color: white;
+        padding: 16px;
+        border-radius: 2px;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+      }
+
+      .notification.active {
+        transform: translateX(0);
       }
     </style>
   </head>
+  <div id="notification" class="notification">
+    <p>Saving...</p>
+    <p>This may take few seconds.</p>
+  </div>
   <body class="bg-gray-100 flex items-center justify-center">
+    {% comment %} The form sheet {% endcomment %}
     <div class="bg-white p-10 rounded shadow-lg w-1/2">
-      <div class="flex justify-between items-center mb-10">
-        <h2 class="text-2xl font-bold text-gray-900">Customization</h2>
-        <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start"
-        >
-          <img
-            src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/upload.svg"
-            class="h-6 w-6 mr-2"
-            alt="Import icon"
-          />
-          Import config file
-        </button>
-      </div>
-      <div class="mb-10">
-        <input
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="signatureName"
-          type="text"
-          placeholder="Enter signature name"
-        />
-      </div>
-      <div class="mb-10">
-        <h3 class="text-xl font-bold mb-4 text-gray-900">
-          Personal Information
-        </h3>
-
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="name"
-            >Name</label
+      <form method="post">
+        {% csrf_token %} {% comment %} Title {% endcomment %}
+        <div class="flex justify-between items-center mb-10">
+          <h2 class="text-2xl font-bold text-gray-900">Customization</h2>
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start"
           >
+            <img
+              src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/upload.svg"
+              class="h-6 w-6 mr-2"
+              alt="Import icon"
+            />
+            Import config file
+          </button>
+        </div>
+        {% comment %}  Signature name {% endcomment %}
+        <div class="mb-10">
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="name"
+            id="{{ form.signatureName.id_for_label }}"
             type="text"
-            placeholder="Your full name"
+            placeholder="{{ form.signatureName.label }}"
+            name="{{ form.signatureName.html_name }}"
+            value="{{ form.signatureName.value|default:'' }}"
           />
+          {{ form.signatureName.errors }}
         </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="title"
-            >Title</label
+
+        {% comment %} Personal Info section {% endcomment %}
+        <div class="mb-10">
+          <h3 class="text-xl font-bold mb-4 text-gray-900">
+            Personal Information
+          </h3>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="name"
+              >Name</label
+            >
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="{{ form.name.id_for_label }}"
+              type="text"
+              placeholder="{{ form.name.label }}"
+              name="{{ form.name.html_name }}"
+              value="{{ form.name.value|default:'' }}"
+            />
+            {{ form.name.errors }}
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="title"
+              >Title</label
+            >
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="{{ form.title.id_for_label }}"
+              type="text"
+              placeholder="{{ form.title.label }}"
+              name="{{ form.title.html_name }}"
+              value="{{ form.title.value|default:'' }}"
+            />
+            {{ form.title.errors }}
+          </div>
+          <div class="mb-4">
+            <!-- TODO : Org Name -->
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="organizationName"
+              >Organization name</label
+            >
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="{{ form.organizationName.id_for_label }}"
+              type="text"
+              placeholder="{{ form.organizationName.label }}"
+              name="{{ form.organizationName.html_name }}"
+              value="{{ form.organizationName.value|default:'' }}"
+            />
+            {{ form.organizationName.errors }}
+          </div>
+          <div class="mb-4">
+            <!-- TODO : Org URL  -->
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="orgUrl"
+              >Organization url</label
+            >
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="orgUrl"
+              type="text"
+              placeholder="Your organization url"
+            />
+          </div>
+          <div class="mb-4">
+            <!-- TODO : Email -->
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="email"
+              >Email</label
+            >
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="email"
+              type="text"
+              placeholder="Your email address"
+            />
+          </div>
+          <div class="mb-8">
+            <!-- TODO : Add field -->
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="additional"
+              >Additional field</label
+            >
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="additional"
+              type="text"
+              placeholder="Organization address, phone number, quote, etc."
+            />
+          </div>
+        </div>
+
+        {% comment %} Image section {% endcomment %}
+        <div class="mb-10">
+          <h3 class="text-xl font-bold mb-4 text-gray-900">Image</h3>
+          <div class="flex items-center mb-4">
+            <!-- TODO : Image option  -->
+            <input
+              type="checkbox"
+              class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+              id="imageOption"
+            />
+            <label class="text-gray-700 text-sm font-bold">Add an image</label>
+          </div>
+          <div class="mb-4" id="imageField" style="display: none">
+            <!-- TODO : Image link -->
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="imageLink"
+              type="text"
+              placeholder="Enter image link"
+            />
+          </div>
+
+          <div class="flex items-center mb-4" style="display: none">
+            <!-- TODO : Image type -->
+            <input
+              type="radio"
+              class="form-radio h-5 w-5 text-blue-600 mr-2 rounded-full"
+              name="imageType"
+              id="choosePhoto"
+              checked
+            />
+            <label class="text-gray-700 text-sm font-bold">Photo</label>
+          </div>
+
+          <div class="flex items-center mb-4" style="display: none">
+            <!-- TODO : Image type 2 -->
+            <input
+              type="radio"
+              class="form-radio h-5 w-5 text-blue-600 mr-2 rounded-full"
+              name="imageType"
+              id="chooseLogo"
+            />
+            <label class="text-gray-700 text-sm font-bold">Logo</label>
+          </div>
+        </div>
+
+        {% comment %} Socials section {% endcomment %}
+        <div class="mb-10">
+          <h3 class="text-xl font-bold mb-4 text-gray-900">Socials</h3>
+          <!-- Website Option -->
+          <div class="flex items-center mb-4">
+            <!-- TODO : Web check -->
+            <input
+              type="checkbox"
+              class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+              id="websiteOption"
+            />
+            <label class="text-gray-700 text-sm font-bold">Website</label>
+          </div>
+          <div class="mb-4" id="websiteField" style="display: none">
+            <!-- TODO : Web link -->
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="websiteLink"
+              type="text"
+              placeholder="Enter Website link"
+            />
+          </div>
+
+          <!-- GitHub Option -->
+          <div class="flex items-center mb-4">
+            <!-- TODO : GitHub check -->
+            <input
+              type="checkbox"
+              class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+              id="githubOption"
+            />
+            <label class="text-gray-700 text-sm font-bold">GitHub</label>
+          </div>
+          <div class="mb-4" id="githubField" style="display: none">
+            <!-- TODO : GitHub link -->
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="githubLink"
+              type="text"
+              placeholder="Enter GitHub profile link"
+            />
+          </div>
+
+          <!-- Instagram Option -->
+          <div class="flex items-center mb-4">
+            <!-- TODO : Instagram check -->
+            <input
+              type="checkbox"
+              class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+              id="instagramOption"
+            />
+            <label class="text-gray-700 text-sm font-bold">Instagram</label>
+          </div>
+          
+          <div class="mb-4" id="instagramField" style="display: none">
+            <!-- TODO : Instagram link -->
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="instagramLink"
+              type="text"
+              placeholder="Enter Instagram profile link"
+            />
+          </div>
+
+          <!-- LinkedIn Option -->
+          <div class="flex items-center mb-4">
+            <!-- TODO : LinkedIn check -->
+            <input
+              type="checkbox"
+              class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+              id="linkedinOption"
+            />
+            <label class="text-gray-700 text-sm font-bold">LinkedIn</label>
+          </div>
+          <div class="mb-4" id="linkedinField" style="display: none">
+            <!-- TODO : LinkedIn link -->
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="linkedinLink"
+              type="text"
+              placeholder="Enter LinkedIn profile link"
+            />
+          </div>
+
+          <!-- Slack Option -->
+          <div class="flex items-center mb-4">
+            <!-- TODO : Slack check -->
+            <input
+              type="checkbox"
+              class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+              id="slackOption"
+            />
+            <label class="text-gray-700 text-sm font-bold">Slack</label>
+          </div>
+          <div class="mb-4" id="slackField" style="display: none">
+            <!-- TODO : Slack link -->
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="slackLink"
+              type="text"
+              placeholder="Enter Slack profile link"
+            />
+          </div>
+
+          <!-- YouTube Option -->
+          <div class="flex items-center mb-4">
+            <!-- TODO : YouTube check -->
+            <input
+              type="checkbox"
+              class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+              id="youtubeOption"
+            />
+            <label class="text-gray-700 text-sm font-bold">YouTube</label>
+          </div>
+          <div class="mb-4" id="youtubeField" style="display: none">
+            <!-- TODO : YouTube link -->
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="youtubeLink"
+              type="text"
+              placeholder="Enter YouTube channel link"
+            />
+          </div>
+
+          <!-- Twitter Option -->
+          <div class="flex items-center mb-4">
+            <!-- TODO : Twitter check -->
+            <input
+              type="checkbox"
+              class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+              id="twitterOption"
+            />
+            <label class="text-gray-700 text-sm font-bold">Twitter</label>
+          </div>
+          <div class="mb-4" id="twitterField" style="display: none">
+            <!-- TODO : Twitter link -->
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="twitterLink"
+              type="text"
+              placeholder="Enter Twitter profile link"
+            />
+          </div>
+
+          <!-- Facebook Option -->
+          <div class="flex items-center mb-4">
+            <!-- TODO : Facebook check -->
+            <input
+              type="checkbox"
+              class="form-checkbox h-5 w-5 text-blue-600 mr-2"
+              id="facebookOption"
+            />
+            <label class="text-gray-700 text-sm font-bold">Facebook</label>
+          </div>
+          <div class="mb-4" id="facebookField" style="display: none">
+            <!-- TODO : Facebook link -->
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="facebookLink"
+              type="text"
+              placeholder="Enter Facebook profile link"
+            />
+          </div>
+        </div>
+
+        <hr style="border-top: 1px solid #ccc" />
+
+        {% comment %} Submit buttons {% endcomment %}
+        <div class="flex justify-center">
+          <button
+            type="submit"
+            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start mt-8"
           >
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="title"
-            type="text"
-            placeholder="Your title in your organization"
-          />
+            <img
+              src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/save.svg"
+              class="h-6 w-6 mr-2"
+              alt="Save current config"
+            />
+            Save Current Config
+          </button>
         </div>
-        <div class="mb-4">
-          <label
-            class="block text-gray-700 text-sm font-bold mb-2"
-            for="orgName"
-            >Organization name</label
-          >
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="orgName"
-            type="text"
-            placeholder="Your organization name"
-          />
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="orgUrl"
-            >Organization url</label
-          >
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="orgUrl"
-            type="text"
-            placeholder="Your organization url"
-          />
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="email"
-            >Email</label
-          >
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="email"
-            type="text"
-            placeholder="Your email address"
-          />
-        </div>
-        <div class="mb-8">
-          <label
-            class="block text-gray-700 text-sm font-bold mb-2"
-            for="additional"
-            >Additional field</label
-          >
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="additional"
-            type="text"
-            placeholder="Organization address, phone number, quote, etc."
-          />
-        </div>
-      </div>
-      <div class="mb-10">
-        <h3 class="text-xl font-bold mb-4 text-gray-900">Image</h3>
-        <div class="flex items-center mb-4">
-          <input
-            type="checkbox"
-            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-            id="imageOption"
-          />
-          <label class="text-gray-700 text-sm font-bold">Add an image</label>
-        </div>
-        <div class="mb-4" id="imageField" style="display: none">
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="imageLink"
-            type="text"
-            placeholder="Enter image link"
-          />
-        </div>
-
-        <div class="flex items-center mb-4" style="display: none">
-          <input
-            type="radio"
-            class="form-radio h-5 w-5 text-blue-600 mr-2 rounded-full"
-            name="imageType"
-            id="choosePhoto"
-            checked
-          />
-          <label class="text-gray-700 text-sm font-bold">Photo</label>
-        </div>
-
-        <div class="flex items-center mb-4" style="display: none">
-          <input
-            type="radio"
-            class="form-radio h-5 w-5 text-blue-600 mr-2 rounded-full"
-            name="imageType"
-            id="chooseLogo"
-          />
-          <label class="text-gray-700 text-sm font-bold">Logo</label>
-        </div>
-      </div>
-      <div class="mb-10">
-        <h3 class="text-xl font-bold mb-4 text-gray-900">Socials</h3>
-        <!-- Website Option -->
-        <div class="flex items-center mb-4">
-          <input
-            type="checkbox"
-            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-            id="websiteOption"
-          />
-          <label class="text-gray-700 text-sm font-bold">Website</label>
-        </div>
-        <div class="mb-4" id="websiteField" style="display: none">
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="websiteLink"
-            type="text"
-            placeholder="Enter Website link"
-          />
-        </div>
-
-        <!-- GitHub Option -->
-        <div class="flex items-center mb-4">
-          <input
-            type="checkbox"
-            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-            id="githubOption"
-          />
-          <label class="text-gray-700 text-sm font-bold">GitHub</label>
-        </div>
-        <div class="mb-4" id="githubField" style="display: none">
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="githubLink"
-            type="text"
-            placeholder="Enter GitHub profile link"
-          />
-        </div>
-
-        <!-- Instagram Option -->
-        <div class="flex items-center mb-4">
-          <input
-            type="checkbox"
-            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-            id="instagramOption"
-          />
-          <label class="text-gray-700 text-sm font-bold">Instagram</label>
-        </div>
-        <div class="mb-4" id="instagramField" style="display: none">
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="instagramLink"
-            type="text"
-            placeholder="Enter Instagram profile link"
-          />
-        </div>
-
-        <!-- LinkedIn Option -->
-        <div class="flex items-center mb-4">
-          <input
-            type="checkbox"
-            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-            id="linkedinOption"
-          />
-          <label class="text-gray-700 text-sm font-bold">LinkedIn</label>
-        </div>
-        <div class="mb-4" id="linkedinField" style="display: none">
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="linkedinLink"
-            type="text"
-            placeholder="Enter LinkedIn profile link"
-          />
-        </div>
-
-        <!-- Slack Option -->
-        <div class="flex items-center mb-4">
-          <input
-            type="checkbox"
-            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-            id="slackOption"
-          />
-          <label class="text-gray-700 text-sm font-bold">Slack</label>
-        </div>
-        <div class="mb-4" id="slackField" style="display: none">
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="slackLink"
-            type="text"
-            placeholder="Enter Slack profile link"
-          />
-        </div>
-
-        <!-- YouTube Option -->
-        <div class="flex items-center mb-4">
-          <input
-            type="checkbox"
-            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-            id="youtubeOption"
-          />
-          <label class="text-gray-700 text-sm font-bold">YouTube</label>
-        </div>
-        <div class="mb-4" id="youtubeField" style="display: none">
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="youtubeLink"
-            type="text"
-            placeholder="Enter YouTube channel link"
-          />
-        </div>
-
-        <!-- Twitter Option -->
-        <div class="flex items-center mb-4">
-          <input
-            type="checkbox"
-            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-            id="twitterOption"
-          />
-          <label class="text-gray-700 text-sm font-bold">Twitter</label>
-        </div>
-        <div class="mb-4" id="twitterField" style="display: none">
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="twitterLink"
-            type="text"
-            placeholder="Enter Twitter profile link"
-          />
-        </div>
-
-        <!-- Facebook Option -->
-        <div class="flex items-center mb-4">
-          <input
-            type="checkbox"
-            class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-            id="facebookOption"
-          />
-          <label class="text-gray-700 text-sm font-bold">Facebook</label>
-        </div>
-        <div class="mb-4" id="facebookField" style="display: none">
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="facebookLink"
-            type="text"
-            placeholder="Enter Facebook profile link"
-          />
-        </div>
-      </div>
-      <div class="flex justify-center items-center space-x-2">
+      </form>
+      <div class="flex justify-center items-center space-x-2 mt-6">
         <button
           id="previewBtn"
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start"
@@ -326,68 +416,84 @@
             class="h-6 w-6 mr-2"
             alt="Download signature"
           />
-          Save Signature
+          Download Signature
         </button>
-        <button
-          id="saveConfigBtn"
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start"
-        >
-          <img
-            src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/download.svg"
-            class="h-6 w-6 mr-2"
-            alt="Download config file"
-          />
-          Save Config
-        </button>
+        <a href="{% url 'download-config' %}" target="_blank">
+          <button
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start"
+          >
+            <img
+              src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/download.svg"
+              class="h-6 w-6 mr-2"
+              alt="Download config file"
+            />
+            Download Config
+          </button>
+        </a>
       </div>
     </div>
-
-    <script>
-      document
-        .getElementById('imageOption')
-        .addEventListener('change', function () {
-          var imageField = document.getElementById('imageField');
-          imageField.style.display = this.checked ? 'block' : 'none';
-
-          var choosePhotoField = document.getElementById('choosePhotoField');
-          choosePhotoField.style.display = this.checked ? 'block' : 'none';
-
-          var chooseLogoField = document.getElementById('chooseLogoField');
-          chooseLogoField.style.display = this.checked ? 'block' : 'none';
-        });
-      document
-        .getElementById('imageOption')
-        .addEventListener('change', function () {
-          var photoOption =
-            document.getElementById('choosePhoto').parentElement;
-          var logoOption = document.getElementById('chooseLogo').parentElement;
-
-          if (this.checked) {
-            photoOption.style.display = 'flex';
-            logoOption.style.display = 'flex';
-          } else {
-            photoOption.style.display = 'none';
-            logoOption.style.display = 'none';
-          }
-        });
-
-      [
-        'website',
-        'github',
-        'instagram',
-        'linkedin',
-        'slack',
-        'youtube',
-        'twitter',
-        'facebook'
-      ].forEach(platform => {
-        document
-          .getElementById(`${platform}Option`)
-          .addEventListener('change', function () {
-            var field = document.getElementById(`${platform}Field`);
-            field.style.display = this.checked ? 'block' : 'none';
-          });
-      });
-    </script>
   </body>
+  <script>
+    document
+      .getElementById('imageOption')
+      .addEventListener('change', function () {
+        var imageField = document.getElementById('imageField');
+        imageField.style.display = this.checked ? 'block' : 'none';
+
+        var choosePhotoField = document.getElementById('choosePhotoField');
+        choosePhotoField.style.display = this.checked ? 'block' : 'none';
+
+        var chooseLogoField = document.getElementById('chooseLogoField');
+        chooseLogoField.style.display = this.checked ? 'block' : 'none';
+      });
+    document
+      .getElementById('imageOption')
+      .addEventListener('change', function () {
+        var photoOption = document.getElementById('choosePhoto').parentElement;
+        var logoOption = document.getElementById('chooseLogo').parentElement;
+
+        if (this.checked) {
+          photoOption.style.display = 'flex';
+          logoOption.style.display = 'flex';
+        } else {
+          photoOption.style.display = 'none';
+          logoOption.style.display = 'none';
+        }
+      });
+
+    [
+      'website',
+      'github',
+      'instagram',
+      'linkedin',
+      'slack',
+      'youtube',
+      'twitter',
+      'facebook'
+    ].forEach(platform => {
+      document
+        .getElementById(`${platform}Option`)
+        .addEventListener('change', function () {
+          var field = document.getElementById(`${platform}Field`);
+          field.style.display = this.checked ? 'block' : 'none';
+        });
+    });
+    document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
+      event.preventDefault();
+
+      var notification = document.getElementById('notification');
+      notification.classList.remove('hidden');
+      notification.classList.add('active');
+
+      setTimeout(function() {
+        notification.classList.remove('active');
+        notification.classList.add('hidden');
+      }, 2000);
+
+      setTimeout(function() {
+        document.querySelector('form').submit();
+      }, 2100); // This delays the form submission until after the notification has been hidden
+    });
+  </script>
 </html>
