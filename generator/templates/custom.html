@@ -106,7 +106,6 @@
             {{ form.title.errors }}
           </div>
           <div class="mb-4">
-            <!-- TODO : Org Name -->
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="organizationName"
@@ -123,18 +122,20 @@
             {{ form.organizationName.errors }}
           </div>
           <div class="mb-4">
-            <!-- TODO : Org URL  -->
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
-              for="orgUrl"
+              for="organizationURL"
               >Organization url</label
             >
             <input
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="orgUrl"
+              id="{{ form.organizationURL.id_for_label }}"
               type="text"
-              placeholder="Your organization url"
+              placeholder="{{ form.organizationURL.label }}"
+              name="{{ form.organizationURL.html_name }}"
+              value="{{ form.organizationURL.value|default:'' }}"
             />
+            {{ form.organizationURL.errors }}
           </div>
           <div class="mb-4">
             <!-- TODO : Email -->
@@ -145,13 +146,15 @@
             >
             <input
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="email"
+              id="{{ form.email.id_for_label }}"
               type="text"
-              placeholder="Your email address"
+              placeholder="{{ form.email.label }}"
+              name="{{ form.email.html_name }}"
+              value="{{ form.email.value|default:'' }}"
             />
+            {{ form.email.errors }}
           </div>
           <div class="mb-8">
-            <!-- TODO : Add field -->
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="additional"
@@ -159,10 +162,13 @@
             >
             <input
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="additional"
+              id="{{ form.additional.id_for_label }}"
               type="text"
-              placeholder="Organization address, phone number, quote, etc."
+              placeholder="{{ form.additional.label }}"
+              name="{{ form.additional.html_name }}"
+              value="{{ form.additional.value|default:'' }}"
             />
+            {{ form.additional.errors }}
           </div>
         </div>
 

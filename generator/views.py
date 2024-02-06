@@ -22,7 +22,9 @@ def custom(request):
                 "name": form.cleaned_data.get("name") or "None",
                 "title": form.cleaned_data.get("title") or "None",
                 "organization_name": form.cleaned_data.get("organizationName") or "None",
-                
+                "organization_url": form.cleaned_data.get("organizationURL") or "None",
+                "email": form.cleaned_data.get("email") or "None",
+                "additional": form.cleaned_data.get("additional") or "None",
                 # "image_option": form.cleaned_data.get("imageOption", False),
                 # "image_type": form.cleaned_data.get("imageType", "photo"),
             }

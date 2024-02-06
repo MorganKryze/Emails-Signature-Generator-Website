@@ -5,6 +5,13 @@ class ConfigForm(forms.Form):
     name = forms.CharField(label='Enter your full name', max_length=100, required=True)
     title = forms.CharField(label='Enter your job title', max_length=100, required=True)
     organizationName = forms.CharField(label='Enter your organization name', max_length=100, required=True)
+    organizationURL = forms.URLField(label='Enter your organization URL', required=True)
+    email = forms.EmailField(label='Enter your email address', required=True)
+    additional = forms.CharField(
+        label="Enter organization address, phone number, quote, etc.",
+        widget=forms.Textarea,
+        required=False,
+    )
     
     # imageOption = forms.BooleanField(label='Add an image', required=False)
     # IMAGE_TYPE_CHOICES = [
