@@ -218,7 +218,6 @@
           <h3 class="text-xl font-bold mb-4 text-gray-900">Socials</h3>
           <!-- Website Option -->
           <div class="flex items-center mb-4">
-            <!-- TODO : Web check -->
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
@@ -229,7 +228,6 @@
             <label class="text-gray-700 text-sm font-bold">Website</label>
           </div>
           <div class="mb-4" id="webField" style="display: none">
-            <!-- TODO : Web link -->
             <input
               type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -243,143 +241,164 @@
 
           <!-- GitHub Option -->
           <div class="flex items-center mb-4">
-            <!-- TODO : GitHub check -->
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="githubOption"
+              id="githubCheckbox"
+              name="{{ form.githubCheckbox.html_name }}"
+              {% if form.githubCheckbox.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold">GitHub</label>
           </div>
           <div class="mb-4" id="githubField" style="display: none">
-            <!-- TODO : GitHub link -->
             <input
+              type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="githubLink"
-              type="text"
-              placeholder="Enter GitHub profile link"
+              placeholder="{{ form.githubLink.label }}"
+              name="{{ form.githubLink.html_name }}"
+              value="{{ form.githubLink.value|default:'' }}"
             />
+            {{ form.githubLink.errors }}
           </div>
 
           <!-- Instagram Option -->
           <div class="flex items-center mb-4">
-            <!-- TODO : Instagram check -->
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="instagramOption"
+              id="instagramCheckbox"
+              name="{{ form.instagramCheckbox.html_name }}"
+              {% if form.instagramCheckbox.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold">Instagram</label>
           </div>
 
           <div class="mb-4" id="instagramField" style="display: none">
-            <!-- TODO : Instagram link -->
             <input
+              type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="instagramLink"
-              type="text"
-              placeholder="Enter Instagram profile link"
+              placeholder="{{ form.instagramLink.label }}"
+              name="{{ form.instagramLink.html_name }}"
+              value="{{ form.instagramLink.value|default:'' }}"
             />
+            {{ form.instagramLink.errors }}
           </div>
 
           <!-- LinkedIn Option -->
           <div class="flex items-center mb-4">
-            <!-- TODO : LinkedIn check -->
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="linkedinOption"
+              id="linkedinCheckbox"
+              name="{{ form.linkedinCheckbox.html_name }}"
+              {% if form.linkedinCheckbox.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold">LinkedIn</label>
           </div>
           <div class="mb-4" id="linkedinField" style="display: none">
-            <!-- TODO : LinkedIn link -->
             <input
+              type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="linkedinLink"
-              type="text"
-              placeholder="Enter LinkedIn profile link"
+              placeholder="{{ form.linkedinLink.label }}"
+              name="{{ form.linkedinLink.html_name }}"
+              value="{{ form.linkedinLink.value|default:'' }}"
             />
+            {{ form.linkedinLink.errors }}
           </div>
 
           <!-- Slack Option -->
           <div class="flex items-center mb-4">
-            <!-- TODO : Slack check -->
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="slackOption"
+              id="slackCheckbox"
+              name="{{ form.slackCheckbox.html_name }}"
+              {% if form.slackCheckbox.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold">Slack</label>
           </div>
           <div class="mb-4" id="slackField" style="display: none">
-            <!-- TODO : Slack link -->
             <input
+              type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="slackLink"
-              type="text"
-              placeholder="Enter Slack profile link"
+              placeholder="{{ form.slackLink.label }}"
+              name="{{ form.slackLink.html_name }}"
+              value="{{ form.slackLink.value|default:'' }}"
             />
+            {{ form.slackLink.errors }}
           </div>
 
           <!-- YouTube Option -->
           <div class="flex items-center mb-4">
-            <!-- TODO : YouTube check -->
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="youtubeOption"
+              id="youtubeCheckbox"
+              name="{{ form.youtubeCheckbox.html_name }}"
+              {% if form.youtubeCheckbox.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold">YouTube</label>
           </div>
           <div class="mb-4" id="youtubeField" style="display: none">
-            <!-- TODO : YouTube link -->
             <input
+              type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="youtubeLink"
-              type="text"
-              placeholder="Enter YouTube channel link"
+              placeholder="{{ form.youtubeLink.label }}"
+              name="{{ form.youtubeLink.html_name }}"
+              value="{{ form.youtubeLink.value|default:'' }}"
             />
+            {{ form.youtubeLink.errors }}
           </div>
 
           <!-- Twitter Option -->
           <div class="flex items-center mb-4">
-            <!-- TODO : Twitter check -->
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="twitterOption"
+              id="twitterCheckbox"
+              name="{{ form.twitterCheckbox.html_name }}"
+              {% if form.twitterCheckbox.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold">Twitter</label>
           </div>
           <div class="mb-4" id="twitterField" style="display: none">
-            <!-- TODO : Twitter link -->
             <input
+              type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="twitterLink"
-              type="text"
-              placeholder="Enter Twitter profile link"
+              placeholder="{{ form.twitterLink.label }}"
+              name="{{ form.twitterLink.html_name }}"
+              value="{{ form.twitterLink.value|default:'' }}"
             />
+            {{ form.twitterLink.errors }}
           </div>
 
           <!-- Facebook Option -->
           <div class="flex items-center mb-4">
-            <!-- TODO : Facebook check -->
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="facebookOption"
+              id="facebookCheckbox"
+              name="{{ form.facebookCheckbox.html_name }}"
+              {% if form.facebookCheckbox.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold">Facebook</label>
           </div>
           <div class="mb-4" id="facebookField" style="display: none">
-            <!-- TODO : Facebook link -->
             <input
+              type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="facebookLink"
-              type="text"
-              placeholder="Enter Facebook profile link"
+              placeholder="{{ form.facebookLink.label }}"
+              name="{{ form.facebookLink.html_name }}"
+              value="{{ form.facebookLink.value|default:'' }}"
             />
+            {{ form.facebookLink.errors }}
           </div>
         </div>
 

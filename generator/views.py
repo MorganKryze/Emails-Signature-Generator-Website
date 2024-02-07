@@ -30,6 +30,20 @@ def custom(request):
                 "image_type": form.cleaned_data.get("imageType", "photo") or "None",
                 "web_checkbox": form.cleaned_data.get("webCheckbox", False) or False,
                 "web_link": form.cleaned_data.get("webLink", "None") or "None",
+                "github_checkbox": form.cleaned_data.get("githubCheckbox", False) or False,
+                "github_link": form.cleaned_data.get("githubLink", "None") or "None",
+                "instagram_checkbox": form.cleaned_data.get("instagramCheckbox", False) or False,
+                "instagram_link": form.cleaned_data.get("instagramLink", "None") or "None",
+                "linkedin_checkbox": form.cleaned_data.get("linkedinCheckbox", False) or False,
+                "linkedin_link": form.cleaned_data.get("linkedinLink", "None") or "None",
+                "slack_checkbox": form.cleaned_data.get("slackCheckbox", False) or False,
+                "slack_link": form.cleaned_data.get("slackLink", "None") or "None",
+                "youtube_checkbox": form.cleaned_data.get("youtubeCheckbox", False) or False,
+                "youtube_link": form.cleaned_data.get("youtubeLink", "None") or "None",
+                "twitter_checkbox": form.cleaned_data.get("twitterCheckbox", False) or False,
+                "twitter_link": form.cleaned_data.get("twitterLink", "None") or "None",
+                "facebook_checkbox": form.cleaned_data.get("facebookCheckbox", False) or False,
+                "facebook_link": form.cleaned_data.get("facebookLink", "None") or "None",
                 
             }
     else:

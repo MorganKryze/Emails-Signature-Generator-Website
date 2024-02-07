@@ -41,3 +41,24 @@ class ConfigForm(forms.Form):
 
     webCheckbox = forms.BooleanField(required=False)
     webLink = forms.URLField(label="Enter website URL", required=False)
+    
+    githubCheckbox = forms.BooleanField(required=False)
+    githubLink = forms.URLField(label="Enter GitHub URL", required=False)
+    
+    instagramCheckbox = forms.BooleanField(required=False)
+    instagramLink = forms.URLField(label="Enter Instagram URL", required=False)
+    
+    linkedinCheckbox = forms.BooleanField(required=False)
+    linkedinLink = forms.URLField(label="Enter LinkedIn URL", required=False)
+    
+    slackCheckbox = forms.BooleanField(required=False)
+    slackLink = forms.URLField(label="Enter Slack URL", required=False)
+    
+    youtubeCheckbox = forms.BooleanField(required=False)
+    youtubeLink = forms.URLField(label="Enter YouTube URL", required=False)
+    
+    twitterCheckbox = forms.BooleanField(required=False)
+    twitterLink = forms.URLField(label="Enter Twitter URL", required=False)
+    
+    facebookCheckbox = forms.BooleanField(required=False)
+    facebookLink = forms.URLField(label="Enter Facebook URL", required=False)
