@@ -93,6 +93,20 @@ def download_config(request):
     return response
 
 
+def preview(request):
+    env = Environment(
+        loader=FileSystemLoader("generator/templates"),
+        autoescape=False,
+    )
+
+    template = env.get_template(HTML_TEMPLATE)
+    data_conf_dict = dict(data_conf)
+
+    html = template.render(data_conf_dict)
+
+    return HttpResponse(html)
+
+
 def download_signature(request):
     env = Environment(
         loader=FileSystemLoader("generator/templates"),
@@ -101,9 +115,9 @@ def download_signature(request):
 
     template = env.get_template(HTML_TEMPLATE)
     data_conf_dict = dict(data_conf)
+
     html = template.render(data_conf_dict)
 
-    with OUTPUT_FILENAME.open("w") as file:
-        file.write(html)
-
-    return render(request, "output.html")
+    response = HttpResponse(html, content_type="text/html")
+    response["Content-Disposition"] = "attachment; filename=signature.html"
+    return response
