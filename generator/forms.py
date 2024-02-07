@@ -27,11 +27,14 @@ class ConfigForm(forms.Form):
     isImageSelected = forms.BooleanField(required=False)
 
     imageLink = forms.URLField(label="Enter image URL", required=False)
-    
-    # IMAGE_TYPE_CHOICES = [
-    #     ("photo", "Photo"),
-    #     ("logo", "Logo"),
-    # ]
-    # imageType = forms.ChoiceField(
-    #     choices=IMAGE_TYPE_CHOICES, widget=forms.RadioSelect, initial="photo"
-    # )
+
+    IMAGE_TYPE_CHOICES = [
+        ("photo", "Photo"),
+        ("logo", "Logo"),
+    ]
+    imageType = forms.ChoiceField(
+        choices=IMAGE_TYPE_CHOICES,
+        widget=forms.RadioSelect,
+        initial="photo",
+        required=False,
+    )

@@ -59,9 +59,9 @@
         {% comment %} Signature name {% endcomment %}
         <div class="mb-10">
           <input
+            type="text"
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="{{ form.signatureName.id_for_label }}"
-            type="text"
             placeholder="{{ form.signatureName.label }}"
             name="{{ form.signatureName.html_name }}"
             value="{{ form.signatureName.value|default:'' }}"
@@ -80,9 +80,9 @@
               >Name</label
             >
             <input
+              type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="{{ form.name.id_for_label }}"
-              type="text"
               placeholder="{{ form.name.label }}"
               name="{{ form.name.html_name }}"
               value="{{ form.name.value|default:'' }}"
@@ -96,9 +96,9 @@
               >Title</label
             >
             <input
+              type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="{{ form.title.id_for_label }}"
-              type="text"
               placeholder="{{ form.title.label }}"
               name="{{ form.title.html_name }}"
               value="{{ form.title.value|default:'' }}"
@@ -112,9 +112,9 @@
               >Organization name</label
             >
             <input
+              type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="{{ form.organizationName.id_for_label }}"
-              type="text"
               placeholder="{{ form.organizationName.label }}"
               name="{{ form.organizationName.html_name }}"
               value="{{ form.organizationName.value|default:'' }}"
@@ -128,9 +128,9 @@
               >Organization url</label
             >
             <input
+              type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="{{ form.organizationURL.id_for_label }}"
-              type="text"
               placeholder="{{ form.organizationURL.label }}"
               name="{{ form.organizationURL.html_name }}"
               value="{{ form.organizationURL.value|default:'' }}"
@@ -144,9 +144,9 @@
               >Email</label
             >
             <input
+              type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="{{ form.email.id_for_label }}"
-              type="text"
               placeholder="{{ form.email.label }}"
               name="{{ form.email.html_name }}"
               value="{{ form.email.value|default:'' }}"
@@ -160,9 +160,9 @@
               >Additional field</label
             >
             <input
+              type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="{{ form.additional.id_for_label }}"
-              type="text"
               placeholder="{{ form.additional.label }}"
               name="{{ form.additional.html_name }}"
               value="{{ form.additional.value|default:'' }}"
@@ -176,24 +176,22 @@
           <h3 class="text-xl font-bold mb-4 text-gray-900">Image</h3>
           <div class="flex items-center mb-4">
             <input
-              class="form-checkbox h-5 w-5 text-blue-600 mr-2"
               type="checkbox"
+              class="form-checkbox h-5 w-5 text-blue-600 mr-2"
               id="isImageSelected"
               name="{{ form.isImageSelected.html_name }}"
-
               {% if form.isImageSelected.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold" for="isImageSelected"
-            >Add an image</label
+              >Add an image</label
             >
             {{ form.isImageSelected.errors }}
           </div>
           <div class="mb-4" id="imageField" style="display: none">
-            <!-- TODO : Image link -->
             <input
+              type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="imageLink"
-              type="text"
               placeholder="{{ form.imageLink.label }}"
               name="{{ form.imageLink.html_name }}"
               value="{{ form.imageLink.value|default:'' }}"
@@ -202,25 +200,15 @@
           </div>
 
           <div class="flex items-center mb-4" style="display: none">
-            <!-- TODO : Image type -->
-            <input
-              type="radio"
-              class="form-radio h-5 w-5 text-blue-600 mr-2 rounded-full"
-              name="imageType"
-              id="choosePhoto"
-              checked
-            />
+            <input type="radio" class="form-radio h-5 w-5 text-blue-600 mr-2
+            rounded-full" id="choosePhoto" name="imageType" value="photo" {% if form.imageType.value == "photo" %} checked {% endif %} />
             <label class="text-gray-700 text-sm font-bold">Photo</label>
           </div>
 
           <div class="flex items-center mb-4" style="display: none">
-            <!-- TODO : Image type 2 -->
-            <input
-              type="radio"
-              class="form-radio h-5 w-5 text-blue-600 mr-2 rounded-full"
-              name="imageType"
-              id="chooseLogo"
-            />
+            <input type="radio" class="form-radio h-5 w-5 text-blue-600 mr-2
+            rounded-full" name="imageType" value="logo" id="chooseLogo" 
+            {% if form.imageType.value == "logo" %} checked {% endif %} />
             <label class="text-gray-700 text-sm font-bold">Logo</label>
           </div>
         </div>

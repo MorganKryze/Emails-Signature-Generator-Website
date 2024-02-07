@@ -27,10 +27,9 @@ def custom(request):
                 "additional": form.cleaned_data.get("additional", "None") or "None",
                 "is_image_selected": form.cleaned_data.get("isImageSelected", False) or False,
                 "image_link": form.cleaned_data.get("imageLink", "None") or "None",
+                "image_type": form.cleaned_data.get("imageType", "photo") or "None",
                 
-                # "image_type": form.cleaned_data.get("imageType", "photo"),
             }
-            print(data_conf)
     else:
         form = ConfigForm()
 
