@@ -222,18 +222,23 @@
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="websiteOption"
+              id="webCheckbox"
+              name="{{ form.webCheckbox.html_name }}"
+              {% if form.webCheckbox.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold">Website</label>
           </div>
-          <div class="mb-4" id="websiteField" style="display: none">
+          <div class="mb-4" id="webField" style="display: none">
             <!-- TODO : Web link -->
             <input
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="websiteLink"
               type="text"
-              placeholder="Enter Website link"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="webLink"
+              placeholder="{{ form.webLink.label }}"
+              name="{{ form.webLink.html_name }}"
+              value="{{ form.webLink.value|default:'' }}"
             />
+            {{ form.webLink.errors }}
           </div>
 
           <!-- GitHub Option -->
@@ -461,24 +466,38 @@
     // Call the function when the page loads
     toggleDisplay();
 
-    [
-      'website',
-      'github',
-      'instagram',
-      'linkedin',
-      'slack',
-      'youtube',
-      'twitter',
-      'facebook'
-    ].forEach(platform => {
-      document
-        .getElementById(`${platform}Option`)
-        .addEventListener('change', function () {
-          var field = document.getElementById(`${platform}Field`);
-          field.style.display = this.checked ? 'block' : 'none';
+
+    function toggleFieldDisplay(platform) {
+      var checkbox = document.getElementById(`${platform}Checkbox`);
+      var field = document.getElementById(`${platform}Field`);
+      field.style.display = checkbox.checked ? 'block' : 'none';
+    }
+
+    function addEventListenersToSocials() {
+      [
+        'web',
+        'github',
+        'instagram',
+        'linkedin',
+        'slack',
+        'youtube',
+        'twitter',
+        'facebook'
+      ].forEach(platform => {
+        var checkbox = document.getElementById(`${platform}Checkbox`);
+        checkbox.addEventListener('change', function () {
+          toggleFieldDisplay(platform);
         });
-    });
-    document
+
+        // Call the function to set the initial display of the field
+        toggleFieldDisplay(platform);
+      });
+    }
+
+    // Call the function to add event listeners
+    addEventListenersToSocials();
+
+    {% comment %} document
       .querySelector('button[type="submit"]')
       .addEventListener('click', function (event) {
         event.preventDefault();
@@ -494,7 +513,9 @@
 
         setTimeout(function () {
           document.querySelector('form').submit();
-        }, 2100); // This delays the form submission until after the notification has been hidden
-      });
+        }, 3000); 
+      }); 
+      // notification not working temporary removed
+      {% endcomment %}
   </script>
 </html>

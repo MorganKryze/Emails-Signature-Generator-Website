@@ -28,6 +28,8 @@ def custom(request):
                 "is_image_selected": form.cleaned_data.get("isImageSelected", False) or False,
                 "image_link": form.cleaned_data.get("imageLink", "None") or "None",
                 "image_type": form.cleaned_data.get("imageType", "photo") or "None",
+                "web_checkbox": form.cleaned_data.get("webCheckbox", False) or False,
+                "web_link": form.cleaned_data.get("webLink", "None") or "None",
                 
             }
     else:

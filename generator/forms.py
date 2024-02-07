@@ -38,3 +38,6 @@ class ConfigForm(forms.Form):
         initial="photo",
         required=False,
     )
+
+    webCheckbox = forms.BooleanField(required=False)
+    webLink = forms.URLField(label="Enter website URL", required=False)
