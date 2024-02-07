@@ -39,26 +39,26 @@ class ConfigForm(forms.Form):
         required=False,
     )
 
-    webCheckbox = forms.BooleanField(required=False)
+    isWebSelected = forms.BooleanField(required=False)
     webLink = forms.URLField(label="Enter website URL", required=False)
-    
-    githubCheckbox = forms.BooleanField(required=False)
+
+    isGithubSelected = forms.BooleanField(required=False)
     githubLink = forms.URLField(label="Enter GitHub URL", required=False)
-    
-    instagramCheckbox = forms.BooleanField(required=False)
+
+    isInstagramSelected = forms.BooleanField(required=False)
     instagramLink = forms.URLField(label="Enter Instagram URL", required=False)
-    
-    linkedinCheckbox = forms.BooleanField(required=False)
+
+    isLinkedinSelected = forms.BooleanField(required=False)
     linkedinLink = forms.URLField(label="Enter LinkedIn URL", required=False)
-    
-    slackCheckbox = forms.BooleanField(required=False)
+
+    isSlackSelected = forms.BooleanField(required=False)
     slackLink = forms.URLField(label="Enter Slack URL", required=False)
-    
-    youtubeCheckbox = forms.BooleanField(required=False)
+
+    isYoutubeSelected = forms.BooleanField(required=False)
     youtubeLink = forms.URLField(label="Enter YouTube URL", required=False)
-    
-    twitterCheckbox = forms.BooleanField(required=False)
+
+    isTwitterSelected = forms.BooleanField(required=False)
     twitterLink = forms.URLField(label="Enter Twitter URL", required=False)
-    
-    facebookCheckbox = forms.BooleanField(required=False)
+
+    isFacebookSelected = forms.BooleanField(required=False)
     facebookLink = forms.URLField(label="Enter Facebook URL", required=False)

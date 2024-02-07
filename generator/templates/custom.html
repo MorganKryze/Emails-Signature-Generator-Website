@@ -221,13 +221,13 @@
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="webCheckbox"
-              name="{{ form.webCheckbox.html_name }}"
-              {% if form.webCheckbox.value %} checked {% endif %}
+              id="isWebSelected"
+              name="{{ form.isWebSelected.html_name }}"
+              {% if form.isWebSelected.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold">Website</label>
           </div>
-          <div class="mb-4" id="webField" style="display: none">
+          <div class="mb-4" id="WebField" style="display: none">
             <input
               type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -244,13 +244,13 @@
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="githubCheckbox"
-              name="{{ form.githubCheckbox.html_name }}"
-              {% if form.githubCheckbox.value %} checked {% endif %}
+              id="isGithubSelected"
+              name="{{ form.isGithubSelected.html_name }}"
+              {% if form.isGithubSelected.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold">GitHub</label>
           </div>
-          <div class="mb-4" id="githubField" style="display: none">
+          <div class="mb-4" id="GithubField" style="display: none">
             <input
               type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -267,14 +267,14 @@
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="instagramCheckbox"
-              name="{{ form.instagramCheckbox.html_name }}"
-              {% if form.instagramCheckbox.value %} checked {% endif %}
+              id="isInstagramSelected"
+              name="{{ form.isInstagramSelected.html_name }}"
+              {% if form.isInstagramSelected.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold">Instagram</label>
           </div>
 
-          <div class="mb-4" id="instagramField" style="display: none">
+          <div class="mb-4" id="InstagramField" style="display: none">
             <input
               type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -291,13 +291,13 @@
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="linkedinCheckbox"
-              name="{{ form.linkedinCheckbox.html_name }}"
-              {% if form.linkedinCheckbox.value %} checked {% endif %}
+              id="isLinkedinSelected"
+              name="{{ form.isLinkedinSelected.html_name }}"
+              {% if form.isLinkedinSelected.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold">LinkedIn</label>
           </div>
-          <div class="mb-4" id="linkedinField" style="display: none">
+          <div class="mb-4" id="LinkedinField" style="display: none">
             <input
               type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -314,13 +314,13 @@
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="slackCheckbox"
-              name="{{ form.slackCheckbox.html_name }}"
-              {% if form.slackCheckbox.value %} checked {% endif %}
+              id="isSlackSelected"
+              name="{{ form.isSlackSelected.html_name }}"
+              {% if form.isSlackSelected.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold">Slack</label>
           </div>
-          <div class="mb-4" id="slackField" style="display: none">
+          <div class="mb-4" id="SlackField" style="display: none">
             <input
               type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -337,13 +337,13 @@
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="youtubeCheckbox"
-              name="{{ form.youtubeCheckbox.html_name }}"
-              {% if form.youtubeCheckbox.value %} checked {% endif %}
+              id="isYoutubeSelected"
+              name="{{ form.isYoutubeSelected.html_name }}"
+              {% if form.isYoutubeSelected.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold">YouTube</label>
           </div>
-          <div class="mb-4" id="youtubeField" style="display: none">
+          <div class="mb-4" id="YoutubeField" style="display: none">
             <input
               type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -360,13 +360,13 @@
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="twitterCheckbox"
-              name="{{ form.twitterCheckbox.html_name }}"
-              {% if form.twitterCheckbox.value %} checked {% endif %}
+              id="isTwitterSelected"
+              name="{{ form.isTwitterSelected.html_name }}"
+              {% if form.isTwitterSelected.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold">Twitter</label>
           </div>
-          <div class="mb-4" id="twitterField" style="display: none">
+          <div class="mb-4" id="TwitterField" style="display: none">
             <input
               type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -383,13 +383,13 @@
             <input
               type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="facebookCheckbox"
-              name="{{ form.facebookCheckbox.html_name }}"
-              {% if form.facebookCheckbox.value %} checked {% endif %}
+              id="isFacebookSelected"
+              name="{{ form.isFacebookSelected.html_name }}"
+              {% if form.isFacebookSelected.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold">Facebook</label>
           </div>
-          <div class="mb-4" id="facebookField" style="display: none">
+          <div class="mb-4" id="FacebookField" style="display: none">
             <input
               type="text"
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -487,23 +487,23 @@
 
 
     function toggleFieldDisplay(platform) {
-      var checkbox = document.getElementById(`${platform}Checkbox`);
+      var checkbox = document.getElementById(`is${platform}Selected`);
       var field = document.getElementById(`${platform}Field`);
       field.style.display = checkbox.checked ? 'block' : 'none';
     }
 
     function addEventListenersToSocials() {
       [
-        'web',
-        'github',
-        'instagram',
-        'linkedin',
-        'slack',
-        'youtube',
-        'twitter',
-        'facebook'
+        'Web',
+        'Github',
+        'Instagram',
+        'Linkedin',
+        'Slack',
+        'Youtube',
+        'Twitter',
+        'Facebook'
       ].forEach(platform => {
-        var checkbox = document.getElementById(`${platform}Checkbox`);
+        var checkbox = document.getElementById(`is${platform}Selected`);
         checkbox.addEventListener('change', function () {
           toggleFieldDisplay(platform);
         });

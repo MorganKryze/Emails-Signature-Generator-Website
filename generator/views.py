@@ -25,7 +25,7 @@ def custom(request):
             global data_conf
             data_conf = {
                 "signature_name": form.cleaned_data.get("signatureName"),
-                "personal information": {
+                "personal_information": {
                     "name": form.cleaned_data.get("name"),
                     "title": form.cleaned_data.get("title"),
                     "organization_name": form.cleaned_data.get("organizationName"),
