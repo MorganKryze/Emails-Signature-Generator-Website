@@ -24,9 +24,11 @@ def custom(request):
                 "organization_name": form.cleaned_data.get("organizationName"),
                 "organization_url": form.cleaned_data.get("organizationURL"),
                 "email": form.cleaned_data.get("email"),
-                "additional": form.cleaned_data.get("additional", "None"),
-                "is_image_selected": form.cleaned_data.get("isImageSelected", False),
-                "image_type": form.cleaned_data.get("imageType", "photo"),
+                "additional": form.cleaned_data.get("additional", "None") or "None",
+                "is_image_selected": form.cleaned_data.get("isImageSelected", False) or False,
+                "image_link": form.cleaned_data.get("imageLink", "None") or "None",
+                
+                # "image_type": form.cleaned_data.get("imageType", "photo"),
             }
             print(data_conf)
     else:
