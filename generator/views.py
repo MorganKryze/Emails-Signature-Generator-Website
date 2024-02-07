@@ -1,14 +1,15 @@
 from django.shortcuts import render
 from .forms import ConfigForm
-
 from django.http import HttpResponse
+
 import yaml
-
-
+from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 
 
 HTML_TEMPLATE = "signature-template.html"
+
+OUTPUT_FILENAME = Path("generator/templates/output.html")
 
 
 data_conf = {}
@@ -94,7 +95,15 @@ def download_config(request):
 
 def download_signature(request):
     env = Environment(
-        loader=FileSystemLoader("templates"),
+        loader=FileSystemLoader("generator/templates"),
         autoescape=False,
     )
+
     template = env.get_template(HTML_TEMPLATE)
+    data_conf_dict = dict(data_conf)
+    html = template.render(data_conf_dict)
+
+    with OUTPUT_FILENAME.open("w") as file:
+        file.write(html)
+
+    return render(request, "output.html")
