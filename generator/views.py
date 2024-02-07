@@ -2,14 +2,9 @@ from django.shortcuts import render
 from .forms import ConfigForm
 from django.http import HttpResponse
 
+from .tools import generate_html
+
 import yaml
-from pathlib import Path
-from jinja2 import Environment, FileSystemLoader
-
-
-HTML_TEMPLATE = "signature-template.html"
-
-OUTPUT_FILENAME = Path("generator/templates/output.html")
 
 
 data_conf = {}
@@ -85,39 +80,23 @@ def custom(request):
     return render(request, "custom.html", {"form": form})
 
 
-def download_config(request):
-    response = HttpResponse(
-        yaml.dump(data_conf, sort_keys=False), content_type="text/plain"
-    )
-    response["Content-Disposition"] = "attachment; filename=data.yaml"
-    return response
-
-
 def preview(request):
-    env = Environment(
-        loader=FileSystemLoader("generator/templates"),
-        autoescape=False,
-    )
-
-    template = env.get_template(HTML_TEMPLATE)
-    data_conf_dict = dict(data_conf)
-
-    html = template.render(data_conf_dict)
+    html = generate_html(dict(data_conf))
 
     return HttpResponse(html)
 
 
 def download_signature(request):
-    env = Environment(
-        loader=FileSystemLoader("generator/templates"),
-        autoescape=False,
-    )
-
-    template = env.get_template(HTML_TEMPLATE)
-    data_conf_dict = dict(data_conf)
-
-    html = template.render(data_conf_dict)
+    html = generate_html(dict(data_conf))
 
     response = HttpResponse(html, content_type="text/html")
     response["Content-Disposition"] = "attachment; filename=signature.html"
+    return response
+
+
+def download_config(request):
+    response = HttpResponse(
+        yaml.dump(data_conf, sort_keys=False), content_type="text/plain"
+    )
+    response["Content-Disposition"] = "attachment; filename=config.yaml"
     return response
