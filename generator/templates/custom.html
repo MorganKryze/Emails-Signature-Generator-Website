@@ -56,7 +56,7 @@
             Import config file
           </button>
         </div>
-        {% comment %}  Signature name {% endcomment %}
+        {% comment %} Signature name {% endcomment %}
         <div class="mb-10">
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -138,7 +138,6 @@
             {{ form.organizationURL.errors }}
           </div>
           <div class="mb-4">
-            <!-- TODO : Email -->
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="email"
@@ -176,13 +175,18 @@
         <div class="mb-10">
           <h3 class="text-xl font-bold mb-4 text-gray-900">Image</h3>
           <div class="flex items-center mb-4">
-            <!-- TODO : Image option  -->
             <input
-              type="checkbox"
               class="form-checkbox h-5 w-5 text-blue-600 mr-2"
-              id="imageOption"
+              type="checkbox"
+              id="isImageSelected"
+              name="{{ form.isImageSelected.html_name }}"
+
+              {% if form.isImageSelected.value %} checked {% endif %}
             />
-            <label class="text-gray-700 text-sm font-bold">Add an image</label>
+            <label class="text-gray-700 text-sm font-bold" for="isImageSelected"
+            >Add an image</label
+            >
+            {{ form.isImageSelected.errors }}
           </div>
           <div class="mb-4" id="imageField" style="display: none">
             <!-- TODO : Image link -->
@@ -271,7 +275,7 @@
             />
             <label class="text-gray-700 text-sm font-bold">Instagram</label>
           </div>
-          
+
           <div class="mb-4" id="instagramField" style="display: none">
             <!-- TODO : Instagram link -->
             <input
@@ -441,32 +445,30 @@
     </div>
   </body>
   <script>
+    function toggleDisplay() {
+      var isChecked = document.getElementById('isImageSelected').checked;
+
+      var imageField = document.getElementById('imageField');
+      imageField.style.display = isChecked ? 'block' : 'none';
+
+      var photoOption = document.getElementById('choosePhoto').parentElement;
+      var logoOption = document.getElementById('chooseLogo').parentElement;
+
+      if (isChecked) {
+        photoOption.style.display = 'flex';
+        logoOption.style.display = 'flex';
+      } else {
+        photoOption.style.display = 'none';
+        logoOption.style.display = 'none';
+      }
+    }
+
     document
-      .getElementById('imageOption')
-      .addEventListener('change', function () {
-        var imageField = document.getElementById('imageField');
-        imageField.style.display = this.checked ? 'block' : 'none';
+      .getElementById('isImageSelected')
+      .addEventListener('change', toggleDisplay);
 
-        var choosePhotoField = document.getElementById('choosePhotoField');
-        choosePhotoField.style.display = this.checked ? 'block' : 'none';
-
-        var chooseLogoField = document.getElementById('chooseLogoField');
-        chooseLogoField.style.display = this.checked ? 'block' : 'none';
-      });
-    document
-      .getElementById('imageOption')
-      .addEventListener('change', function () {
-        var photoOption = document.getElementById('choosePhoto').parentElement;
-        var logoOption = document.getElementById('chooseLogo').parentElement;
-
-        if (this.checked) {
-          photoOption.style.display = 'flex';
-          logoOption.style.display = 'flex';
-        } else {
-          photoOption.style.display = 'none';
-          logoOption.style.display = 'none';
-        }
-      });
+    // Call the function when the page loads
+    toggleDisplay();
 
     [
       'website',
@@ -485,21 +487,23 @@
           field.style.display = this.checked ? 'block' : 'none';
         });
     });
-    document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
-      event.preventDefault();
+    document
+      .querySelector('button[type="submit"]')
+      .addEventListener('click', function (event) {
+        event.preventDefault();
 
-      var notification = document.getElementById('notification');
-      notification.classList.remove('hidden');
-      notification.classList.add('active');
+        var notification = document.getElementById('notification');
+        notification.classList.remove('hidden');
+        notification.classList.add('active');
 
-      setTimeout(function() {
-        notification.classList.remove('active');
-        notification.classList.add('hidden');
-      }, 2000);
+        setTimeout(function () {
+          notification.classList.remove('active');
+          notification.classList.add('hidden');
+        }, 2000);
 
-      setTimeout(function() {
-        document.querySelector('form').submit();
-      }, 2100); // This delays the form submission until after the notification has been hidden
-    });
+        setTimeout(function () {
+          document.querySelector('form').submit();
+        }, 2100); // This delays the form submission until after the notification has been hidden
+      });
   </script>
 </html>

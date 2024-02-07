@@ -18,15 +18,15 @@ def custom(request):
         if form.is_valid():
             global data_conf
             data_conf = {
-                "signature_name": form.cleaned_data.get("signatureName") or "None",
-                "name": form.cleaned_data.get("name") or "None",
-                "title": form.cleaned_data.get("title") or "None",
-                "organization_name": form.cleaned_data.get("organizationName") or "None",
-                "organization_url": form.cleaned_data.get("organizationURL") or "None",
-                "email": form.cleaned_data.get("email") or "None",
-                "additional": form.cleaned_data.get("additional") or "None",
-                # "image_option": form.cleaned_data.get("imageOption", False),
-                # "image_type": form.cleaned_data.get("imageType", "photo"),
+                "signature_name": form.cleaned_data.get("signatureName"),
+                "name": form.cleaned_data.get("name"),
+                "title": form.cleaned_data.get("title"),
+                "organization_name": form.cleaned_data.get("organizationName"),
+                "organization_url": form.cleaned_data.get("organizationURL"),
+                "email": form.cleaned_data.get("email"),
+                "additional": form.cleaned_data.get("additional", "None"),
+                "is_image_selected": form.cleaned_data.get("isImageSelected", False),
+                "image_type": form.cleaned_data.get("imageType", "photo"),
             }
             print(data_conf)
     else:
@@ -36,6 +36,8 @@ def custom(request):
 
 
 def download_config(request):
-    response = HttpResponse(yaml.dump(data_conf, sort_keys=False), content_type="text/plain")
+    response = HttpResponse(
+        yaml.dump(data_conf, sort_keys=False), content_type="text/plain"
+    )
     response["Content-Disposition"] = "attachment; filename=data.yaml"
     return response
