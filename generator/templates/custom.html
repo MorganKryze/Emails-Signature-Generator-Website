@@ -32,6 +32,14 @@
       .notification.active {
         transform: translateX(0);
       }
+      .disabled {
+        pointer-events: none;
+        color: #cccccc;
+        background-color: #eeeeee;
+      }
+      .errorlist {
+        color: red;
+      }
     </style>
   </head>
   <div id="notification" class="notification">
@@ -41,10 +49,10 @@
   <body class="bg-gray-100 flex items-center justify-center">
     {% comment %} The form sheet {% endcomment %}
     <div class="bg-white p-10 rounded shadow-lg w-1/2">
-      <form method="post">
+      <form method="post" id="Generator">
         {% csrf_token %} {% comment %} Title {% endcomment %}
         <div class="flex justify-between items-center mb-10">
-          <h2 class="text-2xl font-bold text-gray-900">Customization</h2>
+          <h1 class="text-2xl font-bold text-gray-900">Customization</h1>
           <button
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start"
           >
@@ -60,7 +68,7 @@
         <div class="mb-10">
           <input
             type="text"
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline required"
             id="{{ form.signatureName.id_for_label }}"
             placeholder="{{ form.signatureName.label }}"
             name="{{ form.signatureName.html_name }}"
@@ -81,7 +89,7 @@
             >
             <input
               type="text"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline required"
               id="{{ form.name.id_for_label }}"
               placeholder="{{ form.name.label }}"
               name="{{ form.name.html_name }}"
@@ -97,7 +105,7 @@
             >
             <input
               type="text"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline required"
               id="{{ form.title.id_for_label }}"
               placeholder="{{ form.title.label }}"
               name="{{ form.title.html_name }}"
@@ -113,7 +121,7 @@
             >
             <input
               type="text"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline required"
               id="{{ form.organizationName.id_for_label }}"
               placeholder="{{ form.organizationName.label }}"
               name="{{ form.organizationName.html_name }}"
@@ -129,7 +137,7 @@
             >
             <input
               type="text"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline required"
               id="{{ form.organizationURL.id_for_label }}"
               placeholder="{{ form.organizationURL.label }}"
               name="{{ form.organizationURL.html_name }}"
@@ -145,7 +153,7 @@
             >
             <input
               type="text"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline required"
               id="{{ form.email.id_for_label }}"
               placeholder="{{ form.email.label }}"
               name="{{ form.email.html_name }}"
@@ -409,6 +417,7 @@
           <button
             type="submit"
             class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start mt-8"
+            id="submitBtn"
           >
             <img
               src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/save.svg"
@@ -420,7 +429,7 @@
         </div>
       </form>
       <div class="flex justify-center items-center space-x-2 mt-6">
-        <a href="{% url 'preview' %}" target="_blank">
+        <a href="{% url 'preview' %}" target="_blank" id="previewLink">
         <button
           id="previewBtn"
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start"
@@ -434,9 +443,9 @@
         </button>
         </a>
 
-        <a href="{% url 'download-signature' %}" target="_blank">
+        <a href="{% url 'download-signature' %}" target="_blank" id="downloadSignatureLink">
         <button
-          id="saveSignatureBtn"
+          id="downloadSignatureBtn"
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start"
         >
           <img
@@ -447,9 +456,9 @@
           Download Signature
         </button>
         </a>
-        <a href="{% url 'download-config' %}" target="_blank">
+        <a href="{% url 'download-config' %}" target="_blank" id="downloadConfigLink">
           <button
-            type="submit"
+            id="downloadConfigBtn"
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start"
           >
             <img
@@ -519,6 +528,96 @@
 
     // Call the function to add event listeners
     addEventListenersToSocials();
+
+    var previewBtn = document.getElementById('previewBtn');
+    var downloadSignatureBtn = document.getElementById('downloadSignatureBtn');
+    var downloadConfigBtn = document.getElementById('downloadConfigBtn'); 
+    var previewLink = document.getElementById('previewLink');
+    var downloadSignatureLink = document.getElementById('downloadSignatureLink');
+    var downloadConfigLink = document.getElementById('downloadConfigLink');
+
+    previewBtn.disabled = true;
+    downloadSignatureBtn.disabled = true;
+    downloadConfigBtn.disabled = true;
+    previewBtn.classList.add('disabled');
+    downloadSignatureBtn.classList.add('disabled');
+    downloadConfigBtn.classList.add('disabled');
+
+    document.getElementById('Generator').addEventListener('submit', function(event) {
+      // Check if all required fields are filled
+      var requiredFields = document.querySelectorAll('.required');
+      var allFieldsFilled = true;
+
+      requiredFields.forEach(function(field) {
+        if (field.value === '') {
+          allFieldsFilled = false;
+        }
+      });
+
+      if (allFieldsFilled) {
+        // If all required fields are filled, enable the buttons and remove the disabled class
+        previewBtn.disabled = false;
+        downloadSignatureBtn.disabled = false;
+        downloadConfigBtn.disabled = false;
+        previewBtn.classList.remove('disabled');
+        downloadSignatureBtn.classList.remove('disabled');
+        downloadConfigBtn.classList.remove('disabled');
+
+        // Store the state of the buttons in a cookie
+        document.cookie = "buttonsEnabled=true; path=/";
+      }
+      else {
+        // If not all required fields are filled, disable the buttons and add the disabled class
+        previewBtn.disabled = true;
+        downloadSignatureBtn.disabled = true;
+        downloadConfigBtn.disabled = true;
+        previewBtn.classList.add('disabled');
+        downloadSignatureBtn.classList.add('disabled');
+        downloadConfigBtn.classList.add('disabled');
+
+        // Store the state of the buttons in a cookie
+        document.cookie = "buttonsEnabled=false; path=/";
+      }
+    });
+
+    // When the page is loaded, check the state of the buttons in the cookie
+    window.onload = function() {
+      if (document.cookie.replace(/(?:(?:^|.*;\s*)buttonsEnabled\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "true") {
+        previewBtn.disabled = false;
+        downloadSignatureBtn.disabled = false;
+        downloadConfigBtn.disabled = false;
+        previewBtn.classList.remove('disabled');
+        downloadSignatureBtn.classList.remove('disabled');
+        downloadConfigBtn.classList.remove('disabled');
+      }
+      else {
+        previewBtn.disabled = true;
+        downloadSignatureBtn.disabled = true;
+        downloadConfigBtn.disabled = true;
+        previewBtn.classList.add('disabled');
+        downloadSignatureBtn.classList.add('disabled');
+        downloadConfigBtn.classList.add('disabled');
+      }
+    };
+
+    previewLink.addEventListener('click', function(event) {
+      if (previewBtn.disabled) {
+        event.preventDefault();
+      }
+    });
+
+    downloadSignatureLink.addEventListener('click', function(event) {
+      if (downloadSignatureBtn.disabled) {
+        event.preventDefault();
+      }
+    });
+
+    downloadConfigLink.addEventListener('click', function(event) {
+      if (downloadConfigBtn.disabled) {
+        event.preventDefault();
+      }
+    });
+
 
     {% comment %} document
       .querySelector('button[type="submit"]')
