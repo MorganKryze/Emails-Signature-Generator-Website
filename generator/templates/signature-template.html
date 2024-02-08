@@ -4,6 +4,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="icon"
+      href="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/favicon.svg"
+    />
     <title>{{ signature_name }}</title>
     <style type="text/css">
         .signature {
@@ -43,8 +47,8 @@
         .signature .logo .overlay-photo {
             border-radius: 50%;
             width: 100%; 
-            height: auto; 
-            object-fit: contain;
+            height: 100%; 
+            object-fit: cover;
             border: 2px solid #444;
         }
         .signature .logo .overlay-logo {
@@ -66,6 +70,17 @@
     <br>
     <br>
     <div class="signature">
+        {% if image.is_image_selected %}
+        <div class="logo">
+            <a href="{{ personal_information.organization_url }}">
+            {% if image.image_type == 'photo' or image.image_type == 'Photo' %}
+                <img src="{{ image.image_link }}" class="overlay-photo" alt="Photo">
+            {% elif image.image_type == 'logo' or image.image_type == 'Logo' %}
+                <img src="{{ image.image_link }}" class="overlay-logo" alt="Logo">
+            {% endif %}
+            </a>
+        </div>
+        {% endif %}
         <div class="details">
             <div class="name">{{ personal_information.name }}</div>
             <div class="title">{{ personal_information.title }} | {{ personal_information.organization_name }}</a></div>
