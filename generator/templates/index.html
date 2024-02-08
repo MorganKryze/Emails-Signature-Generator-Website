@@ -13,28 +13,48 @@
       href="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/favicon.svg"
     />
   </head>
-  <footer>
-    <a href="https://github.com/MorganKryze/Emails-Signature-Generator-Website/issues" class="fixed bottom-0 left-0 m-4" title="Report a bug">
-      <img src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/bug.svg" alt="Report a bug" />
-    </a>
-  </footer>
   <body class="bg-gray-100 flex items-center justify-center h-screen">
     <div class="bg-white p-10 rounded shadow-lg w-1/2">
       <h2 class="text-2xl font-bold mb-6 text-gray-900">
         Email Signature Generator
       </h2>
       <p class="text-gray-700 mb-6">
-        Create professional email signatures in seconds. Customize colors,
-        fonts, and images to match your brand.
+        Create professional or personal email signatures in seconds. Customize
+        information, images, colors and fonts to match your brand.
+      </p>
+      <p class="text-gray-700 mb-6">
+        Please take time to read the guidelines before using the generator. Do
+        not hesitate to report any bugs or improvements you would like to see.
       </p>
       <div class="flex justify-center">
-        <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="button"
+        <a
+          href="{% url 'custom' %}"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-white"
+          >Get Started</a
         >
-          <a href="{% url 'custom' %}" class="text-white">Get Started</a>
-        </button>
+      </div>
+      <div class="container mx-auto text-center mt-4 text-gray-500 text-shadow">
+        <a href="#">Guidelines</a>
+        &bull;
+        <a href="{% url 'terms'%}">Terms</a>
+        &bull;
+        <a href="https://github.com/MorganKryze/Emails-Signature-Generator-Website">Source Code</a>
+        &bull;
+        <a href="https://github.com/MorganKryze">&copy; MorganKryze</a>
       </div>
     </div>
+    </div>
   </body>
+  <footer>
+    <a
+      href="https://github.com/MorganKryze/Emails-Signature-Generator-Website/issues"
+      class="fixed bottom-0 left-0 m-4"
+      title="Report a bug"
+    >
+      <img
+        src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/bug.svg"
+        alt="Report a bug"
+      />
+    </a>
+  </footer>
 </html>

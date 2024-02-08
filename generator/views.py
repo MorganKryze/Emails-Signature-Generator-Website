@@ -13,6 +13,9 @@ data_conf = {}
 def index(request):
     return render(request, "index.html")
 
+def terms(request):
+    return render(request, "terms.html")
+
 
 def custom(request):
     if request.method == "POST":
