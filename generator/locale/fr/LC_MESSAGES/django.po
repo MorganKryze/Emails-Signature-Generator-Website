@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 23:52+0000\n"
+"POT-Creation-Date: 2024-02-08 23:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: MorganKryze morgan@kodelab.fr\n"
 "Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
@@ -110,6 +110,42 @@ msgstr ""
 
 #: generator/templates/custom.html:217
 msgid "custom-image-logo-title"
+msgstr ""
+
+#: generator/templates/custom.html:224
+msgid "custom-socials-title"
+msgstr ""
+
+#: generator/templates/custom.html:234
+msgid "custom-socials-website-title"
+msgstr ""
+
+#: generator/templates/custom.html:257
+msgid "custom-socials-github-title"
+msgstr ""
+
+#: generator/templates/custom.html:280
+msgid "custom-socials-instagram-title"
+msgstr ""
+
+#: generator/templates/custom.html:304
+msgid "custom-socials-linkedin-title"
+msgstr ""
+
+#: generator/templates/custom.html:327
+msgid "custom-socials-slack-title"
+msgstr ""
+
+#: generator/templates/custom.html:350
+msgid "custom-socials-youtube-title"
+msgstr ""
+
+#: generator/templates/custom.html:373
+msgid "custom-socials-twitter-title"
+msgstr ""
+
+#: generator/templates/custom.html:396
+msgid "custom-socials-facebook-title"
 msgstr ""
 
 #: generator/templates/guidelines.html:15

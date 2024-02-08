@@ -215,7 +215,7 @@
 
         {% comment %} Socials section {% endcomment %}
         <div class="mb-10">
-          <h3 class="text-xl font-bold mb-4 text-gray-900">Socials</h3>
+          <h3 class="text-xl font-bold mb-4 text-gray-900">{% trans "custom-socials-title" %}</h3>
           <!-- Website Option -->
           <div class="flex items-center mb-4">
             <input
@@ -225,7 +225,7 @@
               name="{{ form.isWebSelected.html_name }}"
               {% if form.isWebSelected.value %} checked {% endif %}
             />
-            <label class="text-gray-700 text-sm font-bold">Website</label>
+            <label class="text-gray-700 text-sm font-bold">{% trans "custom-socials-website-title" %}</label>
           </div>
           <div class="mb-4" id="WebField" style="display: none">
             <input
@@ -248,7 +248,7 @@
               name="{{ form.isGithubSelected.html_name }}"
               {% if form.isGithubSelected.value %} checked {% endif %}
             />
-            <label class="text-gray-700 text-sm font-bold">GitHub</label>
+            <label class="text-gray-700 text-sm font-bold">{% trans "custom-socials-github-title" %}</label>
           </div>
           <div class="mb-4" id="GithubField" style="display: none">
             <input
@@ -271,7 +271,7 @@
               name="{{ form.isInstagramSelected.html_name }}"
               {% if form.isInstagramSelected.value %} checked {% endif %}
             />
-            <label class="text-gray-700 text-sm font-bold">Instagram</label>
+            <label class="text-gray-700 text-sm font-bold">{% trans "custom-socials-instagram-title" %}</label>
           </div>
 
           <div class="mb-4" id="InstagramField" style="display: none">
@@ -295,7 +295,7 @@
               name="{{ form.isLinkedinSelected.html_name }}"
               {% if form.isLinkedinSelected.value %} checked {% endif %}
             />
-            <label class="text-gray-700 text-sm font-bold">LinkedIn</label>
+            <label class="text-gray-700 text-sm font-bold">{% trans "custom-socials-linkedin-title" %}</label>
           </div>
           <div class="mb-4" id="LinkedinField" style="display: none">
             <input
@@ -318,7 +318,7 @@
               name="{{ form.isSlackSelected.html_name }}"
               {% if form.isSlackSelected.value %} checked {% endif %}
             />
-            <label class="text-gray-700 text-sm font-bold">Slack</label>
+            <label class="text-gray-700 text-sm font-bold">{% trans "custom-socials-slack-title" %}</label>
           </div>
           <div class="mb-4" id="SlackField" style="display: none">
             <input
@@ -341,7 +341,7 @@
               name="{{ form.isYoutubeSelected.html_name }}"
               {% if form.isYoutubeSelected.value %} checked {% endif %}
             />
-            <label class="text-gray-700 text-sm font-bold">YouTube</label>
+            <label class="text-gray-700 text-sm font-bold">{% trans "custom-socials-youtube-title" %}</label>
           </div>
           <div class="mb-4" id="YoutubeField" style="display: none">
             <input
@@ -364,7 +364,7 @@
               name="{{ form.isTwitterSelected.html_name }}"
               {% if form.isTwitterSelected.value %} checked {% endif %}
             />
-            <label class="text-gray-700 text-sm font-bold">Twitter</label>
+            <label class="text-gray-700 text-sm font-bold">{% trans "custom-socials-twitter-title" %}</label>
           </div>
           <div class="mb-4" id="TwitterField" style="display: none">
             <input
@@ -387,7 +387,7 @@
               name="{{ form.isFacebookSelected.html_name }}"
               {% if form.isFacebookSelected.value %} checked {% endif %}
             />
-            <label class="text-gray-700 text-sm font-bold">Facebook</label>
+            <label class="text-gray-700 text-sm font-bold">{% trans "custom-socials-facebook-title" %}</label>
           </div>
           <div class="mb-4" id="FacebookField" style="display: none">
             <input
