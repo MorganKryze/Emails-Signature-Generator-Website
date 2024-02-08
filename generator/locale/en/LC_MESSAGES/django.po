@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 23:29+0000\n"
+"POT-Creation-Date: 2024-02-08 23:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,7 +55,7 @@ msgstr ""
 "If you were trying to generate an email signature, please consider saving "
 "your work before trying to download or preview anything."
 
-#: generator/templates/base.html:7
+#: generator/templates/base.html:7 generator/templates/index.html:5
 msgid "website-title"
 msgstr "Emails Signature Generator"
 
@@ -100,6 +100,30 @@ msgstr "Violate the terms of service."
 msgid "guidelines-do-not-l-3"
 msgstr "Disrespect other users."
 
+#: generator/templates/index.html:7
+msgid "index-paragraph-1"
+msgstr "Create professional or personal email signatures in seconds. Customize information, images, colors and fonts to match your brand."
+
+#: generator/templates/index.html:8
+msgid "index-paragraph-2"
+msgstr "Please take time to read the guidelines before using the generator. Do not hesitate to report any bugs or improvements you would like to see."
+
+#: generator/templates/index.html:13
+msgid "index-get-started"
+msgstr "Get started"
+
+#: generator/templates/index.html:17
+msgid "index-guidelines"
+msgstr "Guidelines"
+
+#: generator/templates/index.html:19
+msgid "index-terms"
+msgstr "Terms of Service"
+
+#: generator/templates/index.html:23
+msgid "index-source-code"
+msgstr "Source Code"
+
 #: generator/templates/terms.html:15
 msgid "terms-title"
 msgstr "Terms of Service"
@@ -118,7 +142,9 @@ msgstr "Cookies"
 
 #: generator/templates/terms.html:24
 msgid "terms-cookies-content"
-msgstr "We only use cookies to store the state of buttons and do not use them for any other purposes."
+msgstr ""
+"We only use cookies to store the state of buttons and do not use them for "
+"any other purposes."
 
 #: generator/templates/terms.html:26
 msgid "terms-usage-title"

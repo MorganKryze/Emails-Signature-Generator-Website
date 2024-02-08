@@ -1,32 +1,26 @@
-{% extends "base.html" %} {% block body_content %}
+{% extends "base.html" %} {% block body_content %}{% load i18n %}
 <body class="bg-gray-100 flex items-center justify-center h-screen">
   <div class="bg-white p-10 rounded shadow-lg w-1/2">
     <h2 class="text-2xl font-bold mb-6 text-gray-900">
-      Email Signature Generator
+      {% trans "website-title" %}
     </h2>
-    <p class="text-gray-700 mb-6">
-      Create professional or personal email signatures in seconds. Customize
-      information, images, colors and fonts to match your brand.
-    </p>
-    <p class="text-gray-700 mb-6">
-      Please take time to read the guidelines before using the generator. Do not
-      hesitate to report any bugs or improvements you would like to see.
-    </p>
+    <p class="text-gray-700 mb-6">{% trans "index-paragraph-1" %}</p>
+    <p class="text-gray-700 mb-6">{% trans "index-paragraph-2" %}</p>
     <div class="flex justify-center">
       <a
         href="{% url 'custom' %}"
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-white"
-        >Get Started</a
+        >{% trans "index-get-started" %}</a
       >
     </div>
     <div class="container mx-auto text-center mt-6 text-gray-500 text-shadow">
-      <a href="{% url 'guidelines' %}">Guidelines</a>
+      <a href="{% url 'guidelines' %}">{% trans "index-guidelines" %}</a>
       &bull;
-      <a href="{% url 'terms' %}">Terms</a>
+      <a href="{% url 'terms' %}">{% trans "index-terms" %}</a>
       &bull;
       <a
         href="https://github.com/MorganKryze/Emails-Signature-Generator-Website"
-        >Source Code</a
+        >{% trans "index-source-code" %}</a
       >
       &bull;
       <a href="https://github.com/MorganKryze">&copy; MorganKryze</a>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 23:29+0000\n"
+"POT-Creation-Date: 2024-02-08 23:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,7 +51,7 @@ msgstr ""
 msgid "500-paragraph-2"
 msgstr ""
 
-#: generator/templates/base.html:7
+#: generator/templates/base.html:7 generator/templates/index.html:5
 msgid "website-title"
 msgstr ""
 
@@ -93,6 +93,30 @@ msgstr ""
 
 #: generator/templates/guidelines.html:34
 msgid "guidelines-do-not-l-3"
+msgstr ""
+
+#: generator/templates/index.html:7
+msgid "index-paragraph-1"
+msgstr ""
+
+#: generator/templates/index.html:8
+msgid "index-paragraph-2"
+msgstr ""
+
+#: generator/templates/index.html:13
+msgid "index-get-started"
+msgstr ""
+
+#: generator/templates/index.html:17
+msgid "index-guidelines"
+msgstr ""
+
+#: generator/templates/index.html:19
+msgid "index-terms"
+msgstr ""
+
+#: generator/templates/index.html:23
+msgid "index-source-code"
 msgstr ""
 
 #: generator/templates/terms.html:15
