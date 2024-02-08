@@ -101,14 +101,20 @@ def preview(request):
 def download_signature(request):
     html = generate_html(dict(data_conf))
 
+    signature_name = data_conf.get("signature_name", "")
+    filename = f"signature-{signature_name}.html"
+
     response = HttpResponse(html, content_type="text/html")
-    response["Content-Disposition"] = "attachment; filename=signature.html"
+    response["Content-Disposition"] = f"attachment; filename={filename}"
     return response
 
 
 def download_config(request):
+    signature_name = data_conf.get("signature_name", "")
+    filename = f"{signature_name}.yaml"
+
     response = HttpResponse(
         yaml.dump(data_conf, sort_keys=False), content_type="text/plain"
     )
-    response["Content-Disposition"] = "attachment; filename=config.yaml"
+    response["Content-Disposition"] = f"attachment; filename=config-{filename}"
     return response
