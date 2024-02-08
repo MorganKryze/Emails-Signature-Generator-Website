@@ -416,13 +416,11 @@
           </div>
         </div>
 
-        <hr style="border-top: 1px solid #ccc" />
-
         {% comment %} Submit buttons {% endcomment %}
         <div class="flex justify-center">
           <button
             type="submit"
-            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start mt-8"
+            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start mb-6"
             id="submitBtn"
           >
             <img
@@ -434,6 +432,7 @@
           </button>
         </div>
       </form>
+      <hr style="border-top: 1px solid #ccc" />
       <div class="flex justify-center items-center space-x-2 mt-6">
         <a href="{% url 'preview' %}" target="_blank" id="previewLink">
         <button
