@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 23:15+0000\n"
+"POT-Creation-Date: 2024-02-08 23:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,6 +39,7 @@ msgid "404-title"
 msgstr "Oops! The page you're looking for does not exist."
 
 #: generator/templates/404.html:17 generator/templates/500.html:16
+#: generator/templates/guidelines.html:8
 msgid "return-to-homepage"
 msgstr "Return to Homepage"
 
@@ -61,3 +62,40 @@ msgstr "Emails Signature Generator"
 #: generator/templates/base.html:27
 msgid "report-a-bug"
 msgstr "Report a bug"
+
+#: generator/templates/guidelines.html:15
+msgid "guidelines-title"
+msgstr "Guidelines"
+
+#: generator/templates/guidelines.html:19
+msgid "guidelines-title-do"
+msgstr "DO"
+
+#: generator/templates/guidelines.html:22
+msgid "guidelines-do-l-1"
+msgstr "Use freely the generator for personal or professional purposes."
+
+#: generator/templates/guidelines.html:23
+msgid "guidelines-do-l-2"
+msgstr ""
+"Save your configuration before generating the signature to avoid issues."
+
+#: generator/templates/guidelines.html:24
+msgid "guidelines-do-l-3"
+msgstr "Report any bugs without taking advantage of them."
+
+#: generator/templates/guidelines.html:29
+msgid "guidelines-title-do-not"
+msgstr "DO NOT"
+
+#: generator/templates/guidelines.html:32
+msgid "guidelines-do-not-l-1"
+msgstr "Change the keys of the config file."
+
+#: generator/templates/guidelines.html:33
+msgid "guidelines-do-not-l-2"
+msgstr "Violate the terms of service."
+
+#: generator/templates/guidelines.html:34
+msgid "guidelines-do-not-l-3"
+msgstr "Disrespect other users."
