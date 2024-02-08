@@ -1,9 +1,10 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Email Signature Generator</title>
+    <title>{% trans "website-title" %}</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
@@ -23,7 +24,7 @@
     <a
       href="https://github.com/MorganKryze/Emails-Signature-Generator-Website/issues"
       class="fixed bottom-0 left-0 m-4"
-      title="Report a bug"
+      title="{% trans "report-a-bug" %}"
     >
       <img
         src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/bug.svg"

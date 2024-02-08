@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 21:10+0000\n"
+"POT-Creation-Date: 2024-02-08 23:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,18 +18,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings.py:123
+#: config/settings.py:120
 msgid "English"
 msgstr "Inglés"
 
-#: config/settings.py:124
+#: config/settings.py:121
 msgid "French"
 msgstr "Francés"
 
-#: config/settings.py:125
+#: config/settings.py:122
 msgid "Spanish"
 msgstr "Español"
 
-#: config/settings.py:126
+#: config/settings.py:123
 msgid "German"
 msgstr "Alemán"
+
+#: generator/templates/base.html:7
+msgid "website-title"
+msgstr ""
+
+#: generator/templates/base.html:27
+msgid "report-a-bug"
+msgstr ""
