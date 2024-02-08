@@ -31,28 +31,28 @@
     </style>
 {% endblock %}
 
-{% block header_content%}
+{% block header_content%}{% load i18n %}
 <div class="fixed top-0 left-0 m-4">
       <a href="{% url 'home' %}">
         <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
-          Back to Menu
+          {% trans "return-to-homepage" %}
         </button>
       </a>
     </div>
 {% endblock %}
 
-{% block body_content %}
+{% block body_content %}{% load i18n %}
 <body class="bg-gray-100 flex items-center justify-center">
 {% comment %} The form sheet {% endcomment %}
     <div class="bg-white p-10 rounded shadow-lg w-1/2">
       <form method="post" id="Generator" enctype="multipart/form-data">
         {% csrf_token %} {% comment %} Title {% endcomment %}
         <div class="flex justify-between items-center mb-10">
-          <h1 class="text-2xl font-bold text-gray-900">Customization</h1>
+          <h1 class="text-2xl font-bold text-gray-900">{% trans "custom-title" %}</h1>
           <label class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start">
             <input type="file" name="{{ form.config_file.html_name }}" accept=".yaml" style="display: none;" onchange="document.getElementById('Generator').submit();">
             <img src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/upload.svg" class="h-6 w-6 mr-2" alt="Import icon" />
-            Import config file
+            {% trans "custom-import" %}
           </label>
         </div>
         {% comment %} Signature name {% endcomment %}
@@ -72,12 +72,12 @@
         {% comment %} Personal Info section {% endcomment %}
         <div class="mb-10">
           <h3 class="text-xl font-bold mb-4 text-gray-900">
-            Personal Information
+            {% trans "custom-information-title" %}
           </h3>
 
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="name"
-              >Name</label
+              >{% trans "custom-information-name-title" %}</label
             >
             <input
               type="text"
@@ -93,7 +93,7 @@
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="title"
-              >Title</label
+              >{% trans "custom-information-title-title" %}</label
             >
             <input
               type="text"
@@ -109,7 +109,7 @@
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="organizationName"
-              >Organization name</label
+              >{% trans "custom-information-organization-name-title" %}</label
             >
             <input
               type="text"
@@ -125,7 +125,7 @@
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="organizationURL"
-              >Organization url</label
+              >{% trans "custom-information-organization-url-title" %}</label
             >
             <input
               type="text"
@@ -141,7 +141,7 @@
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="email"
-              >Email</label
+              >{% trans "custom-information-email-title" %}</label
             >
             <input
               type="text"
@@ -157,7 +157,7 @@
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="additional"
-              >Additional field</label
+              >{% trans "custom-information-additional-title" %}</label
             >
             <input
               type="text"
@@ -173,7 +173,7 @@
 
         {% comment %} Image section {% endcomment %}
         <div class="mb-10">
-          <h3 class="text-xl font-bold mb-4 text-gray-900">Image</h3>
+          <h3 class="text-xl font-bold mb-4 text-gray-900">{% trans "custom-image-title" %}</h3>
           <div class="flex items-center mb-4">
             <input
               type="checkbox"
@@ -183,7 +183,7 @@
               {% if form.isImageSelected.value %} checked {% endif %}
             />
             <label class="text-gray-700 text-sm font-bold" for="isImageSelected"
-              >Add an image</label
+              >{% trans "custom-image-add-title" %}</label
             >
             {{ form.isImageSelected.errors }}
           </div>
@@ -202,14 +202,14 @@
           <div class="flex items-center mb-4" style="display: none">
             <input type="radio" class="form-radio h-5 w-5 text-blue-600 mr-2
             rounded-full" id="choosePhoto" name="imageType" value="photo" {% if form.imageType.value == "photo" %} checked {% endif %} />
-            <label class="text-gray-700 text-sm font-bold">Photo</label>
+            <label class="text-gray-700 text-sm font-bold">{% trans "custom-image-photo-title" %}</label>
           </div>
 
           <div class="flex items-center mb-4" style="display: none">
             <input type="radio" class="form-radio h-5 w-5 text-blue-600 mr-2
             rounded-full" name="imageType" value="logo" id="chooseLogo" 
             {% if form.imageType.value == "logo" %} checked {% endif %} />
-            <label class="text-gray-700 text-sm font-bold">Logo</label>
+            <label class="text-gray-700 text-sm font-bold">{% trans "custom-image-logo-title" %}</label>
           </div>
         </div>
 
@@ -463,9 +463,6 @@
       </div>
     </div>
   </body>
-{% endblock %}
-
-{% block footer_content %}
 {% endblock %}
 
 {% block scripts %}

@@ -1,17 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# TRADUCTIONS FOR THE EMAILS SIGNATURE GENERATOR
+# Copyright (C) 2024 MorganKryze(Yann Vidamment)
+# This file is distributed under the same license as the Emails-Signature-Generator-Website package.
+# MorganKryze morgan@kodelab.fr, 2024.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 23:35+0000\n"
+"POT-Creation-Date: 2024-02-08 23:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: MorganKryze morgan@kodelab.fr\n"
+"Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,7 +39,8 @@ msgid "404-title"
 msgstr "Oops! The page you're looking for does not exist."
 
 #: generator/templates/404.html:17 generator/templates/500.html:16
-#: generator/templates/guidelines.html:8 generator/templates/terms.html:8
+#: generator/templates/custom.html:38 generator/templates/guidelines.html:8
+#: generator/templates/terms.html:8
 msgid "return-to-homepage"
 msgstr "Return to Homepage"
 
@@ -62,6 +63,58 @@ msgstr "Emails Signature Generator"
 #: generator/templates/base.html:27
 msgid "report-a-bug"
 msgstr "Report a bug"
+
+#: generator/templates/custom.html:53
+msgid "custom-title"
+msgstr "Customization"
+
+#: generator/templates/custom.html:57
+msgid "custom-import"
+msgstr "Import config file"
+
+#: generator/templates/custom.html:79
+msgid "custom-information-title"
+msgstr "Personal information"
+
+#: generator/templates/custom.html:84
+msgid "custom-information-name-title"
+msgstr "Name"
+
+#: generator/templates/custom.html:100
+msgid "custom-information-title-title"
+msgstr "Title"
+
+#: generator/templates/custom.html:116
+msgid "custom-information-organization-name-title"
+msgstr "Organization name"
+
+#: generator/templates/custom.html:132
+msgid "custom-information-organization-url-title"
+msgstr "Organization url"
+
+#: generator/templates/custom.html:148
+msgid "custom-information-email-title"
+msgstr "Email"
+
+#: generator/templates/custom.html:164
+msgid "custom-information-additional-title"
+msgstr "Additional field"
+
+#: generator/templates/custom.html:181
+msgid "custom-image-title"
+msgstr "Image"
+
+#: generator/templates/custom.html:191
+msgid "custom-image-add-title"
+msgstr "Add an image"
+
+#: generator/templates/custom.html:210
+msgid "custom-image-photo-title"
+msgstr "Photo"
+
+#: generator/templates/custom.html:217
+msgid "custom-image-logo-title"
+msgstr "Logo"
 
 #: generator/templates/guidelines.html:15
 msgid "guidelines-title"
@@ -102,11 +155,15 @@ msgstr "Disrespect other users."
 
 #: generator/templates/index.html:7
 msgid "index-paragraph-1"
-msgstr "Create professional or personal email signatures in seconds. Customize information, images, colors and fonts to match your brand."
+msgstr ""
+"Create professional or personal email signatures in seconds. Customize "
+"information, images, colors and fonts to match your brand."
 
 #: generator/templates/index.html:8
 msgid "index-paragraph-2"
-msgstr "Please take time to read the guidelines before using the generator. Do not hesitate to report any bugs or improvements you would like to see."
+msgstr ""
+"Please take time to read the guidelines before using the generator. Do not "
+"hesitate to report any bugs or improvements you would like to see."
 
 #: generator/templates/index.html:13
 msgid "index-get-started"

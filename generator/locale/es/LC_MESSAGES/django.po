@@ -1,17 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# TRADUCTIONS FOR THE EMAILS SIGNATURE GENERATOR
+# Copyright (C) 2024 MorganKryze(Yann Vidamment)
+# This file is distributed under the same license as the Emails-Signature-Generator-Website package.
+# MorganKryze morgan@kodelab.fr, 2024.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 23:35+0000\n"
+"POT-Creation-Date: 2024-02-08 23:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: MorganKryze morgan@kodelab.fr\n"
+"Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,7 +39,8 @@ msgid "404-title"
 msgstr ""
 
 #: generator/templates/404.html:17 generator/templates/500.html:16
-#: generator/templates/guidelines.html:8 generator/templates/terms.html:8
+#: generator/templates/custom.html:38 generator/templates/guidelines.html:8
+#: generator/templates/terms.html:8
 msgid "return-to-homepage"
 msgstr ""
 
@@ -57,6 +58,58 @@ msgstr ""
 
 #: generator/templates/base.html:27
 msgid "report-a-bug"
+msgstr ""
+
+#: generator/templates/custom.html:53
+msgid "custom-title"
+msgstr ""
+
+#: generator/templates/custom.html:57
+msgid "custom-import"
+msgstr ""
+
+#: generator/templates/custom.html:79
+msgid "custom-information-title"
+msgstr ""
+
+#: generator/templates/custom.html:84
+msgid "custom-information-name-title"
+msgstr ""
+
+#: generator/templates/custom.html:100
+msgid "custom-information-title-title"
+msgstr ""
+
+#: generator/templates/custom.html:116
+msgid "custom-information-organization-name-title"
+msgstr ""
+
+#: generator/templates/custom.html:132
+msgid "custom-information-organization-url-title"
+msgstr ""
+
+#: generator/templates/custom.html:148
+msgid "custom-information-email-title"
+msgstr ""
+
+#: generator/templates/custom.html:164
+msgid "custom-information-additional-title"
+msgstr ""
+
+#: generator/templates/custom.html:181
+msgid "custom-image-title"
+msgstr ""
+
+#: generator/templates/custom.html:191
+msgid "custom-image-add-title"
+msgstr ""
+
+#: generator/templates/custom.html:210
+msgid "custom-image-photo-title"
+msgstr ""
+
+#: generator/templates/custom.html:217
+msgid "custom-image-logo-title"
 msgstr ""
 
 #: generator/templates/guidelines.html:15
