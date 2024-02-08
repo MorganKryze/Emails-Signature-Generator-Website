@@ -25,8 +25,16 @@ def generate_html(data: dict):
         "twitter": "twitter",
         "facebook": "facebook",
     }
-
+    skip_next_link = False
+    
     for key, value in socials.items():
+        if skip_next_link:
+            if key.endswith("_link"):
+                value = "None" 
+            skip_next_link = False
+        if key.endswith("_selected") and not value:
+            skip_next_link = True
+            continue  
         if key.endswith("_link"):
             social_media = social_media_mapping[key.split("_")[0]]
             if value != "None":
