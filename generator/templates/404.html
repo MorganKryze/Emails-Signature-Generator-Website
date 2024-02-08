@@ -1,8 +1,8 @@
-{% extends "base.html" %} {% block body_content %}
+{% extends "base.html" %} {% block body_content %} {% load i18n %}
 <body class="bg-gray-100 flex items-center justify-center h-screen">
   <div class="bg-white p-10 rounded shadow-lg w-1/2 text-center">
     <h2 class="text-2xl font-bold mb-6 text-gray-900">
-      Oops! The page you're looking for does not exist.
+      {% trans "404-title" %}
     </h2>
     <img
       src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/404.svg"
@@ -14,7 +14,7 @@
         href="{% url 'home' %}"
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
       >
-        Return to Homepage
+        {% trans "return-to-homepage" %}
       </a>
     </div>
   </div>

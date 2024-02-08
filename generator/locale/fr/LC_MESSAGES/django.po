@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 23:08+0000\n"
+"POT-Creation-Date: 2024-02-08 23:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,22 @@ msgstr "Espagnol"
 #: config/settings.py:123
 msgid "German"
 msgstr "Allemand"
+
+#: generator/templates/404.html:5
+msgid "404-title"
+msgstr ""
+
+#: generator/templates/404.html:17 generator/templates/500.html:16
+msgid "return-to-homepage"
+msgstr ""
+
+#: generator/templates/500.html:6
+msgid "500-paragraph-1"
+msgstr ""
+
+#: generator/templates/500.html:9
+msgid "500-paragraph-2"
+msgstr ""
 
 #: generator/templates/base.html:7
 msgid "website-title"
