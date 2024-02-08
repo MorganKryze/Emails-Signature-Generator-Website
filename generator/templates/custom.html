@@ -42,6 +42,20 @@
       }
     </style>
   </head>
+  <header>
+    <div class="fixed top-0 left-0 m-4">
+      <a href="{% url 'home' %}">
+        <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+          Back to Menu
+        </button>
+      </a>
+    </div>
+ </header>
+ <footer>
+    <a href="https://github.com/MorganKryze/Emails-Signature-Generator-Website/issues" class="fixed bottom-0 left-0 m-4" >
+      <img src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/bug.svg" alt="Report a bug" />
+    </a>
+  </footer>
   <body class="bg-gray-100 flex items-center justify-center">
     {% comment %} The form sheet {% endcomment %}
     <div class="bg-white p-10 rounded shadow-lg w-1/2">
@@ -574,7 +588,16 @@
 
     // When the page is loaded, check the state of the buttons in the cookie
     window.onload = function() {
-      if (document.cookie.replace(/(?:(?:^|.*;\s*)buttonsEnabled\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "true") {
+      var requiredFields = document.querySelectorAll('.required');
+      var allFieldsFilled = true;
+
+      requiredFields.forEach(function(field) {
+        if (field.value === '') {
+          allFieldsFilled = false;
+        }
+      });
+
+      if (allFieldsFilled && document.cookie.replace(/(?:(?:^|.*;\s*)buttonsEnabled\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "true") {
         previewBtn.disabled = false;
         downloadSignatureBtn.disabled = false;
         downloadConfigBtn.disabled = false;
