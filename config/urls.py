@@ -14,9 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf.urls import i18n
+from django.conf.urls.i18n import i18n_patterns
 from django.urls import include, path
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path("i18n/", include(i18n)),
     path("", include("generator.urls")),
-]
+)
