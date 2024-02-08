@@ -1,38 +1,41 @@
-{% extends "base.html" %} {% block header_content %}
+{% extends "base.html" %} {% block header_content %}{% load i18n %}
 <body class="bg-gray-100 flex items-center justify-center h-screen">
   <div class="fixed top-0 left-0 m-4">
     <a href="{% url 'home' %}">
       <button
         class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
       >
-        Back to Menu
+        {% trans "return-to-homepage" %}
       </button>
     </a>
   </div>
-  {% endblock %} {% block body_content %}
+  {% endblock %} {% block body_content %}{% load i18n %}
   <div class="bg-white p-10 rounded shadow-lg w-1/2">
-    <h2 class="text-2xl font-bold mb-6 text-gray-900">Terms of Service</h2>
-    <h3 class="text-xl font-bold mb-4 text-gray-900">Data Collection</h3>
+    <h2 class="text-2xl font-bold mb-6 text-gray-900">
+      {% trans "terms-title" %}
+    </h2>
+    <h3 class="text-xl font-bold mb-4 text-gray-900">
+      {% trans "terms-data-title" %}
+    </h3>
+    <p class="text-gray-700 mb-6">{% trans "terms-data-content" %}</p>
+    <h3 class="text-xl font-bold mb-4 text-gray-900">
+      {% trans "terms-cookies-title" %}
+    </h3>
+    <p class="text-gray-700 mb-6">{% trans "terms-cookies-content" %}</p>
+    <h3 class="text-xl font-bold mb-4 text-gray-900">
+      {% trans "terms-usage-title" %}
+    </h3>
+    <p class="text-gray-700 mb-6">{% trans "terms-usage-content" %}</p>
+    <h3 class="text-xl font-bold mb-4 text-gray-900">
+      {% trans "terms-licence-title" %}
+    </h3>
     <p class="text-gray-700 mb-6">
-      We do not collect any personal data from our users.
-    </p>
-    <h3 class="text-xl font-bold mb-4 text-gray-900">Cookies</h3>
-    <p class="text-gray-700 mb-6">
-      We only use cookies to remember the state of buttons and do not use them
-      for any other purposes.
-    </p>
-    <h3 class="text-xl font-bold mb-4 text-gray-900">Usage</h3>
-    <p class="text-gray-700 mb-6">
-      Users are free to use our site for any legal purposes.
-    </p>
-    <h3 class="text-xl font-bold mb-4 text-gray-900">License</h3>
-    <p class="text-gray-700 mb-6">
-      All content on this site is licensed under the
+      {% trans "terms-licence-content" %}
       <a
         href="https://github.com/MorganKryze/Emails-Signature-Generator-Website/blob/main/LICENSE"
         class="underline text-blue-500"
       >
-        MIT license </a
+        {% trans "terms-licence-content-link" %}</a
       >.
     </p>
   </div>

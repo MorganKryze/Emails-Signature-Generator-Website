@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 23:22+0000\n"
+"POT-Creation-Date: 2024-02-08 23:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,7 @@ msgid "404-title"
 msgstr ""
 
 #: generator/templates/404.html:17 generator/templates/500.html:16
-#: generator/templates/guidelines.html:8
+#: generator/templates/guidelines.html:8 generator/templates/terms.html:8
 msgid "return-to-homepage"
 msgstr ""
 
@@ -93,4 +93,44 @@ msgstr ""
 
 #: generator/templates/guidelines.html:34
 msgid "guidelines-do-not-l-3"
+msgstr ""
+
+#: generator/templates/terms.html:15
+msgid "terms-title"
+msgstr ""
+
+#: generator/templates/terms.html:18
+msgid "terms-data-title"
+msgstr ""
+
+#: generator/templates/terms.html:20
+msgid "terms-data-content"
+msgstr ""
+
+#: generator/templates/terms.html:22
+msgid "terms-cookies-title"
+msgstr ""
+
+#: generator/templates/terms.html:24
+msgid "terms-cookies-content"
+msgstr ""
+
+#: generator/templates/terms.html:26
+msgid "terms-usage-title"
+msgstr ""
+
+#: generator/templates/terms.html:28
+msgid "terms-usage-content"
+msgstr ""
+
+#: generator/templates/terms.html:30
+msgid "terms-licence-title"
+msgstr ""
+
+#: generator/templates/terms.html:33
+msgid "terms-licence-content"
+msgstr ""
+
+#: generator/templates/terms.html:38
+msgid "terms-licence-content-link"
 msgstr ""
