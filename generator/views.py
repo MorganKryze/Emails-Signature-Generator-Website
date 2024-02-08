@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .forms import ConfigForm
 from django.http import HttpResponse
 
-from .tools import generate_html
+from .tools import generate_html, map_config_to_form
 
 import yaml
 
@@ -16,7 +16,12 @@ def index(request):
 
 def custom(request):
     if request.method == "POST":
-        form = ConfigForm(request.POST)
+        form = ConfigForm(request.POST, request.FILES)
+        config_file = request.FILES.get("config_file")
+        if config_file:
+            config_data = yaml.safe_load(config_file)
+            mapped_data = map_config_to_form(config_data)
+            form = ConfigForm(initial=mapped_data)
         if form.is_valid():
             global data_conf
             data_conf = {
@@ -80,6 +85,7 @@ def custom(request):
                     or "None",
                 },
             }
+
     else:
         form = ConfigForm()
 

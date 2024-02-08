@@ -2,6 +2,8 @@ from django import forms
 
 
 class ConfigForm(forms.Form):
+    config_file = forms.FileField(required=False)
+    
     signatureName = forms.CharField(
         label="Enter signature name", max_length=100, required=True
     )

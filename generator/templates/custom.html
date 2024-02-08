@@ -42,30 +42,22 @@
       }
     </style>
   </head>
-  <div id="notification" class="notification">
-    <p>Saving...</p>
-    <p>This may take few seconds.</p>
-  </div>
   <body class="bg-gray-100 flex items-center justify-center">
     {% comment %} The form sheet {% endcomment %}
     <div class="bg-white p-10 rounded shadow-lg w-1/2">
-      <form method="post" id="Generator">
+      <form method="post" id="Generator" enctype="multipart/form-data">
         {% csrf_token %} {% comment %} Title {% endcomment %}
         <div class="flex justify-between items-center mb-10">
           <h1 class="text-2xl font-bold text-gray-900">Customization</h1>
-          <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start"
-          >
-            <img
-              src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/upload.svg"
-              class="h-6 w-6 mr-2"
-              alt="Import icon"
-            />
+          <label class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start">
+            <input type="file" name="{{ form.config_file.html_name }}" accept=".yaml" style="display: none;" onchange="document.getElementById('Generator').submit();">
+            <img src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/upload.svg" class="h-6 w-6 mr-2" alt="Import icon" />
             Import config file
-          </button>
+          </label>
         </div>
         {% comment %} Signature name {% endcomment %}
         <div class="mb-10">
+          
           <input
             type="text"
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline required"
@@ -617,27 +609,5 @@
         event.preventDefault();
       }
     });
-
-
-    {% comment %} document
-      .querySelector('button[type="submit"]')
-      .addEventListener('click', function (event) {
-        event.preventDefault();
-
-        var notification = document.getElementById('notification');
-        notification.classList.remove('hidden');
-        notification.classList.add('active');
-
-        setTimeout(function () {
-          notification.classList.remove('active');
-          notification.classList.add('hidden');
-        }, 2000);
-
-        setTimeout(function () {
-          document.querySelector('form').submit();
-        }, 3000); 
-      }); 
-      // notification not working temporary removed
-      {% endcomment %}
   </script>
 </html>
