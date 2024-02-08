@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guidelines</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+    />
+    <link
+      rel="icon"
+      href="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/favicon.svg"
+    />
+  </head>
+  <header>
+    <div class="fixed top-0 left-0 m-4">
+      <a href="{% url 'home' %}">
+        <button
+          class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Back to Menu
+        </button>
+      </a>
+    </div>
+  </header>
+  <body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-10 rounded shadow-lg w-1/2">
+      <h2 class="text-2xl font-bold mb-6 text-gray-900">Guidelines</h2>
+      <div class="bg-green-100 p-4 rounded mb-6">
+        <h3 class="text-xl font-bold mb-4 text-gray-900">DO</h3>
+        <ul class="list-disc list-inside text-gray-700">
+          <li>
+            Use freely the generator for personal or professional purposes.
+          </li>
+          <li>
+            Save your configuration before generating the signature to avoid
+            issues.
+          </li>
+          <li>Report any bugs without taking advantage of them.</li>
+        </ul>
+      </div>
+      <div class="bg-red-100 p-4 rounded mb-6">
+        <h3 class="text-xl font-bold mb-4 text-gray-900">DO NOT</h3>
+        <ul class="list-disc list-inside text-gray-700">
+          <li>Change the keys of the config file.</li>
+          <li>Violate the terms of service.</li>
+          <li>Disrespect other users.</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <a
+      href="https://github.com/MorganKryze/Emails-Signature-Generator-Website/issues"
+      class="fixed bottom-0 left-0 m-4"
+      title="Report a bug"
+    >
+      <img
+        src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/bug.svg"
+        alt="Report a bug"
+      />
+    </a>
+  </footer>
+</html>

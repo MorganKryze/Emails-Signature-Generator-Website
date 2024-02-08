@@ -16,6 +16,9 @@ def index(request):
 def terms(request):
     return render(request, "terms.html")
 
+def guidelines(request):
+    return render(request, "guidelines.html")
+
 
 def custom(request):
     if request.method == "POST":
