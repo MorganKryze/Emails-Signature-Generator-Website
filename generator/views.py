@@ -27,7 +27,7 @@ def custom(request):
                     "organization_name": form.cleaned_data.get("organizationName"),
                     "organization_url": form.cleaned_data.get("organizationURL"),
                     "email": form.cleaned_data.get("email"),
-                    "additional": form.cleaned_data.get("additional", "None") or "None",
+                    "additional": form.cleaned_data.get("additional"),
                 },
                 "image": {
                     "is_image_selected": form.cleaned_data.get("isImageSelected", False)
@@ -36,38 +36,44 @@ def custom(request):
                     "image_type": form.cleaned_data.get("imageType", "photo") or "None",
                 },
                 "socials": {
-                    "web_checkbox": form.cleaned_data.get("webCheckbox", False)
+                    "is_web_selected": form.cleaned_data.get("isWebSelected", False)
                     or False,
                     "web_link": form.cleaned_data.get("webLink", "None") or "None",
-                    "github_checkbox": form.cleaned_data.get("githubCheckbox", False)
+                    "is_github_selected": form.cleaned_data.get(
+                        "isGithubSelected", False
+                    )
                     or False,
                     "github_link": form.cleaned_data.get("githubLink", "None")
                     or "None",
-                    "instagram_checkbox": form.cleaned_data.get(
-                        "instagramCheckbox", False
+                    "is_instagram_selected": form.cleaned_data.get(
+                        "isInstagramSelected", False
                     )
                     or False,
                     "instagram_link": form.cleaned_data.get("instagramLink", "None")
                     or "None",
-                    "linkedin_checkbox": form.cleaned_data.get(
-                        "linkedinCheckbox", False
+                    "is_linkedin_selected": form.cleaned_data.get(
+                        "isLinkedinSelected", False
                     )
                     or False,
                     "linkedin_link": form.cleaned_data.get("linkedinLink", "None")
                     or "None",
-                    "slack_checkbox": form.cleaned_data.get("slackCheckbox", False)
+                    "is_slack_selected": form.cleaned_data.get("isSlackSelected", False)
                     or False,
                     "slack_link": form.cleaned_data.get("slackLink", "None") or "None",
-                    "youtube_checkbox": form.cleaned_data.get("youtubeCheckbox", False)
+                    "is_youtube_selected": form.cleaned_data.get(
+                        "isYoutubeSelected", False
+                    )
                     or False,
                     "youtube_link": form.cleaned_data.get("youtubeLink", "None")
                     or "None",
-                    "twitter_checkbox": form.cleaned_data.get("twitterCheckbox", False)
+                    "is_twitter_selected": form.cleaned_data.get(
+                        "isTwitterSelected", False
+                    )
                     or False,
                     "twitter_link": form.cleaned_data.get("twitterLink", "None")
                     or "None",
-                    "facebook_checkbox": form.cleaned_data.get(
-                        "facebookCheckbox", False
+                    "is_facebook_selected": form.cleaned_data.get(
+                        "isFacebookSelected", False
                     )
                     or False,
                     "facebook_link": form.cleaned_data.get("facebookLink", "None")

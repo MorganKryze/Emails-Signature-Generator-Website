@@ -21,7 +21,7 @@ class ConfigForm(forms.Form):
     additional = forms.CharField(
         label="Enter organization address, phone number, quote, etc.",
         widget=forms.Textarea,
-        required=False,
+        required=True,
     )
 
     isImageSelected = forms.BooleanField(required=False)
