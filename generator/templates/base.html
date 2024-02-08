@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Signature Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+    />
+    <link
+      rel="icon"
+      href="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/favicon.svg"
+    />
+    {% block head_content %} {% endblock %}
+  </head>
+  <header>{% block header_content %} {% endblock %}</header>
+
+  {% block body_content %} {% endblock %}
+
+  <footer>
+    {% block footer_content %} {% endblock %}
+    <a
+      href="https://github.com/MorganKryze/Emails-Signature-Generator-Website/issues"
+      class="fixed bottom-0 left-0 m-4"
+      title="Report a bug"
+    >
+      <img
+        src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/bug.svg"
+        alt="Report a bug"
+      />
+    </a>
+  </footer>
+  {% block scripts %} {% endblock %}
+</html>

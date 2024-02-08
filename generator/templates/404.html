@@ -1,41 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 Page Not Found</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
-      rel="stylesheet"
+{% extends "base.html" %} {% block body_content %}
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+  <div class="bg-white p-10 rounded shadow-lg w-1/2 text-center">
+    <h2 class="text-2xl font-bold mb-6 text-gray-900">
+      Oops! The page you're looking for does not exist.
+    </h2>
+    <img
+      src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/404.svg"
+      class="w-80 h-80 mb-8 mt-8 mx-auto"
+      alt="External link"
     />
-    <link
-      rel="icon"
-      href="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/favicon.svg"
-    />
-  </head>
-  <footer>
-    <a href="https://github.com/MorganKryze/Emails-Signature-Generator-Website/issues" class="fixed bottom-0 left-0 m-4" title="Report a bug">
-      <img src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/bug.svg" alt="Report a bug" />
-    </a>
-  </footer>
-  <body class="bg-gray-100 flex items-center justify-center h-screen">
-    <div class="bg-white p-10 rounded shadow-lg w-1/2 text-center">
-      <h2 class="text-2xl font-bold mb-6 text-gray-900">
-        Oops! The page you're looking for does not exist.
-      </h2>
-      <img
-        src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/404.svg"
-        class="w-80 h-80 mb-8 mt-8 mx-auto"
-        alt="External link"
-      />
-      <div class="flex justify-center">
-        <a
-          href="{% url 'home' %}"
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        >
-          Return to Homepage
-        </a>
-      </div>
+    <div class="flex justify-center">
+      <a
+        href="{% url 'home' %}"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      >
+        Return to Homepage
+      </a>
     </div>
-  </body>
-</html>
+  </div>
+</body>
+{% endblock %}

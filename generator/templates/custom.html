@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Email Signature Generator</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="icon"
-      href="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/favicon.svg"
-    />
-    <style>
+{% extends "base.html" %}
+{% block head_content %}
+<style>
       body {
         min-height: 100vh;
         overflow-y: auto;
@@ -41,23 +29,21 @@
         color: red;
       }
     </style>
-  </head>
-  <header>
-    <div class="fixed top-0 left-0 m-4">
+{% endblock %}
+
+{% block header_content%}
+<div class="fixed top-0 left-0 m-4">
       <a href="{% url 'home' %}">
         <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
           Back to Menu
         </button>
       </a>
     </div>
- </header>
- <footer>
-    <a href="https://github.com/MorganKryze/Emails-Signature-Generator-Website/issues" class="fixed bottom-0 left-0 m-4" title="Report a bug">
-      <img src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/bug.svg" alt="Report a bug" />
-    </a>
-  </footer>
-  <body class="bg-gray-100 flex items-center justify-center">
-    {% comment %} The form sheet {% endcomment %}
+{% endblock %}
+
+{% block body_content %}
+<body class="bg-gray-100 flex items-center justify-center">
+{% comment %} The form sheet {% endcomment %}
     <div class="bg-white p-10 rounded shadow-lg w-1/2">
       <form method="post" id="Generator" enctype="multipart/form-data">
         {% csrf_token %} {% comment %} Title {% endcomment %}
@@ -477,8 +463,14 @@
       </div>
     </div>
   </body>
-  <script>
-    function toggleDisplay() {
+{% endblock %}
+
+{% block footer_content %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+  function toggleDisplay() {
       var isChecked = document.getElementById('isImageSelected').checked;
 
       var imageField = document.getElementById('imageField');
@@ -632,4 +624,4 @@
       }
     });
   </script>
-</html>
+{% endblock %}

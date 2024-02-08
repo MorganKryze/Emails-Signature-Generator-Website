@@ -1,60 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Email Signature Generator</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
-    />
-    <link
-      rel="icon"
-      href="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/favicon.svg"
-    />
-  </head>
-  <body class="bg-gray-100 flex items-center justify-center h-screen">
-    <div class="bg-white p-10 rounded shadow-lg w-1/2">
-      <h2 class="text-2xl font-bold mb-6 text-gray-900">
-        Email Signature Generator
-      </h2>
-      <p class="text-gray-700 mb-6">
-        Create professional or personal email signatures in seconds. Customize
-        information, images, colors and fonts to match your brand.
-      </p>
-      <p class="text-gray-700 mb-6">
-        Please take time to read the guidelines before using the generator. Do
-        not hesitate to report any bugs or improvements you would like to see.
-      </p>
-      <div class="flex justify-center">
-        <a
-          href="{% url 'custom' %}"
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-white"
-          >Get Started</a
-        >
-      </div>
-      <div class="container mx-auto text-center mt-6 text-gray-500 text-shadow">
-        <a href="{% url 'guidelines' %}">Guidelines</a>
-        &bull;
-        <a href="{% url 'terms' %}">Terms</a>
-        &bull;
-        <a href="https://github.com/MorganKryze/Emails-Signature-Generator-Website">Source Code</a>
-        &bull;
-        <a href="https://github.com/MorganKryze">&copy; MorganKryze</a>
-      </div>
+{% extends "base.html" %} {% block body_content %}
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+  <div class="bg-white p-10 rounded shadow-lg w-1/2">
+    <h2 class="text-2xl font-bold mb-6 text-gray-900">
+      Email Signature Generator
+    </h2>
+    <p class="text-gray-700 mb-6">
+      Create professional or personal email signatures in seconds. Customize
+      information, images, colors and fonts to match your brand.
+    </p>
+    <p class="text-gray-700 mb-6">
+      Please take time to read the guidelines before using the generator. Do not
+      hesitate to report any bugs or improvements you would like to see.
+    </p>
+    <div class="flex justify-center">
+      <a
+        href="{% url 'custom' %}"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-white"
+        >Get Started</a
+      >
     </div>
+    <div class="container mx-auto text-center mt-6 text-gray-500 text-shadow">
+      <a href="{% url 'guidelines' %}">Guidelines</a>
+      &bull;
+      <a href="{% url 'terms' %}">Terms</a>
+      &bull;
+      <a
+        href="https://github.com/MorganKryze/Emails-Signature-Generator-Website"
+        >Source Code</a
+      >
+      &bull;
+      <a href="https://github.com/MorganKryze">&copy; MorganKryze</a>
     </div>
-  </body>
-  <footer>
-    <a
-      href="https://github.com/MorganKryze/Emails-Signature-Generator-Website/issues"
-      class="fixed bottom-0 left-0 m-4"
-      title="Report a bug"
-    >
-      <img
-        src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/bug.svg"
-        alt="Report a bug"
-      />
-    </a>
-  </footer>
-</html>
+  </div>
+</body>
+{% endblock %}
