@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 23:56+0000\n"
+"POT-Creation-Date: 2024-02-08 23:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: MorganKryze morgan@kodelab.fr\n"
 "Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
@@ -146,6 +146,22 @@ msgstr ""
 
 #: generator/templates/custom.html:396
 msgid "custom-socials-facebook-title"
+msgstr ""
+
+#: generator/templates/custom.html:424
+msgid "custom-btn-save"
+msgstr ""
+
+#: generator/templates/custom.html:440
+msgid "custom-btn-preview"
+msgstr ""
+
+#: generator/templates/custom.html:454
+msgid "custom-btn-download-signature"
+msgstr ""
+
+#: generator/templates/custom.html:467
+msgid "custom-btn-download-config"
 msgstr ""
 
 #: generator/templates/guidelines.html:15
