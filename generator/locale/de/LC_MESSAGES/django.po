@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 23:59+0000\n"
+"POT-Creation-Date: 2024-02-09 00:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: MorganKryze morgan@kodelab.fr\n"
 "Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
@@ -33,6 +33,78 @@ msgstr "Spanisch"
 #: config/settings.py:123
 msgid "German"
 msgstr "Deutsch"
+
+#: generator/forms.py:9
+msgid "Enter signature name"
+msgstr ""
+
+#: generator/forms.py:13
+msgid "Enter your full name"
+msgstr ""
+
+#: generator/forms.py:17
+msgid "Enter your job title"
+msgstr ""
+
+#: generator/forms.py:21
+msgid "Enter your organization name"
+msgstr ""
+
+#: generator/forms.py:25
+msgid "Enter your organization URL"
+msgstr ""
+
+#: generator/forms.py:28
+msgid "Enter your email address"
+msgstr ""
+
+#: generator/forms.py:31
+msgid "Enter organization address, phone number, quote, etc."
+msgstr ""
+
+#: generator/forms.py:38
+msgid "Enter image URL"
+msgstr ""
+
+#: generator/forms.py:41
+msgid "Photo"
+msgstr ""
+
+#: generator/forms.py:42
+msgid "Logo"
+msgstr ""
+
+#: generator/forms.py:52
+msgid "Enter Website URL"
+msgstr ""
+
+#: generator/forms.py:55
+msgid "Enter GitHub URL"
+msgstr ""
+
+#: generator/forms.py:58
+msgid "Enter Instagram URL"
+msgstr ""
+
+#: generator/forms.py:61
+msgid "Enter LinkedIn URL"
+msgstr ""
+
+#: generator/forms.py:64
+msgid "Enter Slack URL"
+msgstr ""
+
+#: generator/forms.py:67
+msgid "Enter YouTube URL"
+msgstr ""
+
+#: generator/forms.py:70
+msgid "Enter Twitter URL"
+msgstr ""
+
+#: generator/forms.py:73
+msgid "Enter Facebook URL"
+msgstr ""
 
 #: generator/templates/404.html:5
 msgid "404-title"
