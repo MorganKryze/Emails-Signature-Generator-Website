@@ -15,129 +15,142 @@
     />
     {% block head_content %} {% endblock %}
   </head>
-  <header>{% block header_content %} {% endblock %}</header>
 
-  {% block body_content %} {% endblock %}
+  <header>
+    {% block header_content %} {% endblock %}
+    <div class="flex justify-end items-end fixed top-0 right-0 m-4">
+      <div class="relative inline-block text-left">
+        <button
+          type="button"
+          id="options-menu"
+          aria-haspopup="true"
+          aria-expanded="true"
+          class="focus:outline-none"
+        >
+          <div class="flex items-center">
+            <span class="mr-2">{% trans "Language" %}</span>
+            <img
+              src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/globe.svg"
+              alt="Report a bug"
+            />
+          </div>
+        </button>
+        <div
+          class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden"
+          id="dropdown"
+        >
+          <div
+            class="py-1"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="options-menu"
+          >
+            <form action="{% url 'set_language' %}" method="post">
+              {% csrf_token %}
+              <input
+                name="next"
+                type="hidden"
+                value="{{ request.get_full_path }}"
+              />
+              <button
+                type="submit"
+                name="language"
+                value="en"
+                class="block w-full px-4 py-1 text-base text-gray-700 hover:bg-gray-100 hover:text-gray-900 text-left"
+                role="menuitem"
+              >
+                {% trans "English" %}
+              </button>
+            </form>
+            <form action="{% url 'set_language' %}" method="post">
+              {% csrf_token %}
+              <input
+                name="next"
+                type="hidden"
+                value="{{ request.get_full_path }}"
+              />
+              <button
+                type="submit"
+                name="language"
+                value="fr"
+                class="block w-full px-4 py-1 text-base text-gray-700 hover:bg-gray-100 hover:text-gray-900 text-left"
+                role="menuitem"
+              >
+                {% trans "French" %}
+              </button>
+            </form>
+            <form action="{% url 'set_language' %}" method="post">
+              {% csrf_token %}
+              <input
+                name="next"
+                type="hidden"
+                value="{{ request.get_full_path }}"
+              />
+              <button
+                type="submit"
+                name="language"
+                value="es"
+                class="block w-full px-4 py-1 text-base text-gray-700 hover:bg-gray-100 hover:text-gray-900 text-left"
+                role="menuitem"
+              >
+                {% trans "Spanish" %}
+              </button>
+            </form>
+            <form action="{% url 'set_language' %}" method="post">
+              {% csrf_token %}
+              <input
+                name="next"
+                type="hidden"
+                value="{{ request.get_full_path }}"
+              />
+              <button
+                type="submit"
+                name="language"
+                value="de"
+                class="block w-full px-4 py-1 text-base text-gray-700 hover:bg-gray-100 hover:text-gray-900 text-left"
+                role="menuitem"
+              >
+                {% trans "German" %}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <body>
+    {% block body_content %} {% endblock %}
+  </body>
 
   <footer>
     {% block footer_content %} {% endblock %}
     <a
       href="https://github.com/MorganKryze/Emails-Signature-Generator-Website/issues"
       class="fixed bottom-0 left-0 m-4"
-      title="{% trans "report-a-bug" %}"
+      title="{% trans 'report-a-bug' %}"
     >
       <img
         src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/bug.svg"
-        alt="Report a bug"
+        alt="{% trans 'Report a bug' %}"
       />
     </a>
-    <div class="relative inline-block text-left ml-4">
-      <div>
-        <button
-          type="button"
-          id="options-menu"
-          aria-haspopup="true"
-          aria-expanded="true"
-        >
-          {% trans "Language" %}
-        </button>
-      </div>
-      <div
-        class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden"
-        id="dropdown"
-      >
-        <div
-          class="py-1"
-          role="menu"
-          aria-orientation="vertical"
-          aria-labelledby="options-menu"
-        >
-          <form action="{% url 'set_language' %}" method="post">
-            {% csrf_token %}
-            <input
-              name="next"
-              type="hidden"
-              value="{{ request.get_full_path }}"
-            />
-            <button
-              type="submit"
-              name="language"
-              value="en"
-              class="block w-full px-4 py-1 text-base text-gray-700 hover:bg-gray-100 hover:text-gray-900 text-left"
-              role="menuitem"
-            >
-              {% trans "English" %}
-            </button>
-          </form>
-          <form action="{% url 'set_language' %}" method="post">
-            {% csrf_token %}
-            <input
-              name="next"
-              type="hidden"
-              value="{{ request.get_full_path }}"
-            />
-            <button
-              type="submit"
-              name="language"
-              value="fr"
-              class="block w-full px-4 py-1 text-base text-gray-700 hover:bg-gray-100 hover:text-gray-900 text-left"
-              role="menuitem"
-            >
-              {% trans "French" %}
-            </button>
-          </form>
-          <form action="{% url 'set_language' %}" method="post">
-            {% csrf_token %}
-            <input
-              name="next"
-              type="hidden"
-              value="{{ request.get_full_path }}"
-            />
-            <button
-              type="submit"
-              name="language"
-              value="es"
-              class="block w-full px-4 py-1 text-base text-gray-700 hover:bg-gray-100 hover:text-gray-900 text-left"
-              role="menuitem"
-            >
-              {% trans "Spanish" %}
-            </button>
-          </form>
-          <form action="{% url 'set_language' %}" method="post">
-            {% csrf_token %}
-            <input
-              name="next"
-              type="hidden"
-              value="{{ request.get_full_path }}"
-            />
-            <button
-              type="submit"
-              name="language"
-              value="de"
-              class="block w-full px-4 py-1 text-base text-gray-700 hover:bg-gray-100 hover:text-gray-900 text-left"
-              role="menuitem"
-            >
-              {% trans "German" %}
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
   </footer>
+
   {% block scripts %} {% endblock %}
   <script>
     var button = document.getElementById('options-menu');
     var dropdown = document.getElementById('dropdown');
-    
+
     button.addEventListener('click', function (event) {
       event.stopPropagation();
       dropdown.classList.toggle('hidden');
     });
-  
+
     dropdown.addEventListener('click', function (event) {
       event.stopPropagation();
     });
-  
+
     document.addEventListener('click', function () {
       dropdown.classList.add('hidden');
     });
