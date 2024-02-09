@@ -70,7 +70,7 @@
     <br>
     <br>
     <div class="signature">
-        {% if image.is_image_selected %}
+        {% if image.is_image_selected and image.image_link != "None" %}
         <div class="logo">
             <a href="{{ personal_information.organization_url }}">
             {% if image.image_type == 'photo' or image.image_type == 'Photo' %}
