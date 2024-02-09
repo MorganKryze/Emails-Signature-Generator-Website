@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-09 00:59+0000\n"
+"POT-Creation-Date: 2024-02-09 01:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: MorganKryze morgan@kodelab.fr\n"
 "Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings.py:120 generator/templates/base.html:37
+#: config/settings.py:120 generator/templates/base.html:62
 msgid "English"
 msgstr "Anglais"
 
-#: config/settings.py:121 generator/templates/base.html:44
+#: config/settings.py:121 generator/templates/base.html:79
 msgid "French"
 msgstr "Français"
 
-#: config/settings.py:122 generator/templates/base.html:51
+#: config/settings.py:122 generator/templates/base.html:96
 msgid "Spanish"
 msgstr "Espagnol"
 
-#: config/settings.py:123 generator/templates/base.html:58
+#: config/settings.py:123 generator/templates/base.html:113
 msgid "German"
 msgstr "Allemand"
 
@@ -134,9 +134,19 @@ msgstr ""
 msgid "website-title"
 msgstr "Générateur de signatures d'e-mails"
 
-#: generator/templates/base.html:29
+#: generator/templates/base.html:31
 msgid "Language"
 msgstr "Langage"
+
+#: generator/templates/base.html:131
+msgid "report-a-bug"
+msgstr "Signaler un bug"
+
+#: generator/templates/base.html:135
+#, fuzzy
+#| msgid "report-a-bug"
+msgid "Report a bug"
+msgstr "Signaler un bug"
 
 #: generator/templates/custom.html:53
 msgid "custom-title"
@@ -352,6 +362,3 @@ msgstr "Tout le contenu de ce site est sous licence"
 #: generator/templates/terms.html:38
 msgid "terms-licence-content-link"
 msgstr "Licence MIT"
-
-#~ msgid "report-a-bug"
-#~ msgstr "Signaler un bug"
