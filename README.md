@@ -84,6 +84,16 @@ To understand the project structure, you can refer to the [STRUCTURE.md](STRUCTU
 - Spanish
 - German
 
+## Future improvements
+
+- Custom the font
+- Custom the color
+- Custom the html template
+- Add more social media
+- Add more email clients
+- Add more languages
+- Add informative popups or banners for issues or warnings
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
