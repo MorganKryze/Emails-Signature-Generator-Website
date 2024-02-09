@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-09 23:08+0000\n"
+"POT-Creation-Date: 2024-02-09 23:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: MorganKryze morgan@kodelab.fr\n"
 "Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
@@ -307,19 +307,23 @@ msgstr ""
 msgid "guidelines-do-l-3"
 msgstr "Reporta cualquier error sin aprovecharte de ellos."
 
-#: generator/templates/guidelines.html:29
+#: generator/templates/guidelines.html:25
+msgid "guidelines-do-l-4"
+msgstr "La imagen debe provenir de una URL pública. No puedes cargar un archivo de imagen."
+
+#: generator/templates/guidelines.html:30
 msgid "guidelines-title-do-not"
 msgstr "NO HACER"
 
-#: generator/templates/guidelines.html:32
+#: generator/templates/guidelines.html:33
 msgid "guidelines-do-not-l-1"
 msgstr "Cambia las claves del archivo de configuración."
 
-#: generator/templates/guidelines.html:33
+#: generator/templates/guidelines.html:34
 msgid "guidelines-do-not-l-2"
 msgstr "Viola los términos de servicio."
 
-#: generator/templates/guidelines.html:34
+#: generator/templates/guidelines.html:35
 msgid "guidelines-do-not-l-3"
 msgstr "Falta el respeto a otros usuarios."
 
