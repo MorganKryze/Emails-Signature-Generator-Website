@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-09 00:11+0000\n"
+"POT-Creation-Date: 2024-02-09 00:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: MorganKryze morgan@kodelab.fr\n"
 "Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
@@ -17,19 +17,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: config/settings.py:120
+
+#: config/settings.py:120 generator/templates/base.html:69
 msgid "English"
 msgstr "Englisch"
 
-#: config/settings.py:121
+#: config/settings.py:121 generator/templates/base.html:86
 msgid "French"
 msgstr "Französisch"
 
-#: config/settings.py:122
+#: config/settings.py:122 generator/templates/base.html:103
 msgid "Spanish"
 msgstr "Spanisch"
 
-#: config/settings.py:123
+#: config/settings.py:123 generator/templates/base.html:120
 msgid "German"
 msgstr "Deutsch"
 
@@ -59,7 +60,8 @@ msgstr "Geben Sie Ihre E-Mail-Adresse ein"
 
 #: generator/forms.py:31
 msgid "Enter organization address, phone number, quote, etc."
-msgstr "Geben Sie die Adresse Ihrer Organisation, Telefonnummer, Angebot usw. ein"
+msgstr ""
+"Geben Sie die Adresse Ihrer Organisation, Telefonnummer, Angebot usw. ein"
 
 #: generator/forms.py:38
 msgid "Enter image URL"
@@ -118,12 +120,15 @@ msgstr "Zur Startseite zurückkehren"
 #: generator/templates/500.html:6
 msgid "500-paragraph-1"
 msgstr ""
-"Oops! Auf unserer Seite ist etwas schiefgelaufen. Versuchen Sie es später erneut oder melden Sie dies den Betreibern!"
+"Oops! Auf unserer Seite ist etwas schiefgelaufen. Versuchen Sie es später "
+"erneut oder melden Sie dies den Betreibern!"
 
 #: generator/templates/500.html:9
 msgid "500-paragraph-2"
 msgstr ""
-"Wenn Sie versucht haben, eine E-Mail-Signatur zu generieren, sollten Sie Ihre Arbeit speichern, bevor Sie etwas herunterladen oder eine Vorschau anzeigen."
+"Wenn Sie versucht haben, eine E-Mail-Signatur zu generieren, sollten Sie "
+"Ihre Arbeit speichern, bevor Sie etwas herunterladen oder eine Vorschau "
+"anzeigen."
 
 #: generator/templates/base.html:7 generator/templates/index.html:5
 msgid "website-title"
@@ -132,6 +137,10 @@ msgstr "E-Mail-Signaturgenerator"
 #: generator/templates/base.html:27
 msgid "report-a-bug"
 msgstr "Einen Fehler melden"
+
+#: generator/templates/base.html:42
+msgid "Language"
+msgstr "Sprache"
 
 #: generator/templates/custom.html:53
 msgid "custom-title"
@@ -247,11 +256,14 @@ msgstr "MACHEN"
 
 #: generator/templates/guidelines.html:22
 msgid "guidelines-do-l-1"
-msgstr "Verwenden Sie den Generator frei für persönliche oder berufliche Zwecke."
+msgstr ""
+"Verwenden Sie den Generator frei für persönliche oder berufliche Zwecke."
 
 #: generator/templates/guidelines.html:23
 msgid "guidelines-do-l-2"
-msgstr "Speichern Sie Ihre Konfiguration, bevor Sie die Signatur generieren, um Probleme zu vermeiden."
+msgstr ""
+"Speichern Sie Ihre Konfiguration, bevor Sie die Signatur generieren, um "
+"Probleme zu vermeiden."
 
 #: generator/templates/guidelines.html:24
 msgid "guidelines-do-l-3"
@@ -276,12 +288,16 @@ msgstr "Respektieren Sie andere Benutzer."
 #: generator/templates/index.html:7
 msgid "index-paragraph-1"
 msgstr ""
-"Erstellen Sie professionelle oder persönliche E-Mail-Signaturen in Sekundenschnelle. Passen Sie Informationen, Bilder, Farben und Schriftarten an, um Ihre Marke anzupassen."
+"Erstellen Sie professionelle oder persönliche E-Mail-Signaturen in "
+"Sekundenschnelle. Passen Sie Informationen, Bilder, Farben und Schriftarten "
+"an, um Ihre Marke anzupassen."
 
 #: generator/templates/index.html:8
 msgid "index-paragraph-2"
 msgstr ""
-"Bitte nehmen Sie sich Zeit, um die Richtlinien zu lesen, bevor Sie den Generator verwenden. Zögern Sie nicht, Fehler zu melden oder Verbesserungen vorzuschlagen."
+"Bitte nehmen Sie sich Zeit, um die Richtlinien zu lesen, bevor Sie den "
+"Generator verwenden. Zögern Sie nicht, Fehler zu melden oder Verbesserungen "
+"vorzuschlagen."
 
 #: generator/templates/index.html:13
 msgid "index-get-started"
@@ -318,7 +334,8 @@ msgstr "Cookies"
 #: generator/templates/terms.html:24
 msgid "terms-cookies-content"
 msgstr ""
-"Wir verwenden nur Cookies, um den Zustand von Schaltflächen zu speichern und verwenden sie nicht für andere Zwecke."
+"Wir verwenden nur Cookies, um den Zustand von Schaltflächen zu speichern und "
+"verwenden sie nicht für andere Zwecke."
 
 #: generator/templates/terms.html:26
 msgid "terms-usage-title"

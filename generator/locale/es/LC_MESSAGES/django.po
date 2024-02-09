@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-09 00:11+0000\n"
+"POT-Creation-Date: 2024-02-09 00:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: MorganKryze morgan@kodelab.fr\n"
 "Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
@@ -17,19 +17,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: config/settings.py:120
+
+#: config/settings.py:120 generator/templates/base.html:69
 msgid "English"
 msgstr "Inglés"
 
-#: config/settings.py:121
+#: config/settings.py:121 generator/templates/base.html:86
 msgid "French"
 msgstr "Francés"
 
-#: config/settings.py:122
+#: config/settings.py:122 generator/templates/base.html:103
 msgid "Spanish"
 msgstr "Español"
 
-#: config/settings.py:123
+#: config/settings.py:123 generator/templates/base.html:120
 msgid "German"
 msgstr "Alemán"
 
@@ -59,7 +60,8 @@ msgstr "Ingrese su dirección de correo electrónico"
 
 #: generator/forms.py:31
 msgid "Enter organization address, phone number, quote, etc."
-msgstr "Ingrese la dirección de su organización, número de teléfono, cita, etc."
+msgstr ""
+"Ingrese la dirección de su organización, número de teléfono, cita, etc."
 
 #: generator/forms.py:38
 msgid "Enter image URL"
@@ -135,6 +137,10 @@ msgstr "Generador de Firmas de Correo Electrónico"
 #: generator/templates/base.html:27
 msgid "report-a-bug"
 msgstr "Reportar un error"
+
+#: generator/templates/base.html:42
+msgid "Language"
+msgstr "Idioma"
 
 #: generator/templates/custom.html:53
 msgid "custom-title"
@@ -288,8 +294,7 @@ msgstr ""
 msgid "index-paragraph-2"
 msgstr ""
 "Por favor, tómate un tiempo para leer las directrices antes de usar el "
-"generador. No dudes en reportar cualquier error o mejora que te gustaría "
-"ver."
+"generador. No dudes en reportar cualquier error o mejora que te gustaría ver."
 
 #: generator/templates/index.html:13
 msgid "index-get-started"
@@ -335,7 +340,9 @@ msgstr "Uso"
 
 #: generator/templates/terms.html:28
 msgid "terms-usage-content"
-msgstr "Los usuarios son libres de utilizar nuestro sitio para cualquier propósito legal."
+msgstr ""
+"Los usuarios son libres de utilizar nuestro sitio para cualquier propósito "
+"legal."
 
 #: generator/templates/terms.html:30
 msgid "terms-licence-title"

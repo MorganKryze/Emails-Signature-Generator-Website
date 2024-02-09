@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-09 00:11+0000\n"
+"POT-Creation-Date: 2024-02-09 00:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: MorganKryze morgan@kodelab.fr\n"
 "Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings.py:120
+#: config/settings.py:120 generator/templates/base.html:69
 msgid "English"
 msgstr "Anglais"
 
-#: config/settings.py:121
+#: config/settings.py:121 generator/templates/base.html:86
 msgid "French"
 msgstr "Français"
 
-#: config/settings.py:122
+#: config/settings.py:122 generator/templates/base.html:103
 msgid "Spanish"
 msgstr "Espagnol"
 
-#: config/settings.py:123
+#: config/settings.py:123 generator/templates/base.html:120
 msgid "German"
 msgstr "Allemand"
 
@@ -60,7 +60,8 @@ msgstr "Entrez votre adresse e-mail"
 
 #: generator/forms.py:31
 msgid "Enter organization address, phone number, quote, etc."
-msgstr "Entrez l'adresse de l'organisation, le numéro de téléphone, la citation, etc."
+msgstr ""
+"Entrez l'adresse de l'organisation, le numéro de téléphone, la citation, etc."
 
 #: generator/forms.py:38
 msgid "Enter image URL"
@@ -119,12 +120,15 @@ msgstr "Retour à la page d'accueil"
 #: generator/templates/500.html:6
 msgid "500-paragraph-1"
 msgstr ""
-"Oops! Quelque chose s'est mal passé de notre côté. Peut-être réessayer plus tard ou signaler ceci aux responsables !"
+"Oops! Quelque chose s'est mal passé de notre côté. Peut-être réessayer plus "
+"tard ou signaler ceci aux responsables !"
 
 #: generator/templates/500.html:9
 msgid "500-paragraph-2"
 msgstr ""
-"Si vous essayiez de générer une signature d'e-mail, veuillez envisager de sauvegarder votre travail avant d'essayer de télécharger ou de prévisualiser quoi que ce soit."
+"Si vous essayiez de générer une signature d'e-mail, veuillez envisager de "
+"sauvegarder votre travail avant d'essayer de télécharger ou de prévisualiser "
+"quoi que ce soit."
 
 #: generator/templates/base.html:7 generator/templates/index.html:5
 msgid "website-title"
@@ -133,6 +137,10 @@ msgstr "Générateur de signatures d'e-mails"
 #: generator/templates/base.html:27
 msgid "report-a-bug"
 msgstr "Signaler un bug"
+
+#: generator/templates/base.html:42
+msgid "Language"
+msgstr "Langage"
 
 #: generator/templates/custom.html:53
 msgid "custom-title"
@@ -248,11 +256,14 @@ msgstr "FAIRE"
 
 #: generator/templates/guidelines.html:22
 msgid "guidelines-do-l-1"
-msgstr "Utilisez librement le générateur à des fins personnelles ou professionnelles."
+msgstr ""
+"Utilisez librement le générateur à des fins personnelles ou professionnelles."
 
 #: generator/templates/guidelines.html:23
 msgid "guidelines-do-l-2"
-msgstr "Sauvegardez votre configuration avant de générer la signature pour éviter les problèmes."
+msgstr ""
+"Sauvegardez votre configuration avant de générer la signature pour éviter "
+"les problèmes."
 
 #: generator/templates/guidelines.html:24
 msgid "guidelines-do-l-3"
@@ -276,11 +287,16 @@ msgstr "Manquez de respect envers les autres utilisateurs."
 
 #: generator/templates/index.html:7
 msgid "index-paragraph-1"
-msgstr "Créez des signatures d'e-mail professionnelles ou personnelles en quelques secondes. Personnalisez les informations, les images, les couleurs et les polices pour correspondre à votre marque !"
+msgstr ""
+"Créez des signatures d'e-mail professionnelles ou personnelles en quelques "
+"secondes. Personnalisez les informations, les images, les couleurs et les "
+"polices pour correspondre à votre marque !"
 
 #: generator/templates/index.html:8
 msgid "index-paragraph-2"
-msgstr "Prenez le temps de lire les directives avant d'utiliser le générateur. N'hésitez pas à signaler tout bug ou amélioration que vous souhaitez voir."
+msgstr ""
+"Prenez le temps de lire les directives avant d'utiliser le générateur. "
+"N'hésitez pas à signaler tout bug ou amélioration que vous souhaitez voir."
 
 #: generator/templates/index.html:13
 msgid "index-get-started"
@@ -308,7 +324,8 @@ msgstr "Collecte de données"
 
 #: generator/templates/terms.html:20
 msgid "terms-data-content"
-msgstr "Nous ne collectons aucune donnée personnelle auprès de nos utilisateurs."
+msgstr ""
+"Nous ne collectons aucune donnée personnelle auprès de nos utilisateurs."
 
 #: generator/templates/terms.html:22
 msgid "terms-cookies-title"
@@ -316,7 +333,9 @@ msgstr "Cookies"
 
 #: generator/templates/terms.html:24
 msgid "terms-cookies-content"
-msgstr "Nous utilisons uniquement des cookies pour stocker l'état des boutons et ne les utilisons pas à d'autres fins."
+msgstr ""
+"Nous utilisons uniquement des cookies pour stocker l'état des boutons et ne "
+"les utilisons pas à d'autres fins."
 
 #: generator/templates/terms.html:26
 msgid "terms-usage-title"

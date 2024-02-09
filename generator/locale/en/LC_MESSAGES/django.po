@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-09 00:07+0000\n"
+"POT-Creation-Date: 2024-02-09 00:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: MorganKryze morgan@kodelab.fr\n"
 "Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
@@ -18,21 +18,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings.py:120
+#: config/settings.py:120 generator/templates/base.html:69
 msgid "English"
 msgstr "English"
 
-#: config/settings.py:121
+#: config/settings.py:121 generator/templates/base.html:86
 msgid "French"
 msgstr "French"
 
-#: config/settings.py:122
+#: config/settings.py:122 generator/templates/base.html:103
 msgid "Spanish"
 msgstr "Spanish"
 
-#: config/settings.py:123
+#: config/settings.py:123 generator/templates/base.html:120
 msgid "German"
-msgstr "Spanish"
+msgstr "German"
 
 #: generator/forms.py:9
 msgid "Enter signature name"
@@ -135,6 +135,10 @@ msgstr "Emails Signature Generator"
 #: generator/templates/base.html:27
 msgid "report-a-bug"
 msgstr "Report a bug"
+
+#: generator/templates/base.html:42
+msgid "Language"
+msgstr "Language"
 
 #: generator/templates/custom.html:53
 msgid "custom-title"
