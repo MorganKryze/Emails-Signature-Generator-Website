@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-09 01:22+0000\n"
+"POT-Creation-Date: 2024-02-09 01:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: MorganKryze morgan@kodelab.fr\n"
 "Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings.py:120 generator/templates/base.html:62
+#: config/settings.py:120 generator/templates/base.html:66
 msgid "English"
 msgstr "Inglés"
 
-#: config/settings.py:121 generator/templates/base.html:79
+#: config/settings.py:121 generator/templates/base.html:83
 msgid "French"
 msgstr "Francés"
 
-#: config/settings.py:122 generator/templates/base.html:96
+#: config/settings.py:122 generator/templates/base.html:100
 msgid "Spanish"
 msgstr "Español"
 
-#: config/settings.py:123 generator/templates/base.html:113
+#: config/settings.py:123 generator/templates/base.html:117
 msgid "German"
 msgstr "Alemán"
 
@@ -130,21 +130,24 @@ msgstr ""
 "considera guardar tu trabajo antes de intentar descargar o previsualizar "
 "algo."
 
-#: generator/templates/base.html:7 generator/templates/index.html:5
+#: generator/templates/base.html:7 generator/templates/base.html:11
+#: generator/templates/index.html:5
 msgid "website-title"
 msgstr "Generador de Firmas de Correo Electrónico"
 
-#: generator/templates/base.html:31
+#: generator/templates/base.html:8
+msgid "website-description"
+msgstr "Genera firmas de correo electrónico profesionales o personales en segundos."
+
+#: generator/templates/base.html:35
 msgid "Language"
 msgstr "Idioma"
 
-#: generator/templates/base.html:131
+#: generator/templates/base.html:135
 msgid "report-a-bug"
 msgstr "Reportar un error"
 
-#: generator/templates/base.html:135
-#, fuzzy
-#| msgid "report-a-bug"
+#: generator/templates/base.html:139
 msgid "Report a bug"
 msgstr "Reportar un error"
 
