@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.0.0\n"
+"Project-Id-Version: 1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-09 01:37+0000\n"
+"POT-Creation-Date: 2024-02-09 23:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: MorganKryze morgan@kodelab.fr\n"
 "Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
@@ -111,8 +111,8 @@ msgid "404-title"
 msgstr "Oops! The page you're looking for does not exist."
 
 #: generator/templates/404.html:17 generator/templates/500.html:16
-#: generator/templates/custom.html:38 generator/templates/guidelines.html:8
-#: generator/templates/terms.html:8
+#: generator/templates/clients.html:8 generator/templates/custom.html:38
+#: generator/templates/guidelines.html:8 generator/templates/terms.html:8
 msgid "return-to-homepage"
 msgstr "Return to Homepage"
 
@@ -148,6 +148,36 @@ msgstr "Report a bug"
 #: generator/templates/base.html:139
 msgid "Report a bug"
 msgstr "Report a bug"
+
+#: generator/templates/clients.html:17 generator/templates/index.html:21
+msgid "clients-title"
+msgstr "Supported Email Clients"
+
+#: generator/templates/clients.html:21
+msgid "clients-thunderbird"
+msgstr "Thunderbird"
+
+#: generator/templates/clients.html:26 generator/templates/clients.html:35
+#: generator/templates/clients.html:44 generator/templates/clients.html:53
+#: generator/templates/clients.html:62
+msgid "clients-integration-guide"
+msgstr "Integration Guide"
+
+#: generator/templates/clients.html:30
+msgid "clients-outlook-windows"
+msgstr "Outlook for Windows"
+
+#: generator/templates/clients.html:39
+msgid "clients-outlook-macos"
+msgstr "Outlook for MacOS"
+
+#: generator/templates/clients.html:48
+msgid "clients-apple-mail"
+msgstr "Apple Mail"
+
+#: generator/templates/clients.html:57
+msgid "clients-gmail"
+msgstr "Gmail"
 
 #: generator/templates/custom.html:53
 msgid "custom-title"
@@ -314,7 +344,7 @@ msgstr "Guidelines"
 msgid "index-terms"
 msgstr "Terms of Service"
 
-#: generator/templates/index.html:23
+#: generator/templates/index.html:25
 msgid "index-source-code"
 msgstr "Source Code"
 

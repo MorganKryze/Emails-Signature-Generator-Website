@@ -1,0 +1,69 @@
+{% extends "base.html" %} {% block header_content %}{% load i18n %}
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+  <div class="fixed top-0 left-0 m-4">
+    <a href="{% url 'home' %}">
+      <button
+        class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+      >
+        {% trans "return-to-homepage" %}
+      </button>
+    </a>
+  </div>
+  {% endblock %} {% block body_content %} {% load i18n %}
+
+  <body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-10 rounded shadow-lg w-1/2 text-center">
+      <h2 class="text-2xl font-bold mb-6 text-gray-900">
+        {% trans "clients-title" %}
+      </h2>
+      <ul class="text-left">
+        <li class="mb-4">
+          <strong>{% trans "clients-thunderbird" %}</strong>
+          &bull;
+          <a
+            href="https://www.youtube.com/watch?v=oPP4_i_kfQE"
+            class="text-blue-500 hover:underline"
+            >{% trans "clients-integration-guide" %}</a
+          >
+        </li>
+        <li class="mb-4">
+          <strong>{% trans "clients-outlook-windows" %}</strong>
+          &bull;
+          <a
+            href="https://www.youtube.com/watch?v=gL5WfVg55c4"
+            class="text-blue-500 hover:underline"
+            >{% trans "clients-integration-guide" %}</a
+          >
+        </li>
+        <li class="mb-4">
+          <strong>{% trans "clients-outlook-macos" %}</strong>
+          &bull;
+          <a
+            href="https://superuser.com/questions/1325233/use-html-signature-in-outlook-2016-for-mac"
+            class="text-blue-500 hover:underline"
+            >{% trans "clients-integration-guide" %}</a
+          >
+        </li>
+        <li class="mb-4">
+          <strong>{% trans "clients-apple-mail" %}</strong>
+          &bull;
+          <a
+            href="https://www.hubspot.com/email-signature-generator/add-html-signature-mail-mac"
+            class="text-blue-500 hover:underline"
+            >{% trans "clients-integration-guide" %}</a
+          >
+        </li>
+        <li class="mb-4">
+          <strong>{% trans "clients-gmail" %}</strong>
+          &bull;
+          <a
+            href="https://www.youtube.com/watch?v=DpW2XJkYYDQ"
+            class="text-blue-500 hover:underline"
+            >{% trans "clients-integration-guide" %}</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  {% endblock %}
+</body>

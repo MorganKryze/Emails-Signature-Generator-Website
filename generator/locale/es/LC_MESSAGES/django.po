@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.0.0\n"
+"Project-Id-Version: 1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-09 01:37+0000\n"
+"POT-Creation-Date: 2024-02-09 23:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: MorganKryze morgan@kodelab.fr\n"
 "Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
@@ -112,8 +112,8 @@ msgid "404-title"
 msgstr "¡Oops! La página que buscas no existe."
 
 #: generator/templates/404.html:17 generator/templates/500.html:16
-#: generator/templates/custom.html:38 generator/templates/guidelines.html:8
-#: generator/templates/terms.html:8
+#: generator/templates/clients.html:8 generator/templates/custom.html:38
+#: generator/templates/guidelines.html:8 generator/templates/terms.html:8
 msgid "return-to-homepage"
 msgstr "Volver a la página principal"
 
@@ -137,7 +137,8 @@ msgstr "Generador de Firmas de Correo Electrónico"
 
 #: generator/templates/base.html:8
 msgid "website-description"
-msgstr "Genera firmas de correo electrónico profesionales o personales en segundos."
+msgstr ""
+"Genera firmas de correo electrónico profesionales o personales en segundos."
 
 #: generator/templates/base.html:35
 msgid "Language"
@@ -150,6 +151,36 @@ msgstr "Reportar un error"
 #: generator/templates/base.html:139
 msgid "Report a bug"
 msgstr "Reportar un error"
+
+#: generator/templates/clients.html:17 generator/templates/index.html:21
+msgid "clients-title"
+msgstr "Clientes de correo electrónico admitidos"
+
+#: generator/templates/clients.html:21
+msgid "clients-thunderbird"
+msgstr "Thunderbird"
+
+#: generator/templates/clients.html:26 generator/templates/clients.html:35
+#: generator/templates/clients.html:44 generator/templates/clients.html:53
+#: generator/templates/clients.html:62
+msgid "clients-integration-guide"
+msgstr "Guía de integración"
+
+#: generator/templates/clients.html:30
+msgid "clients-outlook-windows"
+msgstr "Outlook para Windows"
+
+#: generator/templates/clients.html:39
+msgid "clients-outlook-macos"
+msgstr "Outlook para MacOS"
+
+#: generator/templates/clients.html:48
+msgid "clients-apple-mail"
+msgstr "Correo de Apple"
+
+#: generator/templates/clients.html:57
+msgid "clients-gmail"
+msgstr "Gmail"
 
 #: generator/templates/custom.html:53
 msgid "custom-title"
@@ -317,7 +348,7 @@ msgstr "Directrices"
 msgid "index-terms"
 msgstr "Términos de servicio"
 
-#: generator/templates/index.html:23
+#: generator/templates/index.html:25
 msgid "index-source-code"
 msgstr "Código fuente"
 

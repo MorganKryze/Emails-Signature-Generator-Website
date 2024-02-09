@@ -19,6 +19,8 @@ def terms(request):
 def guidelines(request):
     return render(request, "guidelines.html")
 
+def clients(request):
+    return render(request, "clients.html")
 
 def custom(request):
     if request.method == "POST":
