@@ -4,7 +4,10 @@
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.0.0   | :white_check_mark: |
+| 1.0.1   | :white_check_mark: |
+| 1.0.0   | :x:                |
+
+1.0.0: The fields labels were not correctly translated, icons were not displayed due to url issue.
 
 ## Reporting a Vulnerability
 
