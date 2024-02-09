@@ -40,7 +40,7 @@ def generate_html(data: dict):
             if value != "None":
                 social_media_html += (
                     f'\n\t\t\t\t<a href="{value}"><img'
-                    ' src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/icons/'
+                    ' src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/svg/icons/'
                     f'{social_media}.svg" alt="{social_media}_icon"></a>'
                 )
 
