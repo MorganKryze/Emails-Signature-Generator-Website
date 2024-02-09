@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0.1\n"
+"Project-Id-Version: 1.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-09 23:11+0000\n"
+"POT-Creation-Date: 2024-02-09 23:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: MorganKryze morgan@kodelab.fr\n"
 "Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings.py:120 generator/templates/base.html:66
+#: config/settings.py:120 generator/templates/base.html:72
 msgid "English"
 msgstr "Anglais"
 
-#: config/settings.py:121 generator/templates/base.html:83
+#: config/settings.py:121 generator/templates/base.html:89
 msgid "French"
 msgstr "Français"
 
-#: config/settings.py:122 generator/templates/base.html:100
+#: config/settings.py:122 generator/templates/base.html:106
 msgid "Spanish"
 msgstr "Espagnol"
 
-#: config/settings.py:123 generator/templates/base.html:117
+#: config/settings.py:123 generator/templates/base.html:123
 msgid "German"
 msgstr "Allemand"
 
@@ -130,7 +130,7 @@ msgstr ""
 "sauvegarder votre travail avant d'essayer de télécharger ou de prévisualiser "
 "quoi que ce soit."
 
-#: generator/templates/base.html:7 generator/templates/base.html:11
+#: generator/templates/base.html:7 generator/templates/base.html:17
 #: generator/templates/index.html:5
 msgid "website-title"
 msgstr "Générateur de signatures d'e-mails"
@@ -141,15 +141,15 @@ msgstr ""
 "Créez des signatures d'e-mail professionnelles ou personnelles en quelques "
 "secondes."
 
-#: generator/templates/base.html:35
+#: generator/templates/base.html:41
 msgid "Language"
 msgstr "Langage"
 
-#: generator/templates/base.html:135
+#: generator/templates/base.html:141
 msgid "report-a-bug"
 msgstr "Signaler un bug"
 
-#: generator/templates/base.html:139
+#: generator/templates/base.html:146
 msgid "Report a bug"
 msgstr "Signaler un bug"
 
@@ -312,7 +312,9 @@ msgstr "Signalez tous les bugs sans en tirer profit."
 
 #: generator/templates/guidelines.html:25
 msgid "guidelines-do-l-4"
-msgstr "Les images doivent être hébergées sur des serveurs externes. Elles doivent être accessibles depuis un lien ou url."
+msgstr ""
+"Les images doivent être hébergées sur des serveurs externes. Elles doivent "
+"être accessibles depuis un lien ou url."
 
 #: generator/templates/guidelines.html:30
 msgid "guidelines-title-do-not"
