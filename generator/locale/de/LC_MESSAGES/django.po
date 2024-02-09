@@ -17,7 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
 #: config/settings.py:120
 msgid "English"
 msgstr "Englisch"
@@ -36,302 +35,307 @@ msgstr "Deutsch"
 
 #: generator/forms.py:9
 msgid "Enter signature name"
-msgstr ""
+msgstr "Geben Sie den Signaturennamen ein"
 
 #: generator/forms.py:13
 msgid "Enter your full name"
-msgstr ""
+msgstr "Geben Sie Ihren vollständigen Namen ein"
 
 #: generator/forms.py:17
 msgid "Enter your job title"
-msgstr ""
+msgstr "Geben Sie Ihre Berufsbezeichnung ein"
 
 #: generator/forms.py:21
 msgid "Enter your organization name"
-msgstr ""
+msgstr "Geben Sie den Namen Ihrer Organisation ein"
 
 #: generator/forms.py:25
 msgid "Enter your organization URL"
-msgstr ""
+msgstr "Geben Sie die URL Ihrer Organisation ein"
 
 #: generator/forms.py:28
 msgid "Enter your email address"
-msgstr ""
+msgstr "Geben Sie Ihre E-Mail-Adresse ein"
 
 #: generator/forms.py:31
 msgid "Enter organization address, phone number, quote, etc."
-msgstr ""
+msgstr "Geben Sie die Adresse Ihrer Organisation, Telefonnummer, Angebot usw. ein"
 
 #: generator/forms.py:38
 msgid "Enter image URL"
-msgstr ""
+msgstr "Geben Sie die Bild-URL ein"
 
 #: generator/forms.py:41
 msgid "Photo"
-msgstr ""
+msgstr "Foto"
 
 #: generator/forms.py:42
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: generator/forms.py:52
 msgid "Enter Website URL"
-msgstr ""
+msgstr "Geben Sie die Website-URL ein"
 
 #: generator/forms.py:55
 msgid "Enter GitHub URL"
-msgstr ""
+msgstr "Geben Sie die GitHub-URL ein"
 
 #: generator/forms.py:58
 msgid "Enter Instagram URL"
-msgstr ""
+msgstr "Geben Sie die Instagram-URL ein"
 
 #: generator/forms.py:61
 msgid "Enter LinkedIn URL"
-msgstr ""
+msgstr "Geben Sie die LinkedIn-URL ein"
 
 #: generator/forms.py:64
 msgid "Enter Slack URL"
-msgstr ""
+msgstr "Geben Sie die Slack-URL ein"
 
 #: generator/forms.py:67
 msgid "Enter YouTube URL"
-msgstr ""
+msgstr "Geben Sie die YouTube-URL ein"
 
 #: generator/forms.py:70
 msgid "Enter Twitter URL"
-msgstr ""
+msgstr "Geben Sie die Twitter-URL ein"
 
 #: generator/forms.py:73
 msgid "Enter Facebook URL"
-msgstr ""
+msgstr "Geben Sie die Facebook-URL ein"
 
 #: generator/templates/404.html:5
 msgid "404-title"
-msgstr ""
+msgstr "Oops! Die Seite, die Sie suchen, existiert nicht."
 
 #: generator/templates/404.html:17 generator/templates/500.html:16
 #: generator/templates/custom.html:38 generator/templates/guidelines.html:8
 #: generator/templates/terms.html:8
 msgid "return-to-homepage"
-msgstr ""
+msgstr "Zur Startseite zurückkehren"
 
 #: generator/templates/500.html:6
 msgid "500-paragraph-1"
 msgstr ""
+"Oops! Auf unserer Seite ist etwas schiefgelaufen. Versuchen Sie es später erneut oder melden Sie dies den Betreibern!"
 
 #: generator/templates/500.html:9
 msgid "500-paragraph-2"
 msgstr ""
+"Wenn Sie versucht haben, eine E-Mail-Signatur zu generieren, sollten Sie Ihre Arbeit speichern, bevor Sie etwas herunterladen oder eine Vorschau anzeigen."
 
 #: generator/templates/base.html:7 generator/templates/index.html:5
 msgid "website-title"
-msgstr ""
+msgstr "E-Mail-Signaturgenerator"
 
 #: generator/templates/base.html:27
 msgid "report-a-bug"
-msgstr ""
+msgstr "Einen Fehler melden"
 
 #: generator/templates/custom.html:53
 msgid "custom-title"
-msgstr ""
+msgstr "Anpassung"
 
 #: generator/templates/custom.html:57
 msgid "custom-import"
-msgstr ""
+msgstr "Konfigurationsdatei importieren"
 
 #: generator/templates/custom.html:79
 msgid "custom-information-title"
-msgstr ""
+msgstr "Persönliche Informationen"
 
 #: generator/templates/custom.html:84
 msgid "custom-information-name-title"
-msgstr ""
+msgstr "Name"
 
 #: generator/templates/custom.html:100
 msgid "custom-information-title-title"
-msgstr ""
+msgstr "Titel"
 
 #: generator/templates/custom.html:116
 msgid "custom-information-organization-name-title"
-msgstr ""
+msgstr "Name der Organisation"
 
 #: generator/templates/custom.html:132
 msgid "custom-information-organization-url-title"
-msgstr ""
+msgstr "URL der Organisation"
 
 #: generator/templates/custom.html:148
 msgid "custom-information-email-title"
-msgstr ""
+msgstr "E-Mail"
 
 #: generator/templates/custom.html:164
 msgid "custom-information-additional-title"
-msgstr ""
+msgstr "Zusätzliches Feld"
 
 #: generator/templates/custom.html:181
 msgid "custom-image-title"
-msgstr ""
+msgstr "Bild"
 
 #: generator/templates/custom.html:191
 msgid "custom-image-add-title"
-msgstr ""
+msgstr "Fügen Sie ein Bild hinzu"
 
 #: generator/templates/custom.html:210
 msgid "custom-image-photo-title"
-msgstr ""
+msgstr "Foto"
 
 #: generator/templates/custom.html:217
 msgid "custom-image-logo-title"
-msgstr ""
+msgstr "Logo"
 
 #: generator/templates/custom.html:224
 msgid "custom-socials-title"
-msgstr ""
+msgstr "Soziale Medien"
 
 #: generator/templates/custom.html:234
 msgid "custom-socials-website-title"
-msgstr ""
+msgstr "Website"
 
 #: generator/templates/custom.html:257
 msgid "custom-socials-github-title"
-msgstr ""
+msgstr "GitHub"
 
 #: generator/templates/custom.html:280
 msgid "custom-socials-instagram-title"
-msgstr ""
+msgstr "Instagram"
 
 #: generator/templates/custom.html:304
 msgid "custom-socials-linkedin-title"
-msgstr ""
+msgstr "LinkedIn"
 
 #: generator/templates/custom.html:327
 msgid "custom-socials-slack-title"
-msgstr ""
+msgstr "Slack"
 
 #: generator/templates/custom.html:350
 msgid "custom-socials-youtube-title"
-msgstr ""
+msgstr "YouTube"
 
 #: generator/templates/custom.html:373
 msgid "custom-socials-twitter-title"
-msgstr ""
+msgstr "Twitter"
 
 #: generator/templates/custom.html:396
 msgid "custom-socials-facebook-title"
-msgstr ""
+msgstr "Facebook"
 
 #: generator/templates/custom.html:424
 msgid "custom-btn-save"
-msgstr ""
+msgstr "Aktuelle Konfiguration speichern"
 
 #: generator/templates/custom.html:440
 msgid "custom-btn-preview"
-msgstr ""
+msgstr "Vorschau anzeigen"
 
 #: generator/templates/custom.html:454
 msgid "custom-btn-download-signature"
-msgstr ""
+msgstr "Signatur herunterladen"
 
 #: generator/templates/custom.html:467
 msgid "custom-btn-download-config"
-msgstr ""
+msgstr "Konfigurationsdatei herunterladen"
 
 #: generator/templates/guidelines.html:15
 msgid "guidelines-title"
-msgstr ""
+msgstr "Richtlinien"
 
 #: generator/templates/guidelines.html:19
 msgid "guidelines-title-do"
-msgstr ""
+msgstr "MACHEN"
 
 #: generator/templates/guidelines.html:22
 msgid "guidelines-do-l-1"
-msgstr ""
+msgstr "Verwenden Sie den Generator frei für persönliche oder berufliche Zwecke."
 
 #: generator/templates/guidelines.html:23
 msgid "guidelines-do-l-2"
-msgstr ""
+msgstr "Speichern Sie Ihre Konfiguration, bevor Sie die Signatur generieren, um Probleme zu vermeiden."
 
 #: generator/templates/guidelines.html:24
 msgid "guidelines-do-l-3"
-msgstr ""
+msgstr "Melden Sie Fehler, ohne sie auszunutzen."
 
 #: generator/templates/guidelines.html:29
 msgid "guidelines-title-do-not"
-msgstr ""
+msgstr "NICHT MACHEN"
 
 #: generator/templates/guidelines.html:32
 msgid "guidelines-do-not-l-1"
-msgstr ""
+msgstr "Ändern Sie nicht die Schlüssel der Konfigurationsdatei."
 
 #: generator/templates/guidelines.html:33
 msgid "guidelines-do-not-l-2"
-msgstr ""
+msgstr "Verstoßen Sie nicht gegen die Nutzungsbedingungen."
 
 #: generator/templates/guidelines.html:34
 msgid "guidelines-do-not-l-3"
-msgstr ""
+msgstr "Respektieren Sie andere Benutzer."
 
 #: generator/templates/index.html:7
 msgid "index-paragraph-1"
 msgstr ""
+"Erstellen Sie professionelle oder persönliche E-Mail-Signaturen in Sekundenschnelle. Passen Sie Informationen, Bilder, Farben und Schriftarten an, um Ihre Marke anzupassen."
 
 #: generator/templates/index.html:8
 msgid "index-paragraph-2"
 msgstr ""
+"Bitte nehmen Sie sich Zeit, um die Richtlinien zu lesen, bevor Sie den Generator verwenden. Zögern Sie nicht, Fehler zu melden oder Verbesserungen vorzuschlagen."
 
 #: generator/templates/index.html:13
 msgid "index-get-started"
-msgstr ""
+msgstr "Loslegen"
 
 #: generator/templates/index.html:17
 msgid "index-guidelines"
-msgstr ""
+msgstr "Richtlinien"
 
 #: generator/templates/index.html:19
 msgid "index-terms"
-msgstr ""
+msgstr "Nutzungsbedingungen"
 
 #: generator/templates/index.html:23
 msgid "index-source-code"
-msgstr ""
+msgstr "Quellcode"
 
 #: generator/templates/terms.html:15
 msgid "terms-title"
-msgstr ""
+msgstr "Nutzungsbedingungen"
 
 #: generator/templates/terms.html:18
 msgid "terms-data-title"
-msgstr ""
+msgstr "Datenerfassung"
 
 #: generator/templates/terms.html:20
 msgid "terms-data-content"
-msgstr ""
+msgstr "Wir erfassen keine persönlichen Daten unserer Benutzer."
 
 #: generator/templates/terms.html:22
 msgid "terms-cookies-title"
-msgstr ""
+msgstr "Cookies"
 
 #: generator/templates/terms.html:24
 msgid "terms-cookies-content"
 msgstr ""
+"Wir verwenden nur Cookies, um den Zustand von Schaltflächen zu speichern und verwenden sie nicht für andere Zwecke."
 
 #: generator/templates/terms.html:26
 msgid "terms-usage-title"
-msgstr ""
+msgstr "Verwendung"
 
 #: generator/templates/terms.html:28
 msgid "terms-usage-content"
-msgstr ""
+msgstr "Benutzer sind frei, unsere Website für alle legalen Zwecke zu nutzen."
 
 #: generator/templates/terms.html:30
 msgid "terms-licence-title"
-msgstr ""
+msgstr "Lizenz"
 
 #: generator/templates/terms.html:33
 msgid "terms-licence-content"
-msgstr ""
+msgstr "Alle Inhalte auf dieser Website sind unter der"
 
 #: generator/templates/terms.html:38
 msgid "terms-licence-content-link"
-msgstr ""
+msgstr "MIT-Lizenz"

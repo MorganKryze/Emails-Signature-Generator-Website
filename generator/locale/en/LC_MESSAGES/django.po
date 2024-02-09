@@ -281,7 +281,7 @@ msgstr "Disrespect other users."
 msgid "index-paragraph-1"
 msgstr ""
 "Create professional or personal email signatures in seconds. Customize "
-"information, images, colors and fonts to match your brand."
+"information, images, colors and fonts to match your brand!"
 
 #: generator/templates/index.html:8
 msgid "index-paragraph-2"
