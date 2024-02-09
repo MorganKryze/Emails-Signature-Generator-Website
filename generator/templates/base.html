@@ -4,10 +4,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="{% trans "website-title" %}" />
-    <meta property="og:description" content="{% trans "website-description" %}" />
-    <meta property="og:image" content="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/jpg/demo.jpeg" />
-    <meta property="og:url" content="https://emails-signature-generator.vercel.app/" />
+    <meta property="og:title" content="{% trans "website-title" %}" /> <meta
+    property="og:description" content="{% trans "website-description" %}" />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/jpg/demo.jpeg"
+    />
+    <meta
+      property="og:url"
+      content="https://emails-signature-generator.vercel.app/"
+    />
     <title>{% trans "website-title" %}</title>
     <link
       rel="stylesheet"
@@ -129,16 +135,24 @@
 
   <footer>
     {% block footer_content %} {% endblock %}
-    <a
-      href="https://github.com/MorganKryze/Emails-Signature-Generator-Website/issues"
-      class="fixed bottom-0 left-0 m-4"
-      title="{% trans 'report-a-bug' %}"
-    >
-      <img
-        src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/svg/bug.svg"
-        alt="{% trans 'Report a bug' %}"
-      />
-    </a>
+    <div class="fixed bottom-0 left-0 m-4 flex items-center">
+      <a
+        href="https://github.com/MorganKryze/Emails-Signature-Generator-Website/issues"
+        title="{% trans 'report-a-bug' %}"
+        class="text-gray-500"
+      >
+        <img
+          src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/svg/bug.svg"
+          alt="{% trans 'Report a bug' %}"
+          class="filter drop-shadow grayscale"
+        />
+      </a>
+      <a
+        href="https://github.com/MorganKryze/Emails-Signature-Generator-Website/releases"
+      >
+        <span class="ml-2 text-gray-500 text-shadow">{{ version }}</span>
+      </a>
+    </div>
   </footer>
 
   {% block scripts %} {% endblock %}

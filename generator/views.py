@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .forms import ConfigForm
 from django.http import HttpResponse
 
-from .tools import generate_html, map_config_to_form
+from .tools import generate_html, map_config_to_form, get_latest_version
 
 import yaml
 
@@ -11,16 +11,16 @@ data_conf = {}
 
 
 def index(request):
-    return render(request, "index.html")
+    return render(request, "index.html", {"version": get_latest_version()})
 
 def terms(request):
-    return render(request, "terms.html")
+    return render(request, "terms.html", {"version": get_latest_version()})
 
 def guidelines(request):
-    return render(request, "guidelines.html")
+    return render(request, "guidelines.html", {"version": get_latest_version()})
 
 def clients(request):
-    return render(request, "clients.html")
+    return render(request, "clients.html", {"version": get_latest_version()})
 
 def custom(request):
     if request.method == "POST":
@@ -97,7 +97,9 @@ def custom(request):
     else:
         form = ConfigForm()
 
-    return render(request, "custom.html", {"form": form})
+    return render(
+        request, "custom.html", {"form": form, "version": get_latest_version()}
+    )
 
 
 def preview(request):

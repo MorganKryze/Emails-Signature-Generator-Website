@@ -1,4 +1,5 @@
 from jinja2 import Environment, FileSystemLoader
+import requests
 
 HTML_TEMPLATE = "signature-template.html"
 
@@ -72,7 +73,9 @@ def map_config_to_form(config_data):
     mapped_data.update(
         {
             "isImageSelected": image_data.get("is_image_selected", False),
-            "imageLink": image_data.get("image_link", "") if image_data.get("image_link") != "None" else "",
+            "imageLink": image_data.get("image_link", "")
+            if image_data.get("image_link") != "None"
+            else "",
             "imageType": image_data.get("image_type", "photo"),
         }
     )
@@ -117,3 +120,13 @@ def map_config_to_form(config_data):
     )
 
     return mapped_data
+
+
+def get_latest_version():
+    url = "https://api.github.com/repos/MorganKryze/Emails-Signature-Generator-Website/releases/latest"
+    response = requests.get(url)
+    if response.status_code == 200:
+        latest_release = response.json()
+        return latest_release["tag_name"]
+    else:
+        return None
