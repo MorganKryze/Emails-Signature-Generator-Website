@@ -82,22 +82,22 @@
       </div>
       {% endif %}
       <div class="details">
-        <div class="name">{{ personal_information.name }}</div>
+        <div class="name">{{ personal_information.name|escape }}</div>
         <div class="title">
-          {{ personal_information.title }} | {{
-          personal_information.organization_name }}
+          {{ personal_information.title|escape }} | {{
+          personal_information.organization_name|escape }}
         </div>
         <div class="contact">
           {% if personal_information.additional != 'None' %}
-          <p>{{ personal_information.additional }}</p>
+          <p>{{ personal_information.additional|escape }}</p>
           {% endif %}
           <p>
-            <a href="mailto:{{ personal_information.email }}"
-              >{{ personal_information.email }}</a
+            <a href="mailto:{{ personal_information.email|escape }}"
+              >{{ personal_information.email|escape }}</a
             >
           </p>
         </div>
-        <div class="social-media">{{ social_media_html }}</div>
+        <div class="social-media">{{ social_media_html|safe }}</div>
       </div>
     </div>
   </body>
