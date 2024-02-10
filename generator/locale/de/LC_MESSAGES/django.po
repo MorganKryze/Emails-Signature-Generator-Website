@@ -374,7 +374,7 @@ msgstr "Datenerfassung"
 
 #: generator/templates/terms.html:20
 msgid "terms-data-content"
-msgstr "Wir erfassen keine persönlichen Daten unserer Benutzer."
+msgstr "Wir sammeln keine persönlichen Daten von unseren Benutzern. Wir kennen nur die Gesamtzahl der Besuche."
 
 #: generator/templates/terms.html:22
 msgid "terms-cookies-title"

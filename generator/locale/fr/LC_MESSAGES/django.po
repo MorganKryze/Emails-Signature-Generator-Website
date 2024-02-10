@@ -376,7 +376,7 @@ msgstr "Collecte de données"
 #: generator/templates/terms.html:20
 msgid "terms-data-content"
 msgstr ""
-"Nous ne collectons aucune donnée personnelle auprès de nos utilisateurs."
+"Nous ne collectons aucune donnée personnelle auprès de nos utilisateurs. Nous ne connaissons que le nombre total de visites."
 
 #: generator/templates/terms.html:22
 msgid "terms-cookies-title"
