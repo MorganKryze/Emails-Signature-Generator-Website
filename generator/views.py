@@ -167,10 +167,14 @@ def custom(request: HttpRequest) -> HttpResponse:
     )
 
 
-def preview() -> HttpResponse:
+def preview(request: HttpRequest) -> HttpResponse:  # noqa: ARG001
     """Preview view.
 
-    Returns
+    Args:
+    ----
+        request (HttpRequest): Request object.
+
+    Returns:
     -------
         HttpResponse: Response object.
 
@@ -180,7 +184,7 @@ def preview() -> HttpResponse:
     return HttpResponse(html)
 
 
-def download_signature() -> HttpResponse:
+def download_signature(request: HttpRequest) -> HttpResponse:  # noqa: ARG001
     """Download signature view.
 
     Returns
@@ -198,7 +202,7 @@ def download_signature() -> HttpResponse:
     return response
 
 
-def download_config() -> HttpResponse:
+def download_config(request: HttpRequest) -> HttpResponse:  # noqa: ARG001
     """Download config view.
 
     Returns
