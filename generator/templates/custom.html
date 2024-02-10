@@ -42,7 +42,7 @@
 {% endblock %}
 
 {% block body_content %}{% load i18n %}
-<body class="bg-gray-100 flex items-center justify-center">
+<body class="bg-gray-100 flex items-center justify-center mt-20 mb-20">
 {% comment %} The form sheet {% endcomment %}
     <div class="bg-white p-10 rounded shadow-lg w-1/2">
       <form method="post" id="Generator" enctype="multipart/form-data">
@@ -161,7 +161,7 @@
             >
             <input
               type="text"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline required"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="{{ form.additional.id_for_label }}"
               placeholder="{{ form.additional.label }}"
               name="{{ form.additional.html_name }}"
