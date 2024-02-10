@@ -3,26 +3,28 @@ from django.utils.translation import gettext_lazy as _
 
 
 class ConfigForm(forms.Form):
+    """Config form."""
+
     config_file = forms.FileField(required=False)
 
     signatureName = forms.CharField(
-        label=_("Enter signature name"), max_length=100, required=True
+        label=_("Enter signature name"), max_length=100, required=True,
     )
 
     name = forms.CharField(
-        label=_("Enter your full name"), max_length=100, required=True
+        label=_("Enter your full name"), max_length=100, required=True,
     )
 
     title = forms.CharField(
-        label=_("Enter your job title"), max_length=100, required=True
+        label=_("Enter your job title"), max_length=100, required=True,
     )
 
     organizationName = forms.CharField(
-        label=_("Enter your organization name"), max_length=100, required=True
+        label=_("Enter your organization name"), max_length=100, required=True,
     )
 
     organizationURL = forms.URLField(
-        label=_("Enter your organization URL"), required=True
+        label=_("Enter your organization URL"), required=True,
     )
 
     email = forms.EmailField(label=_("Enter your email address"), required=True)

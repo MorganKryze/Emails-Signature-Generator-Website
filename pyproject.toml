@@ -1,0 +1,51 @@
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+line-length = 88
+indent-width = 4
+target-version = "py311"
+select = ["ALL"]
+ignore = [
+    "D100",
+    "T201",
+    "INP001",
+    "S101",
+    "PT027",
+    "E402",
+    "C901",
+    "S311",
+    "FBT001",
+    "FBT003",
+    "RET505",
+    "PLR0912",
+    "PLR0913",
+    "S701",
+    "PLW2901",
+    "PLW0603",
+]

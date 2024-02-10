@@ -1,10 +1,21 @@
-from jinja2 import Environment, FileSystemLoader
 import requests
+from jinja2 import Environment, FileSystemLoader
 
 HTML_TEMPLATE = "signature-template.html"
 
 
-def generate_html(data: dict):
+def generate_html(data: dict) -> str:
+    """Generate HTML signature from data.
+
+    Args:
+    ----
+        data (dict): Data to be used to generate the HTML signature.
+
+    Returns:
+    -------
+        str: HTML signature.
+
+    """
     env = Environment(
         loader=FileSystemLoader("generator/templates"),
         autoescape=False,
@@ -50,12 +61,21 @@ def generate_html(data: dict):
     return template.render(data_conf_dict)
 
 
-def map_config_to_form(config_data):
+def map_config_to_form(config_data: dict) -> None:
+    """Map config data to form data.
+
+    Args:
+    ----
+        config_data (dict): Configuration data.
+
+    Returns:
+    -------
+        None: Mapped data.
+
+    """
     mapped_data = {}
-    # Map signature_name
     mapped_data["signatureName"] = config_data.get("signature_name")
 
-    # Map personal_information
     personal_info = config_data.get("personal_information", {})
     mapped_data.update(
         {
@@ -65,10 +85,9 @@ def map_config_to_form(config_data):
             "organizationURL": personal_info.get("organization_url"),
             "email": personal_info.get("email"),
             "additional": personal_info.get("additional"),
-        }
+        },
     )
 
-    # Map image
     image_data = config_data.get("image", {})
     mapped_data.update(
         {
@@ -77,10 +96,9 @@ def map_config_to_form(config_data):
             if image_data.get("image_link") != "None"
             else "",
             "imageType": image_data.get("image_type", "photo"),
-        }
+        },
     )
 
-    # Map socials
     socials_data = config_data.get("socials", {})
     mapped_data.update(
         {
@@ -116,16 +134,24 @@ def map_config_to_form(config_data):
             "facebookLink": socials_data.get("facebook_link", "")
             if socials_data.get("facebook_link") != "None"
             else "",
-        }
+        },
     )
 
     return mapped_data
 
 
-def get_latest_version():
+def get_latest_version() -> str:
+    """Get the latest version of the application.
+
+    Returns
+    -------
+        str: Latest version of the application.
+
+    """
     url = "https://api.github.com/repos/MorganKryze/Emails-Signature-Generator-Website/releases/latest"
-    response = requests.get(url)
-    if response.status_code == 200:
+    response = requests.get(url, timeout=15)
+    data_received_status_code = 200
+    if response.status_code == data_received_status_code:
         latest_release = response.json()
         return latest_release["tag_name"]
     else:

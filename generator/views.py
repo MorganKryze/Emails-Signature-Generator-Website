@@ -1,28 +1,85 @@
-from django.shortcuts import render
-from .forms import ConfigForm
-from django.http import HttpResponse
-
-from .tools import generate_html, map_config_to_form, get_latest_version
-
 import yaml
+from django.http import HttpRequest, HttpResponse
+from django.shortcuts import render
 
+from .forms import ConfigForm
+from .tools import generate_html, get_latest_version, map_config_to_form
 
 data_conf = {}
 
 
-def index(request):
+def index(request: HttpRequest) -> HttpResponse:
+    """Index view.
+
+    Args:
+    ----
+        request (HttpRequest): Request object.
+
+    Returns:
+    -------
+        HttpResponse: Response object.
+
+    """
     return render(request, "index.html", {"version": get_latest_version()})
 
-def terms(request):
+
+def terms(request: HttpRequest) -> HttpResponse:
+    """Terms view.
+
+    Args:
+    ----
+        request (HttpRequest): Request object.
+
+    Returns:
+    -------
+        HttpResponse: Response object.
+
+    """
     return render(request, "terms.html", {"version": get_latest_version()})
 
-def guidelines(request):
+
+def guidelines(request: HttpRequest) -> HttpResponse:
+    """Guidelines view.
+
+    Args:
+    ----
+        request (HttpRequest): Request object.
+
+    Returns:
+    -------
+        HttpResponse: Response object.
+
+    """
     return render(request, "guidelines.html", {"version": get_latest_version()})
 
-def clients(request):
+
+def clients(request: HttpRequest) -> HttpResponse:
+    """Clients view.
+
+    Args:
+    ----
+        request (HttpRequest): Request object.
+
+    Returns:
+    -------
+        HttpResponse: Response object.
+
+    """
     return render(request, "clients.html", {"version": get_latest_version()})
 
-def custom(request):
+
+def custom(request: HttpRequest) -> HttpResponse:
+    """Customizatio view.
+
+    Args:
+    ----
+        request (HttpRequest): Request object.
+
+    Returns:
+    -------
+        HttpResponse: Response object.
+
+    """
     if request.method == "POST":
         form = ConfigForm(request.POST, request.FILES)
         config_file = request.FILES.get("config_file")
@@ -53,19 +110,22 @@ def custom(request):
                     or False,
                     "web_link": form.cleaned_data.get("webLink", "None") or "None",
                     "is_github_selected": form.cleaned_data.get(
-                        "isGithubSelected", False
+                        "isGithubSelected",
+                        False,
                     )
                     or False,
                     "github_link": form.cleaned_data.get("githubLink", "None")
                     or "None",
                     "is_instagram_selected": form.cleaned_data.get(
-                        "isInstagramSelected", False
+                        "isInstagramSelected",
+                        False,
                     )
                     or False,
                     "instagram_link": form.cleaned_data.get("instagramLink", "None")
                     or "None",
                     "is_linkedin_selected": form.cleaned_data.get(
-                        "isLinkedinSelected", False
+                        "isLinkedinSelected",
+                        False,
                     )
                     or False,
                     "linkedin_link": form.cleaned_data.get("linkedinLink", "None")
@@ -74,19 +134,22 @@ def custom(request):
                     or False,
                     "slack_link": form.cleaned_data.get("slackLink", "None") or "None",
                     "is_youtube_selected": form.cleaned_data.get(
-                        "isYoutubeSelected", False
+                        "isYoutubeSelected",
+                        False,
                     )
                     or False,
                     "youtube_link": form.cleaned_data.get("youtubeLink", "None")
                     or "None",
                     "is_twitter_selected": form.cleaned_data.get(
-                        "isTwitterSelected", False
+                        "isTwitterSelected",
+                        False,
                     )
                     or False,
                     "twitter_link": form.cleaned_data.get("twitterLink", "None")
                     or "None",
                     "is_facebook_selected": form.cleaned_data.get(
-                        "isFacebookSelected", False
+                        "isFacebookSelected",
+                        False,
                     )
                     or False,
                     "facebook_link": form.cleaned_data.get("facebookLink", "None")
@@ -98,17 +161,33 @@ def custom(request):
         form = ConfigForm()
 
     return render(
-        request, "custom.html", {"form": form, "version": get_latest_version()}
+        request,
+        "custom.html",
+        {"form": form, "version": get_latest_version()},
     )
 
 
-def preview(request):
+def preview() -> HttpResponse:
+    """Preview view.
+
+    Returns
+    -------
+        HttpResponse: Response object.
+
+    """
     html = generate_html(dict(data_conf))
 
     return HttpResponse(html)
 
 
-def download_signature(request):
+def download_signature() -> HttpResponse:
+    """Download signature view.
+
+    Returns
+    -------
+        HttpResponse: Response object.
+
+    """
     html = generate_html(dict(data_conf))
 
     signature_name = data_conf.get("signature_name", "")
@@ -119,12 +198,20 @@ def download_signature(request):
     return response
 
 
-def download_config(request):
+def download_config() -> HttpResponse:
+    """Download config view.
+
+    Returns
+    -------
+        HttpResponse: Response object.
+
+    """
     signature_name = data_conf.get("signature_name", "")
     filename = f"{signature_name}.yaml"
 
     response = HttpResponse(
-        yaml.dump(data_conf, sort_keys=False), content_type="text/plain"
+        yaml.dump(data_conf, sort_keys=False),
+        content_type="text/plain",
     )
     response["Content-Disposition"] = f"attachment; filename=config-{filename}"
     return response
