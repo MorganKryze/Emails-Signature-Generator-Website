@@ -61,12 +61,12 @@ def generate_html(data: dict) -> str:
     return template.render(data_conf_dict)
 
 
-def map_config_to_form(config_data: dict) -> None:
+def map_config_to_form(config_data) -> None:  # noqa: ANN001
     """Map config data to form data.
 
     Args:
     ----
-        config_data (dict): Configuration data.
+        config_data : Configuration data.
 
     Returns:
     -------
