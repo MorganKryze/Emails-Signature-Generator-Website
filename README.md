@@ -4,8 +4,8 @@
 
 [![Demo-page](assets/img/jpg/demo.jpeg)](https://emails-signature-generator.vercel.app)
 
-| ![with logo 200px 500px](assets/img/png/logo.png) | ![with photo 200px 500px](assets/img/png/photo.png) |
-| :-----------------------------------------------: | :-------------------------------------------------: |
+| [![with logo 200px 500px](assets/img/png/logo.png)](https://emails-signature-generator.vercel.app) | [![with photo 200px 500px](assets/img/png/photo.png)](https://emails-signature-generator.vercel.app) |
+| :------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: |
 
 ## Getting Started
 
@@ -113,7 +113,7 @@ The `generator` directory contains the main files of the project.
 - The `tools.py` file contains the functions to generate the html from the data collected from the form.
 - The `urls.py` file contains the links between the patterns and views.
 - The `views.py` file contains the views associated with the html files.
-  
+
 ##### config
 
 The `config` directory contains the settings of the project. For a Django project, this directory is created using the command `django-admin startproject config`. This folder can manage different apps like the `generator` app.
