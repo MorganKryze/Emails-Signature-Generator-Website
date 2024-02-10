@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block body_content %}{% load i18n %}
 <body class="bg-gray-100 flex items-center justify-center h-screen">
-  <div class="bg-white p-10 rounded shadow-lg w-1/2">
+  <div class="bg-white p-10 rounded shadow-lg w-2/3">
     <h2 class="text-2xl font-bold mb-6 text-gray-900">
       {% trans "website-title" %}
     </h2>
@@ -18,7 +18,7 @@
       &bull;
       <a href="{% url 'terms' %}">{% trans "index-terms" %}</a>
       &bull;
-      <a href="{% url 'clients' %}">{% trans "clients-title"%}</a>
+      <a href="{% url 'clients' %}">{% trans "index-clients"%}</a>
       &bull;
       <a
         href="https://github.com/MorganKryze/Emails-Signature-Generator-Website"

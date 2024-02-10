@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-09 23:42+0000\n"
+"POT-Creation-Date: 2024-02-10 12:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: MorganKryze morgan@kodelab.fr\n"
 "Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
@@ -18,91 +18,91 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings.py:120 generator/templates/base.html:72
+#: config/settings.py:61 generator/templates/base.html:72
 msgid "English"
 msgstr "English"
 
-#: config/settings.py:121 generator/templates/base.html:89
+#: config/settings.py:62 generator/templates/base.html:89
 msgid "French"
 msgstr "French"
 
-#: config/settings.py:122 generator/templates/base.html:106
+#: config/settings.py:63 generator/templates/base.html:106
 msgid "Spanish"
 msgstr "Spanish"
 
-#: config/settings.py:123 generator/templates/base.html:123
+#: config/settings.py:64 generator/templates/base.html:123
 msgid "German"
 msgstr "German"
 
-#: generator/forms.py:9
+#: generator/forms.py:11
 msgid "Enter signature name"
 msgstr "Enter signature name"
 
-#: generator/forms.py:13
+#: generator/forms.py:15
 msgid "Enter your full name"
 msgstr "Enter your full name"
 
-#: generator/forms.py:17
+#: generator/forms.py:19
 msgid "Enter your job title"
 msgstr "Enter your job title"
 
-#: generator/forms.py:21
+#: generator/forms.py:23
 msgid "Enter your organization name"
 msgstr "Enter your organization name"
 
-#: generator/forms.py:25
+#: generator/forms.py:27
 msgid "Enter your organization URL"
 msgstr "Enter your organization URL"
 
-#: generator/forms.py:28
+#: generator/forms.py:30
 msgid "Enter your email address"
 msgstr "Enter your email address"
 
-#: generator/forms.py:31
+#: generator/forms.py:33
 msgid "Enter organization address, phone number, quote, etc."
 msgstr "Enter organization address, phone number, quote, etc."
 
-#: generator/forms.py:38
+#: generator/forms.py:40
 msgid "Enter image URL"
 msgstr "Enter image URL"
 
-#: generator/forms.py:41
+#: generator/forms.py:43
 msgid "Photo"
 msgstr "Photo"
 
-#: generator/forms.py:42
+#: generator/forms.py:44
 msgid "Logo"
 msgstr "Logo"
 
-#: generator/forms.py:52
+#: generator/forms.py:54
 msgid "Enter Website URL"
 msgstr "Enter Website URL"
 
-#: generator/forms.py:55
+#: generator/forms.py:57
 msgid "Enter GitHub URL"
 msgstr "Enter GitHub URL"
 
-#: generator/forms.py:58
+#: generator/forms.py:60
 msgid "Enter Instagram URL"
 msgstr "Enter Instagram URL"
 
-#: generator/forms.py:61
+#: generator/forms.py:63
 msgid "Enter LinkedIn URL"
 msgstr "Enter LinkedIn URL"
 
-#: generator/forms.py:64
+#: generator/forms.py:66
 msgid "Enter Slack URL"
 msgstr "Enter Slack URL"
 
-#: generator/forms.py:67
+#: generator/forms.py:69
 msgid "Enter YouTube URL"
 msgstr "Enter YouTube URL"
 
-#: generator/forms.py:70
+#: generator/forms.py:72
 msgid "Enter Twitter URL"
 msgstr "Enter Twitter URL"
 
-#: generator/forms.py:73
+#: generator/forms.py:75
 msgid "Enter Facebook URL"
 msgstr "Enter Facebook URL"
 
@@ -149,7 +149,7 @@ msgstr "Report a bug"
 msgid "Report a bug"
 msgstr "Report a bug"
 
-#: generator/templates/clients.html:17 generator/templates/index.html:21
+#: generator/templates/clients.html:17
 msgid "clients-title"
 msgstr "Supported Email Clients"
 
@@ -348,6 +348,10 @@ msgstr "Guidelines"
 #: generator/templates/index.html:19
 msgid "index-terms"
 msgstr "Terms of Service"
+
+#: generator/templates/index.html:21
+msgid "index-clients"
+msgstr "Supported clients"
 
 #: generator/templates/index.html:25
 msgid "index-source-code"
