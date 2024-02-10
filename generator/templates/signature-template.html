@@ -4,101 +4,65 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      href="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/svg/favicon.svg"
-    />
     <title>{{ signature_name }}</title>
-    <style type="text/css">
-      .signature {
-        font-family: Arial, sans-serif;
-        color: #444;
-        padding: 20px;
-        border-top: 3px solid #444;
-        display: flex;
-        align-items: stretch;
-      }
-      .signature .name {
-        font-size: 18px;
-        font-weight: bold;
-      }
-      .signature .title {
-        font-size: 14px;
-        color: #999;
-      }
-      .signature .contact p {
-        font-size: 14px;
-        color: #666;
-      }
-      .signature .social-media {
-        margin-top: 10px;
-      }
-      .signature .social-media a {
-        margin-right: 10px;
-        color: #444;
-      }
-      .signature .logo {
-        margin-right: 20px;
-        padding-right: 20px;
-        position: relative;
-        width: 120px;
-        height: 120px;
-      }
-      .signature .logo .overlay-photo {
-        border-radius: 50%;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border: 2px solid #444;
-      }
-      .signature .logo .overlay-logo {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-      }
-      .signature .details {
-        flex-grow: 1;
-        border-left: 1px solid #444;
-        padding-left: 20px;
-      }
-      .logo-absent .details {
-        margin-left: 0;
-      }
-    </style>
   </head>
   <body>
-    <br />
-    <br />
-    <div class="signature">
-      {% if image.is_image_selected and image.image_link != "None" %}
-      <div class="logo">
-        <a href="{{ personal_information.organization_url }}">
-          {% if image.image_type == 'photo' or image.image_type == 'Photo' %}
-          <img src="{{ image.image_link }}" class="overlay-photo" alt="Photo" />
-          {% elif image.image_type == 'logo' or image.image_type == 'Logo' %}
-          <img src="{{ image.image_link }}" class="overlay-logo" alt="Logo" />
-          {% endif %}
-        </a>
-      </div>
-      {% endif %}
-      <div class="details">
-        <div class="name">{{ personal_information.name|escape }}</div>
-        <div class="title">
-          {{ personal_information.title|escape }} | {{
-          personal_information.organization_name|escape }}
-        </div>
-        <div class="contact">
-          {% if personal_information.additional != 'None' %}
-          <p>{{ personal_information.additional|escape }}</p>
-          {% endif %}
-          <p>
-            <a href="mailto:{{ personal_information.email|escape }}"
-              >{{ personal_information.email|escape }}</a
-            >
-          </p>
-        </div>
-        <div class="social-media">{{ social_media_html|safe }}</div>
-      </div>
-    </div>
+    <br>
+    <hr style="border-top: 2px solid #000; margin-top: 0;"/>
+    <table style="width: 100%">
+      <tr>
+        {% if image.is_image_selected and image.image_link != "None" %}
+        <td style="width: 180px">
+          <a href="{{ personal_information.organization_url }}">
+            {% if image.image_type == 'photo' or image.image_type == 'Photo' %}
+            <img
+              src="{{ image.image_link }}"
+              style="
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                border: 2px solid #444;
+              "
+              alt="Photo"
+            />
+            {% elif image.image_type == 'logo' or image.image_type == 'Logo' %}
+            <img
+              src="{{ image.image_link }}"
+              style="width: 150px; height: auto; object-fit: contain"
+              alt="Logo"
+            />
+            {% endif %}
+          </a>
+        </td>
+        {% endif %}
+        <td style="border-left: 1px solid #444; height: 100px; overflow: auto">
+          <div
+            style="font-family: Arial, sans-serif; color: #444; padding: 20px"
+          >
+            <div style="font-size: 18px; font-weight: bold">
+              {{ personal_information.name|escape }}
+            </div>
+            <div style="font-size: 14px; color: #999">
+              {{ personal_information.title|escape }} | {{
+              personal_information.organization_name|escape }}
+            </div>
+            <div style="font-size: 14px; color: #666">
+              {% if personal_information.additional != 'None' %}
+              <p>{{ personal_information.additional|escape }}</p>
+              {% endif %}
+              <p>
+                <a href="mailto:{{ personal_information.email|escape }}"
+                  >{{ personal_information.email|escape }}</a
+                >
+              </p>
+            </div>
+            <div>{{ social_media_html|safe }}
+              
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>

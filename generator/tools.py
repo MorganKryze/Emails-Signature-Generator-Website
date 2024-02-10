@@ -53,7 +53,8 @@ def generate_html(data: dict) -> str:
                 social_media_html += (
                     f'\n\t\t\t\t<a href="{value}"><img'
                     ' src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/svg/icons/'
-                    f'{social_media}.svg" alt="{social_media}_icon"></a>'
+                    f'{social_media}.svg" alt="{social_media}_icon"'
+                    ' style="margin-right: 10px;"></a>'
                 )
 
     data_conf_dict["social_media_html"] = social_media_html
