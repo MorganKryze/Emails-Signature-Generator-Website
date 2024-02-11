@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0.5\n"
+"Project-Id-Version: 1.0.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-11 17:10+0000\n"
+"POT-Creation-Date: 2024-02-11 17:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: MorganKryze morgan@kodelab.fr\n"
 "Language-Team: LA-LANGUAGE-TEAM morgan@kodelab.fr\n"
@@ -409,24 +409,24 @@ msgstr "Tout le contenu de ce site est sous licence"
 msgid "terms-licence-content-link"
 msgstr "Licence MIT"
 
-#: generator/views.py:96
+#: generator/views.py:93
 msgid "form-import-success"
 msgstr "Le fichier a été importé avec succès."
 
-#: generator/views.py:167
+#: generator/views.py:164
 msgid "form-is-valid"
 msgstr ""
 "Le formulaire est valide. Vous pouvez désormais accéder à l'aperçu ou aux "
 "téléchargements."
 
-#: generator/views.py:169
+#: generator/views.py:166
 msgid "form-is-invalid"
 msgstr "Le formulaire est invalide. Veuillez vérifier les erreurs ci-dessous."
 
-#: generator/views.py:194
+#: generator/views.py:191
 msgid "form-no-data-saved-to-preview"
 msgstr "Aucune donnée n'a été sauvegardée pour prévisualiser la signature."
 
-#: generator/views.py:210 generator/views.py:231
+#: generator/views.py:207 generator/views.py:228
 msgid "form-no-data-saved-to-download"
 msgstr "Aucune donnée n'a été sauvegardée pour effectuer un téléchargement."
