@@ -57,6 +57,21 @@ This command will compile the messages of the app:
 sh dev_workflow/load_trans.sh
 ```
 
+#### Troubleshooting
+
+If you have an issue version collecting next to the bug button or launching the app, that means that you need to create your .env file (local) or to add the environment variables in your deployment environment (vercel or another). The .env file should look like this:
+
+```plaintext
+DJANGO_SECRET_KEY=your_django_secret_key
+IS_IN_DEBUG_MODE=False
+```
+
+For the version part, just add your Github token to the environment variables:
+
+```plaintext
+GITHUB_TOKEN=your_github_token
+```
+
 ### Project structure
 
 Here are the most important files and directories of the project( you may ignore the other files and directories):
@@ -92,6 +107,7 @@ Emails-Signature-Generator-Website
 ├── LICENSE
 ├── README.md
 ├── requirements.txt
+├── .env.example
 ├── manage.py
 ├── build_files.sh
 └── vercel.json
@@ -133,6 +149,10 @@ The `build_files.sh` file is a shell script to build the files of the project fo
 ##### manage.py
 
 The `manage.py` file is a command-line utility that lets you interact with this Django project in various ways. You can read more about it [here](https://docs.djangoproject.com/en/3.2/ref/django-admin/).
+
+##### .env.example
+
+The `.env.example` file is an example of the environment variables that you may need to run the project. You will need to create a `.env` file with the same variables and their values. Keep in mind not to share your `.env` file with anyone or to put it in your git repository.
 
 ## Supported social media
 

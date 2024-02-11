@@ -1,5 +1,10 @@
+import os
+
 import requests
+from dotenv import load_dotenv
 from jinja2 import Environment, FileSystemLoader
+
+load_dotenv()
 
 HTML_TEMPLATE = "signature-template.html"
 
@@ -62,16 +67,16 @@ def generate_html(data: dict) -> str:
     return template.render(data_conf_dict)
 
 
-def map_config_to_form(config_data: dict) -> None:
+def map_config_to_form(config_data: dict) -> dict:
     """Map config data to form data.
 
     Args:
     ----
-        config_data : Configuration data.
+        config_data (dict): Configuration data.
 
     Returns:
     -------
-        None: Mapped data.
+        dict: Mapped data.
 
     """
     mapped_data = {}
@@ -150,10 +155,14 @@ def get_latest_version() -> str:
 
     """
     url = "https://api.github.com/repos/MorganKryze/Emails-Signature-Generator-Website/releases/latest"
-    response = requests.get(url, timeout=15)
-    data_received_status_code = 200
-    if response.status_code == data_received_status_code:
-        latest_release = response.json()
-        return latest_release["tag_name"]
+    token = os.getenv("GITHUB_TOKEN")
+    headers = {"Authorization": "token " + token if token else ""}
+    response = requests.get(url, headers=headers, timeout=15)
+    try:
+        response = requests.get(url, headers=headers, timeout=15)
+        response.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        print(f"An error occurred: {e}")
+        return ""
     else:
-        return None
+        return response.json()["tag_name"]

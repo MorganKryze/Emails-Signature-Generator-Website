@@ -1,12 +1,16 @@
+import os
 from pathlib import Path
 
 from django.utils.translation import gettext_lazy as _
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "django-insecure--oo=&9!a^%4r*-5!tno0_+q4w(x4f4ho51+3hrca19-8(o77oq"
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 
-DEBUG = False
+DEBUG = os.getenv("IS_IN_DEBUG_MODE") == "True"
 
 ALLOWED_HOSTS = ["*"]
 
