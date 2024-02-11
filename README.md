@@ -7,6 +7,40 @@
 | [![with logo 200px 500px](assets/img/png/logo.png)](https://emails-signature-generator.vercel.app) | [![with photo 200px 500px](assets/img/png/photo.png)](https://emails-signature-generator.vercel.app) |
 | :------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: |
 
+```yaml
+signature_name: demo
+personal_information:
+  name: Your name
+  title: Your title
+  organization_name: Your organisation
+  organization_url: https://web.com
+  email: adress@example.com
+  additional: Workplace adress or quote
+image:
+  is_image_selected: false
+  image_link: https://raw.githubusercontent.com/MorganKryze/Email-Signature-Generator/main/src/assets/default.jpg
+  image_type: photo
+socials:
+  is_web_selected: true
+  web_link: https://example.com
+  is_github_selected: true
+  github_link: https://example.com
+  is_instagram_selected: false
+  instagram_link: None
+  is_linkedin_selected: true
+  linkedin_link: https://example.com
+  is_slack_selected: false
+  slack_link: None
+  is_youtube_selected: true
+  youtube_link: https://example.com
+  is_twitter_selected: false
+  twitter_link: None
+  is_facebook_selected: true
+  facebook_link: https://example.com
+```
+
+Config file example (yaml format).
+
 ## Getting Started
 
 The project does not need to be installed to be used as it is available [here](https://emails-signature-generator.vercel.app).
