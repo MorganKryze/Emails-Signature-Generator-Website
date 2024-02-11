@@ -6,6 +6,7 @@ from jinja2 import Environment, FileSystemLoader
 
 load_dotenv()
 
+GITHUB_RELEASES_URL = "https://api.github.com/repos/MorganKryze/Emails-Signature-Generator-Website/releases/latest"
 HTML_TEMPLATE = "signature-template.html"
 
 
@@ -153,18 +154,20 @@ def get_latest_version() -> str:
 
     Returns
     -------
-        str: Latest version of the application.
+        str: Latest version of the application, or an empty string if an error occurred.
 
     """
-    url = "https://api.github.com/repos/MorganKryze/Emails-Signature-Generator-Website/releases/latest"
     token = os.getenv("GITHUB_TOKEN")
-    headers = {"Authorization": "token " + token if token else ""}
-    response = requests.get(url, headers=headers, timeout=15)
+    headers = {"Authorization": f"token {token}"} if token else {}
     try:
-        response = requests.get(url, headers=headers, timeout=15)
+        response = requests.get(GITHUB_RELEASES_URL, headers=headers, timeout=15)
         response.raise_for_status()
-    except requests.exceptions.RequestException as e:
-        print(f"An error occurred: {e}")
+    except (requests.exceptions.Timeout, requests.exceptions.ConnectionError):
+        print("A network error occurred.")
         return ""
-    else:
-        return response.json()["tag_name"]
+    except requests.exceptions.HTTPError as e:
+        print(f"An HTTP error occurred: {e}")
+        return ""
+
+    data = response.json()
+    return data.get("tag_name", "")
