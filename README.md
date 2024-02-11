@@ -9,6 +9,7 @@
 
 ```yaml
 signature_name: demo
+
 personal_information:
   name: Your name
   title: Your title
@@ -16,10 +17,12 @@ personal_information:
   organization_url: https://web.com
   email: adress@example.com
   additional: Workplace adress or quote
+
 image:
   is_image_selected: false
   image_link: https://raw.githubusercontent.com/MorganKryze/Email-Signature-Generator/main/src/assets/default.jpg
   image_type: photo
+
 socials:
   is_web_selected: true
   web_link: https://example.com
@@ -43,7 +46,7 @@ Config file example (yaml format).
 
 ## Getting Started
 
-The project does not need to be installed to be used as it is available [here](https://emails-signature-generator.vercel.app).
+The project has been deployed to vercel and all services are available [here](https://emails-signature-generator.vercel.app).
 
 ### Prerequisites
 
@@ -51,7 +54,7 @@ The project does not need to be installed to be used as it is available [here](h
 
 ### Build
 
-To build the project, you can either download the zip file or clone the repository:
+To build the project, you can either **download the zip file** or **clone** the repository:
 
 ```bash
 git clone https://github.com/MorganKryze/Emails-Signature-Generator-Website.git
@@ -65,9 +68,41 @@ pip install -r requirements.txt
 ```
 
 > [!NOTE]
-> I recomment using a virtual environment ([venv](https://docs.python.org/3/library/venv.html) or [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)) to avoid conflicts with your other projects.
+> I recomment using a **virtual environment** ([venv](https://docs.python.org/3/library/venv.html) or [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)) to avoid conflicts with your other projects.
 
-You also need gettext to compile the translations. The details instructions are available [here](https://www.drupal.org/docs/8/modules/potion/how-to-install-setup-gettext).
+You also need **gettext** to compile the translations. The details instructions are available [here](https://www.drupal.org/docs/8/modules/potion/how-to-install-setup-gettext).
+
+Finally, you will need to create a .env file in the root directory of the project with the following content (you may copy the .env.example file and replace the values with yours, then rename the file to .env):
+
+```plaintext
+DJANGO_SECRET_KEY=your_django_secret_key
+IS_IN_DEBUG_MODE=False
+```
+
+The `DJANGO_SECRET_KEY` is a random string of characters that you will need to generate (at least 50 characters). You can use the following command to generate it:
+
+```bash
+python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+```
+
+The `IS_IN_DEBUG_MODE` variable is a boolean that indicates if the project is in debug mode or not. If you want to run the project in debug mode, you will need to set the variable to `True`. Otherwise, you will need to set it to `False` (for deployement purpose).
+
+To be able to display the version of the project on the website, you will need to make request to the GitHub API. As the unauthenticated requests are limited, you will need to create a token on your GitHub account. You can follow the instructions [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). Then, you will need to add the token to the environment variables :
+
+Add your Github token to the environment variables:
+
+```plaintext
+GITHUB_TOKEN=your_github_token
+```
+
+Or add your token to your .bashrc or .zshrc file:
+
+```bash
+export GITHUB_TOKEN=your_github_token
+```
+
+> [!NOTE]
+> When you plan to deploy the project, you will need to [add the environment variables](https://vercel.com/docs/projects/environment-variables/system-environment-variables) in your deployment environment (vercel or another) so they can be accessible byt your code (no modification of this code necessary).
 
 ### Usage
 
@@ -89,21 +124,6 @@ This command will compile the messages of the app:
 
 ```bash
 sh dev_workflow/load_trans.sh
-```
-
-#### Troubleshooting
-
-If you have an issue version collecting next to the bug button or launching the app, that means that you need to create your .env file (local) or to add the environment variables in your deployment environment (vercel or another). The .env file should look like this:
-
-```plaintext
-DJANGO_SECRET_KEY=your_django_secret_key
-IS_IN_DEBUG_MODE=False
-```
-
-For the version part, just add your Github token to the environment variables:
-
-```plaintext
-GITHUB_TOKEN=your_github_token
 ```
 
 ### Project structure
@@ -218,11 +238,11 @@ The `.env.example` file is an example of the environment variables that you may 
 
 - Custom the font
 - Custom the color
-- Custom the html template
+- Choose the html template
 - Add more social media
 - Add more email clients
 - Add more languages
-- Add informative popups or banners for issues or warnings
+- ~~Add informative popups or banners for issues or warnings~~
 
 ## Contributing
 
