@@ -26,7 +26,9 @@ def generate_html(data: dict) -> str:
         autoescape=False,
     )
 
-    template = env.get_template(HTML_TEMPLATE)
+    template = env.get_template(
+        HTML_TEMPLATE,
+    )  # TODO (Morgan): Add new template and ability to change it
     data_conf_dict = dict(data)
 
     social_media_html = ""
