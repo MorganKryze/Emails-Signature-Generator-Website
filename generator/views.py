@@ -1,6 +1,8 @@
 import yaml
+from django.contrib import messages
 from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.utils.translation import gettext_lazy as _
 
 from .forms import ConfigForm
 from .tools import generate_html, get_latest_version, map_config_to_form
@@ -69,7 +71,7 @@ def clients(request: HttpRequest) -> HttpResponse:
 
 
 def custom(request: HttpRequest) -> HttpResponse:
-    """Customizatio view.
+    """View for customization.
 
     Args:
     ----
@@ -83,10 +85,13 @@ def custom(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         form = ConfigForm(request.POST, request.FILES)
         config_file = request.FILES.get("config_file")
+
         if config_file:
             config_data = yaml.safe_load(config_file)
             mapped_data = map_config_to_form(config_data)
-            form = ConfigForm(initial=mapped_data)
+            form = ConfigForm(data=mapped_data)
+            messages.success(request, _("form-import-success"))
+
         if form.is_valid():
             global data_conf
             data_conf = {
@@ -156,6 +161,9 @@ def custom(request: HttpRequest) -> HttpResponse:
                     or "None",
                 },
             }
+            messages.success(request, _("form-is-valid"))
+        else:
+            messages.error(request, _("form-is-invalid"))
 
     else:
         form = ConfigForm()
@@ -167,7 +175,7 @@ def custom(request: HttpRequest) -> HttpResponse:
     )
 
 
-def preview(request: HttpRequest) -> HttpResponse:  # noqa: ARG001
+def preview(request: HttpRequest) -> HttpResponse:
     """Preview view.
 
     Args:
@@ -179,12 +187,15 @@ def preview(request: HttpRequest) -> HttpResponse:  # noqa: ARG001
         HttpResponse: Response object.
 
     """
+    if not data_conf:
+        messages.error(request, _("form-no-data-saved-to-preview"))
+        return redirect("/custom")
     html = generate_html(dict(data_conf))
 
     return HttpResponse(html)
 
 
-def download_signature(request: HttpRequest) -> HttpResponse:  # noqa: ARG001
+def download_signature(request: HttpRequest) -> HttpResponse:
     """Download signature view.
 
     Returns
@@ -192,6 +203,9 @@ def download_signature(request: HttpRequest) -> HttpResponse:  # noqa: ARG001
         HttpResponse: Response object.
 
     """
+    if not data_conf:
+        messages.error(request, _("form-no-data-saved-to-download"))
+        return redirect("/custom")
     html = generate_html(dict(data_conf))
 
     signature_name = data_conf.get("signature_name", "")
@@ -202,7 +216,7 @@ def download_signature(request: HttpRequest) -> HttpResponse:  # noqa: ARG001
     return response
 
 
-def download_config(request: HttpRequest) -> HttpResponse:  # noqa: ARG001
+def download_config(request: HttpRequest) -> HttpResponse:
     """Download config view.
 
     Returns
@@ -210,6 +224,9 @@ def download_config(request: HttpRequest) -> HttpResponse:  # noqa: ARG001
         HttpResponse: Response object.
 
     """
+    if not data_conf:
+        messages.error(request, _("form-no-data-saved-to-download"))
+        return redirect("/custom")
     signature_name = data_conf.get("signature_name", "")
     filename = f"{signature_name}.yaml"
 

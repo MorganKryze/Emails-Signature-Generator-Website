@@ -5,21 +5,6 @@
         min-height: 100vh;
         overflow-y: auto;
       }
-      .notification {
-        position: fixed;
-        right: 0;
-        top: 0;
-        background-color: #55b685;
-        color: white;
-        padding: 16px;
-        border-radius: 2px;
-        transition: transform 0.3s ease-in-out;
-        transform: translateX(100%);
-      }
-
-      .notification.active {
-        transform: translateX(0);
-      }
       .disabled {
         pointer-events: none;
         color: #cccccc;
@@ -43,8 +28,27 @@
 
 {% block body_content %}{% load i18n %}
 <body class="bg-gray-100 flex items-center justify-center mt-20 mb-20">
+    
 {% comment %} The form sheet {% endcomment %}
     <div class="bg-white p-10 rounded shadow-lg w-1/2">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="relative p-4 text-white text-center rounded-lg mb-4 messageBanner
+            {% if message.tags == 'success' %} 
+              bg-green-500 
+            {% else %} 
+              bg-red-500 
+            {% endif %}" style="transition: opacity 1s;">
+            {{ message }}
+            <button class="absolute top-0 right-0 p-2" onclick="this.parentElement.remove();">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+        {% endfor %}
+      {% endif %}
+
       <form method="post" id="Generator" enctype="multipart/form-data">
         {% csrf_token %} {% comment %} Title {% endcomment %}
         <div class="flex justify-between items-center mb-10">
@@ -417,13 +421,16 @@
             {% trans "custom-btn-save" %}
           </button>
         </div>
+
       </form>
+      
       <hr style="border-top: 1px solid #ccc" />
-      <div class="flex justify-center items-center space-x-2 mt-6">
+
+      <div style="{% if form.errors %}pointer-events: none;{% endif %}" class="flex justify-center items-center space-x-2 mt-6">
         <a href="{% url 'preview' %}" target="_blank" id="previewLink">
         <button
           id="previewBtn"
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start {% if form.errors %}disabled{% endif %}"
         >
           <img
             src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/svg/external-link.svg"
@@ -437,7 +444,7 @@
         <a href="{% url 'download-signature' %}" target="_blank" id="downloadSignatureLink">
         <button
           id="downloadSignatureBtn"
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start {% if form.errors %}disabled{% endif %}"
         >
           <img
             src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/svg/download.svg"
@@ -450,7 +457,7 @@
         <a href="{% url 'download-config' %}" target="_blank" id="downloadConfigLink">
           <button
             id="downloadConfigBtn"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start {% if form.errors %}disabled{% endif %}"
           >
             <img
               src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/svg/download.svg"
@@ -522,103 +529,21 @@
 
     // Call the function to add event listeners
     addEventListenersToSocials();
+  </script>
 
-    var previewBtn = document.getElementById('previewBtn');
-    var downloadSignatureBtn = document.getElementById('downloadSignatureBtn');
-    var downloadConfigBtn = document.getElementById('downloadConfigBtn'); 
-    var previewLink = document.getElementById('previewLink');
-    var downloadSignatureLink = document.getElementById('downloadSignatureLink');
-    var downloadConfigLink = document.getElementById('downloadConfigLink');
-
-    previewBtn.disabled = true;
-    downloadSignatureBtn.disabled = true;
-    downloadConfigBtn.disabled = true;
-    previewBtn.classList.add('disabled');
-    downloadSignatureBtn.classList.add('disabled');
-    downloadConfigBtn.classList.add('disabled');
-
-    document.getElementById('Generator').addEventListener('submit', function(event) {
-      // Check if all required fields are filled
-      var requiredFields = document.querySelectorAll('.required');
-      var allFieldsFilled = true;
-
-      requiredFields.forEach(function(field) {
-        if (field.value === '') {
-          allFieldsFilled = false;
-        }
-      });
-
-      if (allFieldsFilled) {
-        // If all required fields are filled, enable the buttons and remove the disabled class
-        previewBtn.disabled = false;
-        downloadSignatureBtn.disabled = false;
-        downloadConfigBtn.disabled = false;
-        previewBtn.classList.remove('disabled');
-        downloadSignatureBtn.classList.remove('disabled');
-        downloadConfigBtn.classList.remove('disabled');
-
-        // Store the state of the buttons in a cookie
-        document.cookie = "buttonsEnabled=true; path=/";
+  <script>
+  window.onload = function() {
+    var banners = document.getElementsByClassName('messageBanner');
+    function fadeAndRemoveBanner() {
+      if (banners.length > 0) {
+        banners[0].style.opacity = '0';
+        setTimeout(function() {
+          banners[0].remove();
+          fadeAndRemoveBanner();
+        }, 2000);
       }
-      else {
-        // If not all required fields are filled, disable the buttons and add the disabled class
-        previewBtn.disabled = true;
-        downloadSignatureBtn.disabled = true;
-        downloadConfigBtn.disabled = true;
-        previewBtn.classList.add('disabled');
-        downloadSignatureBtn.classList.add('disabled');
-        downloadConfigBtn.classList.add('disabled');
-
-        // Store the state of the buttons in a cookie
-        document.cookie = "buttonsEnabled=false; path=/";
-      }
-    });
-
-    // When the page is loaded, check the state of the buttons in the cookie
-    window.onload = function() {
-      var requiredFields = document.querySelectorAll('.required');
-      var allFieldsFilled = true;
-
-      requiredFields.forEach(function(field) {
-        if (field.value === '') {
-          allFieldsFilled = false;
-        }
-      });
-
-      if (allFieldsFilled && document.cookie.replace(/(?:(?:^|.*;\s*)buttonsEnabled\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "true") {
-        previewBtn.disabled = false;
-        downloadSignatureBtn.disabled = false;
-        downloadConfigBtn.disabled = false;
-        previewBtn.classList.remove('disabled');
-        downloadSignatureBtn.classList.remove('disabled');
-        downloadConfigBtn.classList.remove('disabled');
-      }
-      else {
-        previewBtn.disabled = true;
-        downloadSignatureBtn.disabled = true;
-        downloadConfigBtn.disabled = true;
-        previewBtn.classList.add('disabled');
-        downloadSignatureBtn.classList.add('disabled');
-        downloadConfigBtn.classList.add('disabled');
-      }
-    };
-
-    previewLink.addEventListener('click', function(event) {
-      if (previewBtn.disabled) {
-        event.preventDefault();
-      }
-    });
-
-    downloadSignatureLink.addEventListener('click', function(event) {
-      if (downloadSignatureBtn.disabled) {
-        event.preventDefault();
-      }
-    });
-
-    downloadConfigLink.addEventListener('click', function(event) {
-      if (downloadConfigBtn.disabled) {
-        event.preventDefault();
-      }
-    });
+    }
+    setTimeout(fadeAndRemoveBanner, 2500);
+  };
   </script>
 {% endblock %}
