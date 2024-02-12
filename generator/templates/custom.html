@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block head_content %}
-<style>
+  <style>
       body {
         min-height: 100vh;
         overflow-y: auto;
@@ -13,7 +13,7 @@
       .errorlist {
         color: red;
       }
-    </style>
+  </style>
 {% endblock %}
 
 {% block header_content%}{% load i18n %}
@@ -64,7 +64,7 @@
           
           <input
             type="text"
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline required"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
             id="{{ form.signatureName.id_for_label }}"
             placeholder="{{ form.signatureName.label }}"
             name="{{ form.signatureName.html_name }}"
@@ -85,7 +85,7 @@
             >
             <input
               type="text"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline required"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
               id="{{ form.name.id_for_label }}"
               placeholder="{{ form.name.label }}"
               name="{{ form.name.html_name }}"
@@ -101,7 +101,7 @@
             >
             <input
               type="text"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline required"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
               id="{{ form.title.id_for_label }}"
               placeholder="{{ form.title.label }}"
               name="{{ form.title.html_name }}"
@@ -117,7 +117,7 @@
             >
             <input
               type="text"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline required"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
               id="{{ form.organizationName.id_for_label }}"
               placeholder="{{ form.organizationName.label }}"
               name="{{ form.organizationName.html_name }}"
@@ -133,7 +133,7 @@
             >
             <input
               type="text"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline required"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
               id="{{ form.organizationURL.id_for_label }}"
               placeholder="{{ form.organizationURL.label }}"
               name="{{ form.organizationURL.html_name }}"
@@ -149,7 +149,7 @@
             >
             <input
               type="text"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline required"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
               id="{{ form.email.id_for_label }}"
               placeholder="{{ form.email.label }}"
               name="{{ form.email.html_name }}"
