@@ -426,11 +426,11 @@
       
       <hr style="border-top: 1px solid #ccc" />
 
-      <div style="{% if form.errors or not form.isbound %}pointer-events: none;{% endif %}" class="flex justify-center items-center space-x-2 mt-6">
+      <div style="{% if form.errors  %}pointer-events: none;{% endif %}" class="flex justify-center items-center space-x-2 mt-6">
         <a href="{% url 'preview' %}" target="_blank" id="previewLink">
         <button
           id="previewBtn"
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start {% if form.errors or not form.isbound %}disabled{% endif %}"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start {% if form.errors  %}disabled{% endif %}"
         >
           <img
             src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/svg/external-link.svg"
@@ -444,7 +444,7 @@
         <a href="{% url 'download-signature' %}" target="_blank" id="downloadSignatureLink">
         <button
           id="downloadSignatureBtn"
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start {% if form.errors or not form.isbound %}disabled{% endif %}"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start {% if form.errors  %}disabled{% endif %}"
         >
           <img
             src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/svg/download.svg"
@@ -457,7 +457,7 @@
         <a href="{% url 'download-config' %}" target="_blank" id="downloadConfigLink">
           <button
             id="downloadConfigBtn"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start {% if form.errors or not form.isbound %}disabled{% endif %}"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex flex-row items-center justify-start {% if form.errors  %}disabled{% endif %}"
           >
             <img
               src="https://raw.githubusercontent.com/MorganKryze/Emails-Signature-Generator-Website/main/assets/img/svg/download.svg"
