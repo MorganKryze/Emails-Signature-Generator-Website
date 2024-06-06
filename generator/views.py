@@ -166,7 +166,35 @@ def custom(request: HttpRequest) -> HttpResponse:
             messages.error(request, _("form-is-invalid"))
 
     else:
-        form = ConfigForm()
+        initial_data = {
+            "signatureName": request.GET.get("signatureName", ""),
+            "name": request.GET.get("name", ""),
+            "title": request.GET.get("title", ""),
+            "organizationName": request.GET.get("organizationName", ""),
+            "organizationURL": request.GET.get("organizationURL", ""),
+            "email": request.GET.get("email", ""),
+            "additional": request.GET.get("additional", ""),
+            "isImageSelected": request.GET.get("isImageSelected", False),
+            "imageLink": request.GET.get("imageLink", ""),
+            "imageType": request.GET.get("imageType", ""),
+            "isWebSelected": request.GET.get("isWebSelected", False),
+            "webLink": request.GET.get("webLink", ""),
+            "isGithubSelected": request.GET.get("isGithubSelected", False),
+            "githubLink": request.GET.get("githubLink", ""),
+            "isInstagramSelected": request.GET.get("isInstagramSelected", False),
+            "instagramLink": request.GET.get("instagramLink", ""),
+            "isLinkedinSelected": request.GET.get("isLinkedinSelected", False),
+            "linkedinLink": request.GET.get("linkedinLink", ""),
+            "isSlackSelected": request.GET.get("isSlackSelected", False),
+            "slackLink": request.GET.get("slackLink", ""),
+            "isYoutubeSelected": request.GET.get("isYoutubeSelected", False),
+            "youtubeLink": request.GET.get("youtubeLink", ""),
+            "isTwitterSelected": request.GET.get("isTwitterSelected", False),
+            "twitterLink": request.GET.get("twitterLink", ""),
+            "isFacebookSelected": request.GET.get("isFacebookSelected", False),
+            "facebookLink": request.GET.get("facebookLink", ""),
+        }
+        form = ConfigForm(initial=initial_data)
 
     return render(
         request,
